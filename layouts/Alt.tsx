@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 //= Components
 import Loader from "components/Common/Loader";
 import Navbar from 'components/Common/Navbar';
+import Header from 'components/Common/AltHeader';
 import Scrollables from 'components/Common/Scollables';
-import AltHeader from 'components/Common/AltHeader';
 import Footer from 'components/Common/Footer';
 
 interface IProps {
@@ -21,7 +21,7 @@ function AltPageLayout({ children, headerData }: IProps) {
     <>
       <Loader />
       <Navbar />
-      <AltHeader title={headerData.title} path={headerData.path} illustrationText={headerData.illustrationText} customFontSize={headerData.customFontSize} />
+      <Header {...headerData} />
       <Scrollables />
       <main>
         {children}

@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import Loader from "components/Common/Loader";
 import Navbar from 'components/Common/Navbar';
 import Scrollables from 'components/Common/Scollables';
-import MainHeader from 'components/Common/MainHeader';
+import Header from 'components/Common/MainHeader';
 import Footer from 'components/Common/Footer';
 
 interface IProps {
@@ -15,7 +15,7 @@ function MainPageLayout({ children }: IProps) {
     <>
       <Loader />
       <Navbar />
-      <MainHeader />
+      <Header />
       <Scrollables />
       <main>
         {children}
