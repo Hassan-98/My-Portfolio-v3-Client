@@ -2,16 +2,23 @@ import React from 'react';
 //= Styles
 import classes from './experience.module.scss';
 
-function Experience() {
+interface IProps {
+  noTitle?: boolean;
+}
+
+function Experience({ noTitle }: IProps) {
   return (
     <section>
       <div className="container">
-        <div className={classes.experience}>
-          <h2>
-            <span />
-            Experience
-            <span />
-          </h2>
+        <div className={`${classes.experience} ${noTitle ? classes.noPadding : ''}`}>
+          {
+            !noTitle &&
+            <h2>
+              <span />
+              Experience
+              <span />
+            </h2>
+          }
           <div className={classes.experiences}>
             <div className={classes.exp}>
               <h3><i className="fa-light fa-briefcase"></i> Front End Developer <span className={classes.at}>@</span> <span className={classes.company}>TCG</span></h3>

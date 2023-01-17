@@ -2,7 +2,11 @@ import React from 'react';
 //= Styles
 import classes from './skills.module.scss';
 
-function Skills() {
+interface IProps {
+  smallerPadding?: boolean;
+}
+
+function Skills({ smallerPadding }: IProps) {
   function handleTabClick(event: React.MouseEvent) {
     document.querySelectorAll(`.${classes.item}`).forEach(element => {
       element.classList.remove(classes.active);
@@ -19,7 +23,7 @@ function Skills() {
   return (
     <section>
       <div className="container">
-        <div className={classes.skills}>
+        <div className={`${classes.skills} ${smallerPadding ? classes.smallerPadding : ''}`}>
           <h2>
             <span />
             Skills

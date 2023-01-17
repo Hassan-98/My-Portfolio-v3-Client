@@ -2,10 +2,10 @@
 @import "styles/extends.scss";
 
 .header {
-  padding: 150px 0 200px;
+  padding: 150px 0;
 
   @include lg {
-    padding: 140px 0 100px;
+    padding: 140px 0 120px;
   }
 
   .content {

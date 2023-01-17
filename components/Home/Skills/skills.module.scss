@@ -16,6 +16,18 @@
     padding: 10px 0 60px;
   }
 
+  &.smallerPadding {
+    padding: 75px 0 0;
+
+    @include xl {
+      padding: 50px 0 0;
+    }
+
+    @include xs {
+      padding: 10px 0 0;
+    }
+  }
+
   h2 {
     font-size: 60px;
     font-weight: bold;
@@ -229,11 +241,5 @@
         }
       }
     }
-  }
-}
-
-[data-bs-theme="dark"] {
-  .skills {
-    padding: 120px 0;
   }
 }
