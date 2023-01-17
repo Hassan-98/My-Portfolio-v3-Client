@@ -1,0 +1,183 @@
+@import "styles/mixins.scss";
+@import "styles/extends.scss";
+
+.header {
+  padding: 200px 0 150px;
+
+  @include lg {
+    padding: 140px 0 100px;
+  }
+
+  .greeting {
+    color: var(--main-color);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0;
+
+    span {
+      text-transform: uppercase;
+      font-size: inherit;
+    }
+
+    @include sm {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0;
+    position: relative;
+    left: -5px;
+
+    @include lg {
+      font-size: 85px;
+    }
+
+    @include md {
+      font-size: 70px;
+    }
+
+    @include sm {
+      font-size: 65px;
+      text-align: center;
+    }
+
+    @include xs {
+      font-size: 57px;
+    }
+  }
+
+  h2 {
+    font-weight: 900;
+    color: var(--main-color);
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+
+    @include lg {
+      font-size: 42px;
+    }
+
+    @include md {
+      font-size: 38px;
+    }
+
+    @include sm {
+      font-size: 34px;
+      text-align: center;
+    }
+
+    @include xs {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    margin: 0 0 25px;
+    max-width: 80%;
+
+    @include sm {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    margin-top: 30px;
+    font-family: 'Reey';
+    color: var(--main-color);
+  }
+
+  button {
+    @extend %button;
+    margin-top: 20px;
+    font-family: var(--font-text);
+    padding: 10px 30px;
+
+    @include sm {
+      display: block;
+      margin: 0 auto 20px;
+    }
+  }
+
+  .bg {
+    background-color: var(--common-bg);
+    background-image: url('/images/my-picture.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    aspect-ratio: 1;
+    height: 500px;
+    border-radius: 46% 54% 53% 47% / 43% 37% 63% 57%;
+    animation: morphing 8s linear infinite;
+
+    @include xl {
+      height: 400px;
+    }
+
+    @include md {
+      margin-top: 30px;
+      height: 450px;
+    }
+
+    @include sm {
+      height: 400px;
+      margin: 30px auto 0;
+    }
+
+    @include xs {
+      height: 350px;
+    }
+  }
+}
+
+
+// Dark Mode Customizations
+[data-bs-theme="dark"] .header {
+
+  .greeting,
+  h3 {
+    color: var(--slate-color);
+  }
+
+  .bg {
+    filter: opacity(0.65);
+  }
+
+  button {
+    background-color: var(--secondary-tint);
+    border-color: transparent;
+    color: var(--slate-color);
+
+    i {
+      color: inherit;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+
+      i {
+        color: inherit;
+      }
+    }
+  }
+}
+
+@keyframes morphing {
+  0% {
+    border-radius: 46% 54% 53% 47% / 43% 37% 63% 57%;
+  }
+
+  35% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+
+  70% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 42% 47%;
+  }
+}

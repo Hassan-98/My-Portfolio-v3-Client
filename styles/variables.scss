@@ -1,0 +1,170 @@
+// Famous & social media Colors
+$facebook: #3b5998;
+$twitter: #55acee;
+$googleplus: #dd4b39;
+$pinterest: #bd061e;
+$instagram: #e23f5c;
+$linkedin: #007bb5;
+$github: #000000;
+$snapchat: #fdfc02;
+$reddit: #ff4500;
+$youtube: #ff0000;
+$whatsapp: #4dc247;
+$quora: #a82400;
+$dropbox: #007ee5;
+$flickr: #ff0084;
+$tumblr: #32506d;
+$vk: #45668e;
+$spotify: #00e461;
+$behance: #1769ff;
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/Sora-VariableFont_wght.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/fonts/Rubik-VariableFont_wght.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Array';
+  src: url('/fonts/Array-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reey';
+  src: url('/fonts/Reey-Regular.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-ExtraLight.ttf');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-ExtraLightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-Light.ttf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-LightItalic.ttf');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-Medium.ttf');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-MediumItalic.ttf');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-Bold.ttf');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/fonts/IBMPlexMono-BoldItalic.ttf');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  //= Colors
+  --main-color: #4c4c4c;
+  --main-color-tint: #4c4c4c3a;
+  --secondary-color: #0BBAE6;
+  --secondary-tint: #0bbae679;
+
+  --slate-color: #ccd6f6;
+  --slate-color-dark: #8892b0;
+
+  --btns-bg: #f1f1f1;
+
+  //= Backgrounds
+  --background-white: #FFFFFF;
+  --background-lighty: #F5F5F5;
+  --background-lighty-rgb: 245, 245, 245;
+  --background-dark: #0A192F;
+  --background-darky: #09162b;
+  --background-darky-rgb: 9, 22, 43;
+  --secondary-background: #EDE9E0;
+
+  //= Text Colors
+  --text-color: #000;
+  --text-color-light: #767676;
+  --text-color-muted: #a7a7a7;
+
+  //= Fonts
+  --font-heading: 'Sora', sans-serif;
+  --font-text: 'Rubik', sans-serif;
+  --font-mono: IBMPlexMono;
+  --font-logo: 'Array';
+  --font-signature: 'Reey';
+}
+
+// ============ Customize Bootstrap Theme Colors ============ //
+[data-bs-theme="light"] {
+  --bs-body-color: var(--text-color-light);
+  --bs-heading-color: var(--text-color);
+  --bs-body-bg: var(--background-white);
+
+  --main-color-dark: var(--slate-color-dark);
+  --common-bg: var(--background-lighty);
+  --common-bg-rgb: var(--background-lighty-rgb);
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-color: var(--slate-color-dark);
+  --bs-heading-color: var(--slate-color);
+  --bs-body-bg: var(--background-dark);
+
+  --text-color: var(--slate-color);
+  --main-color: var(--slate-color-dark);
+  --main-color-tint: var(--secondary-tint);
+  --main-color-dark: var(--secondary-tint);
+  --background-white: var(--background-dark);
+  --common-bg: var(--background-darky);
+  --common-bg-rgb: var(--background-darky-rgb);
+
+  --btns-bg: transparent;
+}

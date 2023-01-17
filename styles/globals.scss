@@ -1,0 +1,197 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+/***************  { General Styles For Elements }   *****************/
+$mainColor: #AB5429;
+$h1: 2rem;
+$h2: 1.714rem;
+$h3: 1.5rem;
+$h4: 1.286rem;
+$h5: 1.07rem;
+$h6: 1rem;
+$p: 1rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+p,
+span,
+button,
+input,
+textarea,
+select,
+option,
+div,
+section,
+main {
+  font-family: var(--font-text);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: var(--text-color);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/********************************************************************************/
+
+/********************* Adjusting Font Sizes For All Screens *********************/
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
+
+h5 {
+  font-size: $h5;
+}
+
+h6 {
+  font-size: $h6;
+}
+
+p {
+  line-height: 25px;
+  font-size: $p;
+}
+
+@include md {
+
+  span,
+  p {
+    font-size: 15px;
+  }
+}
+
+@include sm {
+
+  span,
+  p {
+    font-size: 14px;
+  }
+}
+
+@include xs {
+
+  span,
+  p {
+    font-size: 13px;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/*****************************************\ Selection Reset \**************************************/
+
+::selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 11px;
+  border-radius: 5px;
+  border: 3px solid var(--background-white);
+  background-color: var(--main-color);
+}
+
+[data-bs-theme="dark"] {
+  ::selection {
+    background: var(--secondary-color);
+  }
+
+  ::-moz-selection {
+    background: var(--secondary-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid var(--background-dark);
+    background-color: var(--slate-color-dark);
+  }
+}

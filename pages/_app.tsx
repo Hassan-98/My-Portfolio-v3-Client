@@ -1,0 +1,27 @@
+import { useEffect } from 'react';
+import type { AppProps } from 'next/app';
+import Script from 'next/script';
+
+//= Apply Theme Mode
+import applyColorMode from 'scripts/color-mode';
+
+//= Axios & Request Handler
+// import axios from 'utils/axios';
+
+//= Global Styles
+import "styles/globals.scss";
+
+export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    applyColorMode();
+  }, []);
+
+  return (
+    <>
+      <Component {...pageProps} />
+
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-HRSGV4Z9YH1" />
+      <Script src="/js/gtag.js" />
+    </>
+  )
+}

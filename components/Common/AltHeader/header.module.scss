@@ -1,0 +1,103 @@
+@import "styles/mixins.scss";
+@import "styles/extends.scss";
+
+.header {
+  padding: 150px 0 200px;
+
+  @include lg {
+    padding: 140px 0 100px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      @include md {
+        width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 75px;
+    font-weight: 900;
+    margin-bottom: 0;
+    position: relative;
+    left: -5px;
+
+    @include xl {
+      font-size: 70px;
+    }
+
+    @include lg {
+      font-size: 62px;
+    }
+
+    @include md {
+      font-size: 60px;
+    }
+
+    @include sm {
+      font-size: 55px;
+      text-align: center;
+    }
+
+    @include xs {
+      font-size: 48px;
+    }
+  }
+
+  p {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: normal;
+
+    span {
+      font-size: inherit;
+      text-transform: capitalize;
+    }
+
+    @include md {
+      font-size: 18px;
+    }
+
+    @include sm {
+      text-align: center;
+    }
+  }
+
+  .illustration {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: var(--common-bg);
+    padding-top: 30px;
+    height: 200px;
+    width: 300px;
+
+    @include md {
+      display: none;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 58px;
+      -webkit-text-stroke: 1px var(--main-color);
+      color: transparent;
+      font-family: var(--font-signature);
+      position: relative;
+      left: -25%;
+      display: block;
+      width: 450px;
+
+      @include xl {
+        font-size: 50px;
+      }
+
+      @include lg {
+        font-size: 45px;
+        left: -12.5%;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "styles/mixins.scss";
+
+.scrollables {
+  @include sm {
+    display: none;
+  }
+
+  .scroll_line_left {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    z-index: 1;
+    height: 100%;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    flex-wrap: wrap;
+
+    @include xxl {
+      left: 65px;
+    }
+
+    @include xl {
+      left: 25px;
+    }
+
+    @include lg {
+      left: 45px;
+    }
+
+    @include md {
+      left: 20px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      color: var(--main-color);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--main-color-tint);
+      }
+    }
+
+    span {
+      display: block;
+      width: 1px;
+      height: 15vh;
+      background-color: var(--main-color);
+    }
+  }
+
+  .scroll_line_right {
+    height: 100%;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    right: 100px;
+    z-index: 1;
+
+    @include xxl {
+      right: 65px;
+    }
+
+    @include xl {
+      right: 25px;
+    }
+
+    @include lg {
+      right: 45px;
+    }
+
+    @include md {
+      right: 20px;
+    }
+
+    p {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      transform: rotate(-90deg) translateX(85px);
+      color: var(--main-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--main-color-tint);
+      }
+    }
+
+    span {
+      display: block;
+      width: 1px;
+      height: 15vh;
+      background-color: var(--main-color);
+    }
+  }
+}

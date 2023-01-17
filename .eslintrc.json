@@ -1,0 +1,9 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "@next/next/no-css-tags": "off",
+    "no-document-viewport-meta": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off"
+  }
+}

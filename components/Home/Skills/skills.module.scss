@@ -1,0 +1,239 @@
+@import "styles/mixins.scss";
+@import "styles/extends.scss";
+
+.skills {
+  padding: 50px 0 80px;
+
+  @include xl {
+    padding: 40px 0 70px;
+  }
+
+  @include md {
+    padding: 40px 0 60px;
+  }
+
+  @include xs {
+    padding: 10px 0 60px;
+  }
+
+  h2 {
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    @include xl {
+      font-size: 55px;
+    }
+
+    @include md {
+      font-size: 50px;
+    }
+
+    @include sm {
+      font-size: 45px;
+    }
+
+    @include xs {
+      font-size: 40px;
+
+    }
+
+    span {
+      flex-grow: 1;
+      height: 1px;
+      background-color: var(--main-color);
+      transform: translate(25px);
+
+      &:first-of-type {
+        display: none;
+        transform: translate(-25px);
+
+        @include sm {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .skills_tabs_container {
+    margin-top: 50px;
+    background-color: var(--common-bg);
+    border-radius: 8px;
+    display: flex;
+
+    @include md {
+      display: block;
+    }
+
+    .skills_items {
+      padding: 25px;
+      border-right: 1px solid var(--background-white);
+      text-align: center;
+      min-width: 280px;
+
+      @include md {
+        width: 100%;
+        display: flex;
+        border-right: 0;
+        border-bottom: 1px solid var(--background-white);
+      }
+
+      @include xs {
+        padding: 20px;
+      }
+
+      .item {
+        padding: 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+
+        @include md {
+          flex-grow: 1;
+          margin-bottom: 0;
+          margin-inline-end: 10px;
+        }
+
+        @include xs {
+          padding: 15px;
+        }
+
+        &:hover,
+        &.active {
+          background-color: var(--background-white);
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 45px;
+          margin: 0 auto 10px;
+        }
+
+        p {
+          margin-bottom: 0;
+          font-weight: bold;
+          color: var(--slate-color-dark);
+        }
+      }
+    }
+
+    .skills_tabs {
+      padding: 30px;
+      padding-bottom: 1px;
+      flex-grow: 1;
+
+      .tab {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+
+      .section {
+        margin-bottom: 40px;
+
+        .sub_title {
+          font-weight: bold;
+          -webkit-text-stroke: 1px var(--main-color);
+          color: transparent;
+          margin-bottom: 15px;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+
+          @include xs {
+            justify-content: space-between;
+          }
+
+          li {
+            margin: 10px 45px;
+            margin-inline-start: 0;
+            font-family: var(--font-mono);
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 15px;
+
+            @include md {
+              margin: 10px 25px;
+              margin-inline-start: 0;
+            }
+
+            @include xs {
+              margin: 10px;
+              width: 25%;
+              font-size: 14px;
+            }
+
+            @include xs {
+              font-size: 13px;
+            }
+
+            img {
+              width: 80px;
+              margin-bottom: 10px;
+
+              @include md {
+                width: 70px;
+              }
+
+              @include xs {
+                width: 50px;
+              }
+            }
+
+            .compitable {
+              height: 80px;
+              width: 80px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 20px 10px;
+              margin-bottom: 10px;
+              @extend %fancyIcon;
+
+              @include md {
+                width: 70px;
+                height: 70px;
+              }
+
+              @include xs {
+                width: 50px;
+                height: 50px;
+              }
+
+              img {
+                object-fit: contain;
+                width: 54px;
+                height: 54px;
+                position: relative;
+                top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+[data-bs-theme="dark"] {
+  .skills {
+    padding: 120px 0;
+  }
+}
