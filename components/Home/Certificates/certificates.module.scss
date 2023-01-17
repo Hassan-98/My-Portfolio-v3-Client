@@ -83,6 +83,11 @@
 
       @include sm {
         width: 100%;
+
+        &:nth-last-of-type(1),
+        &:nth-last-of-type(2) {
+          display: none;
+        }
       }
 
       .info {

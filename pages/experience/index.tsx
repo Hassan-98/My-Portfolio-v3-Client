@@ -6,7 +6,8 @@ function Experience() {
   const headerData = {
     title: "Experience",
     path: "Experience",
-    illustrationText: "My Exps."
+    illustrationText: "Experience",
+    customFontSize: 38
   }
 
   return (

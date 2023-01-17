@@ -124,6 +124,10 @@ nav.navbar {
             margin-top: 10px;
           }
 
+          @include md {
+            margin-inline-start: 20px;
+          }
+
           &:hover {
             background-color: var(--main-color-dark);
             border-color: var(--main-color-dark);

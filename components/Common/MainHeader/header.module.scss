@@ -14,13 +14,14 @@
     font-weight: 900;
     font-size: 24px;
     margin: 0;
+    max-width: 100%;
 
     span {
       text-transform: uppercase;
       font-size: inherit;
     }
 
-    @include sm {
+    @include md {
       text-align: center;
     }
   }
@@ -38,11 +39,11 @@
 
     @include md {
       font-size: 70px;
+      text-align: center;
     }
 
     @include sm {
       font-size: 65px;
-      text-align: center;
     }
 
     @include xs {
@@ -64,11 +65,11 @@
 
     @include md {
       font-size: 38px;
+      text-align: center;
     }
 
     @include sm {
       font-size: 34px;
-      text-align: center;
     }
 
     @include xs {
@@ -80,9 +81,13 @@
     margin: 0 0 25px;
     max-width: 80%;
 
+    @include md {
+      margin: 0 auto 25px;
+      text-align: center;
+    }
+
     @include sm {
       max-width: 100%;
-      text-align: center;
     }
   }
 
@@ -98,7 +103,7 @@
     font-family: var(--font-text);
     padding: 10px 30px;
 
-    @include sm {
+    @include md {
       display: block;
       margin: 0 auto 20px;
     }
@@ -120,13 +125,12 @@
     }
 
     @include md {
-      margin-top: 30px;
+      margin: 30px auto 0;
       height: 450px;
     }
 
     @include sm {
       height: 400px;
-      margin: 30px auto 0;
     }
 
     @include xs {

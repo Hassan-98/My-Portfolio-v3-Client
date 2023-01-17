@@ -1,4 +1,4 @@
-# My Portfolio API - Client
+# My Portfolio v3 - Client
 This codebase is for the client side app of my portfolio.
 
 ### Dependencies
@@ -14,7 +14,7 @@ Provision the necessary ENV variables needed for running the application:
 
 ## Built With
 
-- [Next.js](https://nextjs.org)
+- [Next.js 13](https://nextjs.org)
 - [Bootstrap 5](https://nextjs.org)
 - [Scss](https://nextjs.org)
 - [TypeScript](https://expressjs.com/)

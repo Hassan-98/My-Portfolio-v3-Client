@@ -6,7 +6,8 @@ function Works() {
   const headerData = {
     title: "Portfolio",
     path: "Works",
-    illustrationText: "Works"
+    illustrationText: "Works",
+    customFontSize: 68
   }
 
   return (

@@ -6,7 +6,8 @@ function Contact() {
   const headerData = {
     title: "Contact Me",
     path: "Contact",
-    illustrationText: "Contct"
+    illustrationText: "Contact",
+    customFontSize: 48
   }
 
   return (

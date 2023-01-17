@@ -6,7 +6,8 @@ function Certificates() {
   const headerData = {
     title: "Certificates",
     path: "Certificates",
-    illustrationText: "Certs"
+    illustrationText: "Certs",
+    customFontSize: 65
   }
 
   return (

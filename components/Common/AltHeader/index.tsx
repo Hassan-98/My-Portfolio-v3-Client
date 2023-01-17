@@ -1,5 +1,5 @@
+import React, { useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
-import React from 'react';
 //= Styles
 import classes from './header.module.scss';
 
@@ -7,9 +7,16 @@ interface IProps {
   title: string;
   path: string;
   illustrationText: string;
+  customFontSize?: number;
 }
 
-function AltHeader({ title, path, illustrationText }: IProps) {
+function AltHeader({ title, path, illustrationText, customFontSize = 58 }: IProps) {
+  const illustrationRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    illustrationRef.current?.style.setProperty('--font-size', `${customFontSize}px`);
+  }, [illustrationRef, customFontSize])
+
   return (
     <header className={classes.header}>
       <div className="container">
@@ -18,7 +25,7 @@ function AltHeader({ title, path, illustrationText }: IProps) {
             <h1>{title}</h1>
             <p><Link href="/">Home</Link> &nbsp;/&nbsp; <span>{path}</span></p>
           </div>
-          <div className={classes.illustration}><span>{illustrationText}</span></div>
+          <div className={classes.illustration}><span ref={illustrationRef}>{illustrationText}</span></div>
         </div>
       </div>
     </header>

@@ -12,6 +12,7 @@ interface IProps {
     title: string;
     path: string;
     illustrationText: string;
+    customFontSize?: number;
   }
 }
 
@@ -20,7 +21,7 @@ function AltPageLayout({ children, headerData }: IProps) {
     <>
       <Loader />
       <Navbar />
-      <AltHeader title={headerData.title} path={headerData.path} illustrationText={headerData.illustrationText} />
+      <AltHeader title={headerData.title} path={headerData.path} illustrationText={headerData.illustrationText} customFontSize={headerData.customFontSize} />
       <Scrollables />
       <main>
         {children}
