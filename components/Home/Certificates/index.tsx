@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 //= Components
 import CertificateModal from 'components/Common/CertificateModal';
 //= Styles
 import classes from './certificates.module.scss';
 
-function Certificates() {
+interface IProps {
+  certsPage?: boolean;
+}
+
+function Certificates({ certsPage }: IProps) {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<string>('');
 
@@ -16,12 +21,15 @@ function Certificates() {
   return (
     <section>
       <div className="container">
-        <div className={classes.certificates}>
-          <h2>
-            <span />
-            Certificates
-            <span />
-          </h2>
+        <div className={`${classes.certificates} ${certsPage ? classes.smallerPadding : ''}`}>
+          {
+            !certsPage &&
+            <h2>
+              <span />
+              Certificates
+              <span />
+            </h2>
+          }
           <div className={classes.container}>
             <div className={classes.certificate}>
               <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-storage-63979.appspot.com/o/Nanodegree%20Cert-1.png_1662600051014?alt=media" alt="certificate" loading="lazy" />
@@ -102,7 +110,12 @@ function Certificates() {
               </div>
             </div>
           </div>
-          <button className={classes.viewMore}><i className="fa-regular fa-eye me-1"></i> View All Certificates</button>
+          {
+            !certsPage &&
+            <Link href="/certificates">
+              <button className={classes.viewMore}><i className="fa-regular fa-eye me-1"></i> View All Certificates</button>
+            </Link>
+          }
         </div>
         {
           modalIsOpen &&

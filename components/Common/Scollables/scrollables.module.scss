@@ -25,10 +25,6 @@
       left: 25px;
     }
 
-    @include lg {
-      left: 45px;
-    }
-
     @include md {
       left: 20px;
     }
@@ -90,6 +86,10 @@
       color: var(--main-color);
       cursor: pointer;
       transition: all 0.3s ease;
+
+      a {
+        color: inherit;
+      }
 
       &:hover {
         color: var(--main-color-tint);
