@@ -12,6 +12,18 @@
     padding: 40px 0 60px;
   }
 
+  &.noPaddingTop {
+    padding: 0 0 80px;
+
+    @include xl {
+      padding: 0 0 70px;
+    }
+
+    @include md {
+      padding: 0 0 60px;
+    }
+  }
+
   h2 {
     font-size: 60px;
     font-weight: bold;
@@ -167,7 +179,9 @@
         }
 
         img {
-          height: 400px;
+          transition: all 1s linear;
+          object-position: top;
+          height: 360px;
           width: 100%;
 
           @include md {
@@ -176,6 +190,11 @@
 
           @include xs {
             height: 275px;
+          }
+
+          &:hover {
+            transition: all 4s linear;
+            object-position: bottom;
           }
         }
 
@@ -248,13 +267,13 @@
 
             li {
               img {
-                width: 48px;
-                height: 48px;
+                width: 44px;
+                height: 44px;
                 margin-inline-end: 15px;
 
                 @include sm {
-                  width: 40px;
-                  height: 40px;
+                  width: 38px;
+                  height: 38px;
                 }
 
                 @include xs {
@@ -269,8 +288,8 @@
               }
 
               &.compitable {
-                height: 48px;
-                width: 48px;
+                height: 44px;
+                width: 44px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -300,8 +319,8 @@
 
           i.github,
           i.demo {
-            font-size: 28px;
-            margin-inline-end: 20px;
+            font-size: 27px;
+            margin-inline-end: 15px;
             cursor: pointer;
             color: var(--main-color);
             transition: all 0.3s ease;

@@ -1,15 +1,20 @@
 import React from 'react';
+import Link from 'next/link';
 //= Styles
 import classes from './works.module.scss';
 
-function Works() {
+interface IProps {
+  worksPage?: boolean;
+}
+
+function Works({ worksPage }: IProps) {
   function toggleView(event: React.MouseEvent) {
     const work_image = event.currentTarget.parentElement?.parentElement?.parentElement;
     const currentViewBtn = event.currentTarget;
     const otherViewBtn = event.currentTarget.nextElementSibling || event.currentTarget.previousElementSibling;
     const image = work_image?.querySelector('img')!;
 
-    const desktop_img = "/images/desktop-gp.png";
+    const desktop_img = "https://firebasestorage.googleapis.com/v0/b/portfolio-storage-63979.appspot.com/o/gp.webp_1651143797909?alt=media";
     const mobile_img = "/images/mobile-gp.png";
 
     image.src = currentViewBtn.className.includes('mobile') ? desktop_img : mobile_img;
@@ -23,12 +28,15 @@ function Works() {
   return (
     <section>
       <div className="container">
-        <div className={classes.works}>
-          <h2>
-            <span />
-            Works
-            <span />
-          </h2>
+        <div className={`${classes.works} ${worksPage ? classes.noPaddingTop : ''}`}>
+          {
+            !worksPage &&
+            <h2>
+              <span />
+              Works
+              <span />
+            </h2>
+          }
           <div className={classes.works_container}>
             <div className={classes.work}>
               <div className={classes.work_image}>
@@ -72,6 +80,9 @@ function Works() {
                   <div className={classes.actions}>
                     <a href="https://github.com" target="_blank" rel="noreferrer">
                       <i className={`fa-brands fa-github ${classes.github}`} title="Github Repo"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noreferrer">
+                      <i className={`fa-solid fa-server ${classes.github}`} title="API Github Repo"></i>
                     </a>
                     <a href="https://hassanali.tk" target="_blank" rel="noreferrer">
                       <i className={`fa-regular fa-arrow-up-right-from-square ${classes.demo}`} title="View Demo"></i>
@@ -146,7 +157,7 @@ function Works() {
                     <i className={`fa-sharp fa-solid fa-mobile ${classes.hide}`} title="toggle mobile view" onClick={toggleView}></i>
                   </div>
                 </div>
-                <img src="/images/desktop-gp.png" alt="work image" loading="lazy" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-storage-63979.appspot.com/o/gp.webp_1651143797909?alt=media" alt="work image" loading="lazy" />
               </div>
               <div className={classes.work_info}>
                 <h3>GP Resturant</h3>
@@ -231,7 +242,10 @@ function Works() {
               </div>
             </div>
           </div>
-          <button><i className="fa-regular fa-eye me-1"></i> View All Works</button>
+          {
+            !worksPage &&
+            <Link href="/works"><button><i className="fa-regular fa-eye me-1"></i> View All Works</button></Link>
+          }
         </div>
       </div>
     </section>
