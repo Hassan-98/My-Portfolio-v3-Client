@@ -32,8 +32,8 @@
     }
 
     h2 {
-      font-weight: bold;
-      font-size: 25px;
+      font-weight: 600;
+      font-size: 24px;
 
       @include lg {
         font-size: 23px;
@@ -86,7 +86,7 @@
           font-size: 15px;
 
           &:first-of-type {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 16px;
             margin: 0;
             font-family: var(--font-heading);
