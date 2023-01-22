@@ -79,7 +79,7 @@ function Navbar() {
             </li>
             <li onClick={toggleThemeMode}><i className={`fa-solid fa-${theme === 'dark' ? 'sun-bright' : 'moon-stars'}`}></i></li>
             <li>
-              <button className={`btn`}>
+              <button className={`btn`} onClick={() => router.push('/resume')}>
                 <i className="fa-light fa-download"></i>
                 Resume
               </button>

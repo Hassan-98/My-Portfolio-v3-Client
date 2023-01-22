@@ -1,0 +1,347 @@
+@import "styles/mixins.scss";
+@import "styles/extends.scss";
+
+.resume {
+  background-color: #fff;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 900px;
+  padding-bottom: 50px;
+
+  @include print {
+    display: table;
+    break-inside: avoid;
+    min-width: auto;
+    padding-bottom: 0;
+  }
+
+  .topbar {
+    background-color: var(--common-bg);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+
+    @include print {
+      display: none;
+    }
+
+    button {
+      @extend %button;
+      margin-inline-end: 10px;
+      border-radius: 3px;
+
+      i {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  .metadata {
+    text-align: center;
+
+    h1 {
+      font-size: 60px;
+      color: #000;
+      font-weight: bold;
+      margin-bottom: 0;
+
+      @include lg {
+        font-size: 38px;
+      }
+    }
+
+    h2 {
+      color: #414141;
+      font-family: var(--font-mono);
+      font-weight: bold;
+
+      @include lg {
+        font-size: 18px;
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 25px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+      max-width: 60%;
+      margin: 5px auto;
+
+      @include lg {
+        max-width: 80%;
+        column-gap: 15px;
+      }
+
+      .link {
+        cursor: pointer;
+        color: #414141;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        i {
+          font-size: 18px;
+          position: relative;
+          top: 4px;
+          margin-inline-end: 8px;
+
+          @include lg {
+            font-size: 14px;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .section {
+    margin-bottom: 10px;
+    padding: 15px 150px;
+    padding-bottom: 0;
+    max-width: 1600px;
+    margin: 10px auto;
+
+    @include xl {
+      padding: 15px 50px;
+      padding-bottom: 0;
+    }
+
+    @include lg {
+      padding: 15px;
+      padding-bottom: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      color: #414141;
+      border-bottom: 2px solid #f1f1f1;
+      font-weight: 600;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: var(--font-mono);
+
+      @include lg {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      padding-left: 15px;
+      margin-bottom: 0;
+      color: #666666;
+
+      @include lg {
+        font-size: 12px;
+      }
+    }
+
+    .skill_set {
+      span {
+        padding-left: 7.5px;
+        color: #414141;
+        font-weight: bold;
+        font-style: italic;
+
+        @include lg {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .experience {
+      margin-bottom: 25px;
+
+      @include lg {
+        margin-bottom: 10px;
+      }
+
+      .title {
+        display: flex;
+        gap: 50px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 18px;
+
+          @include lg {
+            font-size: 14px;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: normal;
+            margin-inline: 5px;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+
+        p:last-of-type {
+          @include lg {
+            font-size: 11px;
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      ul {
+        list-style: disc;
+        padding: 0;
+        margin: 0;
+        padding-left: 42px;
+
+        li {
+          color: #8a8a8a;
+
+          @include lg {
+            font-size: 11px;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .education {
+      margin-bottom: 25px;
+
+      @include lg {
+        margin-bottom: 10px;
+      }
+
+      .title {
+        display: flex;
+        gap: 50px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 18px;
+
+          @include lg {
+            font-size: 14px;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: normal;
+            margin-inline: 5px;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+
+        p:last-of-type {
+          @include lg {
+            font-size: 11px;
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      p.description {
+        padding-left: 30px;
+        max-width: 90%;
+        line-height: 1.25;
+        color: #8a8a8a;
+
+        @include lg {
+          font-size: 11px;
+          color: #666;
+        }
+      }
+    }
+
+    .project {
+      margin-bottom: 25px;
+      break-inside: avoid;
+
+      @include lg {
+        margin-bottom: 10px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .title {
+        display: flex;
+        gap: 50px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 18px;
+
+          @include lg {
+            font-size: 14px;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: normal;
+            margin-inline: 5px;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+
+        a {
+          color: #414141;
+          margin-inline-end: 15px;
+
+          @include lg {
+            font-size: 11px;
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      p.description {
+        padding-left: 30px;
+        max-width: 90%;
+        line-height: 1.25;
+        margin-top: 5px;
+        color: #8a8a8a;
+
+        @include lg {
+          font-size: 11px;
+          margin-top: 0px;
+          color: #666;
+        }
+      }
+    }
+  }
+}

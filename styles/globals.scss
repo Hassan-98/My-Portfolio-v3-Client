@@ -24,6 +24,15 @@ body {
   min-height: 100vh;
   font-family: var(--font-family);
   overflow-x: hidden;
+
+  @include print {
+    background-color: #fff;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 25px 50px;
 }
 
 body {

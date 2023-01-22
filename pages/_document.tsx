@@ -21,6 +21,10 @@ export default function Document() {
         <link rel="shortcut icon" href="/logo.png" />
         {/* CSS Libs */}
         <link rel="stylesheet" href="/css/all.min.css" />
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css' />
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css' />
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-straight/css/uicons-thin-straight.css' />
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css' />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
       </Head>
       <body>
