@@ -20,11 +20,11 @@ class API {
     this.BASE_URL = baseUrl;
   }
 
-  public async GET<T>(endpoint: string, options?: Options): Promise<T | undefined> {
+  public async Get<T>(endpoint: string, options?: Options): Promise<T | undefined> {
     const config = options?.config || {};
 
     try {
-      const response = await axios.get<Response<T>>(`${this.BASE_URL}/${endpoint}`, config);
+      const response = await axios.get<Response<T>>(`${this.BASE_URL}${endpoint}`, config);
 
       if (!response?.data?.success || !response.data?.data) throw new Error("An Unexpected Error Occured");
 
@@ -32,16 +32,16 @@ class API {
 
       return data;
     } catch (err: any) {
-      console.log(err.response.data.message);
+      console.log(err.response?.data?.message);
     }
   }
 
-  public async POST<T>(endpoint: string, options: Options): Promise<T | undefined> {
+  public async Post<T>(endpoint: string, options: Options): Promise<T | undefined> {
     const config = options?.config || {};
     const body = options?.body || {};
 
     try {
-      const response = await axios.post<Response<T>>(`${this.BASE_URL}/${endpoint}`, body, config);
+      const response = await axios.post<Response<T>>(`${this.BASE_URL}${endpoint}`, body, config);
 
       if (!response?.data?.success || !response.data?.data) throw new Error("An Unexpected Error Occured");
 
@@ -49,16 +49,16 @@ class API {
 
       return data;
     } catch (err: any) {
-      console.log(err.response.data.message);
+      console.log(err.response?.data?.message);
     }
   }
 
-  public async PATCH<T>(endpoint: string, options: Options): Promise<T | undefined> {
+  public async Patch<T>(endpoint: string, options: Options): Promise<T | undefined> {
     const config = options?.config || {};
     const body = options?.body || {};
 
     try {
-      const response = await axios.patch<Response<T>>(`${this.BASE_URL}/${endpoint}`, body, config);
+      const response = await axios.patch<Response<T>>(`${this.BASE_URL}${endpoint}`, body, config);
 
       if (!response?.data?.success || !response.data?.data) throw new Error("An Unexpected Error Occured");
 
@@ -66,16 +66,16 @@ class API {
 
       return data;
     } catch (err: any) {
-      console.log(err.response.data.message);
+      console.log(err.response?.data?.message);
     }
   }
 
-  public async DELETE<T>(endpoint: string, options?: Options): Promise<T | undefined> {
+  public async Delete<T>(endpoint: string, options?: Options): Promise<T | undefined> {
     const config = options?.config || {};
     const body = options?.body || {};
 
     try {
-      const response = await axios.delete<Response<T>>(`${this.BASE_URL}/${endpoint}`, { ...config, data: body });
+      const response = await axios.delete<Response<T>>(`${this.BASE_URL}${endpoint}`, { ...config, data: body });
 
       if (!response?.data?.success || !response.data?.data) throw new Error("An Unexpected Error Occured");
 
@@ -83,7 +83,7 @@ class API {
 
       return data;
     } catch (err: any) {
-      console.log(err.response.data.message);
+      console.log(err.response?.data?.message);
     }
   }
 }

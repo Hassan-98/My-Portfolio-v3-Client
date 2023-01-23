@@ -2,8 +2,7 @@ import Head from 'next/head';
 //= Components
 import Show from 'components/Resume/Show';
 
-function About() {
-
+function Resume() {
   return (
     <>
       {/* Head */}
@@ -17,4 +16,4 @@ function About() {
   )
 }
 
-export default About;
+export default Resume;

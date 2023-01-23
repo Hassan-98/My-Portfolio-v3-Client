@@ -1,3 +1,1 @@
-export interface MAINDATA {
-  logo: string;
-}
+export type CVFile = Buffer

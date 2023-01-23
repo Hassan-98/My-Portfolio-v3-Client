@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 //= Styles
 import classes from "./header.module.scss";
 
@@ -12,10 +13,12 @@ function Header() {
             <h1>Hassan Ali</h1>
             <h2>Software Engineer</h2>
             <p>I'm a self-taught software engineer based on Egypt, with over 2 years experience specializing in MERN Stack web development.</p>
-            <button className="btn">
-              <i className="fa-regular fa-briefcase me-2"></i>
-              Check out my works!
-            </button>
+            <Link href="/works">
+              <button className="btn">
+                <i className="fa-regular fa-briefcase me-2"></i>
+                Check out my works!
+              </button>
+            </Link>
           </div>
           <div className="col-lg-5">
             <div className={classes.bg}></div>
