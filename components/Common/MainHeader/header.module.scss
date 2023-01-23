@@ -155,7 +155,8 @@
   button {
     background-color: var(--secondary-tint);
     border-color: transparent;
-    color: var(--slate-color);
+    color: var(--common-bg);
+    font-weight: 450;
 
     i {
       color: inherit;

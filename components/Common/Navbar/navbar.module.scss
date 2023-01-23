@@ -27,16 +27,15 @@ nav.navbar {
 
     .logo {
       // width: 48px;
-      height: 48px;
       font-size: 75px;
       font-family: 'Array';
       color: var(--text-color-tint);
-      position: relative;
-      top: -35px;
-      transform: rotate(-5deg);
+      // position: relative;
+      // top: -35px;
+      // transform: rotate(-5deg);
       cursor: pointer;
-      transform-origin: bottom center;
-      animation: rotateLogo 3s linear infinite alternate;
+      // transform-origin: bottom center;
+      // animation: rotateLogo 3s linear infinite alternate;
 
       @include sm {
         font-size: 60px;
@@ -45,6 +44,8 @@ nav.navbar {
 
       img {
         cursor: pointer;
+        height: 48px;
+        width: 48px;
       }
     }
 

@@ -18,7 +18,7 @@ export default function Document() {
         {/* Google Analytics */}
         <meta name="google-site-verification" content="_U2xB66Sbt6dFzxjqW99iSxKgr47T7RwA621oA5G2Tk" />
         {/* App Logo */}
-        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo-secondary.svg" />
         {/* CSS Libs */}
         <link rel="stylesheet" href="/css/all.min.css" />
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css' />

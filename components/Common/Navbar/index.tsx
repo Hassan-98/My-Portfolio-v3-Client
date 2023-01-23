@@ -55,8 +55,13 @@ function Navbar() {
       <div className="container">
         <div className={classes.content}>
           <div className={classes.logo} onClick={() => router.push('/')}>
-            {/* <Image src="/logo.png" width={48} height={48} alt="website logo" /> */}
-            H
+            {
+              theme === 'light' ?
+                <img src="/logo-black.svg" alt="website logo" />
+                :
+                <img src="/logo-secondary.svg" alt="website logo" />
+            }
+            {/* H */}
           </div>
           <ul className={classes.links}>
             <li className={router.pathname === Page.Home ? classes.active : ''}>
