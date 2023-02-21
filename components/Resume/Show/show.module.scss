@@ -83,6 +83,10 @@
           font-size: 12px;
         }
 
+        a {
+          color: inherit;
+        }
+
         i {
           font-size: 18px;
           position: relative;
@@ -181,6 +185,10 @@
             margin-inline: 5px;
           }
 
+          a {
+            color: inherit;
+          }
+
           &::before {
             content: "# ";
             font-weight: normal;
@@ -209,6 +217,7 @@
 
         li {
           color: #8a8a8a;
+          font-size: 14px;
 
           @include lg {
             font-size: 11px;
@@ -235,6 +244,10 @@
 
           @include lg {
             font-size: 14px;
+          }
+
+          a {
+            color: inherit;
           }
 
           span {

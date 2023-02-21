@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 //= Packages
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
+//= Types
+import { ITestimonial } from 'types';
 //= Styles
 import classes from './testimonials.module.scss';
 import "swiper/css";
 import "swiper/css/autoplay";
 
-function Testimonials() {
+function Testimonials({ data }: { data: ITestimonial[] }) {
   const [loadSwiper, setLoadSwiper] = useState<boolean>(false);
 
   useEffect(() => {
@@ -37,54 +39,26 @@ function Testimonials() {
                 }
               }}
             >
-              <SwiperSlide>
-                <div className={classes.testimonial}>
-                  <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i>
-                  <p className={classes.rating}>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </p>
-                  <p className={classes.paragraph}>“I am completely satisfied with the work that is done by Hassan . I have found the one to help me move my business. Thank you very much for the great work.”</p>
-                  <p className={classes.author}>
-                    <b>Mohamed Ali</b> @ <span>Client</span>
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={classes.testimonial}>
-                  <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i>
-                  <p className={classes.rating}>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </p>
-                  <p className={classes.paragraph}>“I am completely satisfied with the work that is done by Hassan . I have found the one to help me move my business. Thank you very much for the great work.”</p>
-                  <p className={classes.author}>
-                    <b>Mohamed Ali</b> @ <span>Client</span>
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={classes.testimonial}>
-                  <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i>
-                  <p className={classes.rating}>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star me-1"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </p>
-                  <p className={classes.paragraph}>“I am completely satisfied with the work that is done by Hassan . I have found the one to help me move my business. Thank you very much for the great work.”</p>
-                  <p className={classes.author}>
-                    <b>Mohamed Ali</b> @ <span>Client</span>
-                  </p>
-                </div>
-              </SwiperSlide>
+              {
+                data.map(testimonial => (
+                  <SwiperSlide key={testimonial._id}>
+                    <div className={classes.testimonial}>
+                      <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i>
+                      <p className={classes.rating}>
+                        {
+                          new Array(testimonial.rating).fill(0).map((_, i) => (
+                            <i className={`fa-solid fa-star ${i !== testimonial.rating - 1 ? 'me-1' : ''}`} key={i}></i>
+                          ))
+                        }
+                      </p>
+                      <p className={classes.paragraph}>“{testimonial.content}”</p>
+                      <p className={classes.author}>
+                        <b>{testimonial.authorName}</b> @ <span>{testimonial.authorPosition}</span>
+                      </p>
+                    </div>
+                  </SwiperSlide>
+                ))
+              }
             </Swiper>
           }
         </div>

@@ -5,8 +5,17 @@ import Layout from 'layouts/Alt';
 import AboutMe from 'components/Home/AboutMe';
 import Services from 'components/About/Services';
 import Testimonials from 'components/Home/Testimonials';
+//= Api
+import { getGeneralSettings, getAllTestimonials } from 'api';
+//= Types
+import { GeneralSettings, ITestimonial } from 'types';
 
-function About() {
+interface IProps {
+  aboutInfo: GeneralSettings;
+  testimonials: ITestimonial[];
+}
+
+function About({ aboutInfo, testimonials }: IProps) {
   const headerData = {
     title: "About Me",
     path: "About",
@@ -21,13 +30,36 @@ function About() {
         <meta name="description" content="Hassan Ali's Portfolio About Page, Hassan Ali is self-taught web developer based on Egypt, with +2 years experience as a professional web developer specializes in front-end & MERN Stack web development, this is my projects and About page." />
       </Head>
       {/* Page Content */}
-      <Layout headerData={headerData}>
-        <AboutMe />
+      <Layout headerData={headerData} data={aboutInfo}>
+        <AboutMe data={aboutInfo} />
         <Services />
-        <Testimonials />
+        <Testimonials data={testimonials} />
       </Layout>
     </>
   )
+}
+
+export const getServerSideProps = async () => {
+  try {
+    const [aboutInfo, testimonials] = await Promise.all([
+      getGeneralSettings(),
+      getAllTestimonials()
+    ]);
+
+    return {
+      props: {
+        aboutInfo,
+        testimonials
+      }
+    }
+  } catch {
+    return {
+      props: {
+        aboutInfo: null,
+        testimonials: []
+      }
+    }
+  }
 }
 
 export default About;

@@ -104,6 +104,10 @@
           width: fit-content;
           font-size: inherit;
 
+          a {
+            color: inherit;
+          }
+
           &::after {
             content: "";
             display: block;
@@ -124,7 +128,7 @@
 
         span.at {
           color: var(--slate-color-dark);
-          margin-inline: 4px;
+          margin-inline: 8px;
           font-size: inherit;
         }
       }

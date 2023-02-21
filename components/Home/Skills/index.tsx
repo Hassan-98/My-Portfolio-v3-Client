@@ -1,12 +1,15 @@
 import React from 'react';
+//= Types
+import { ISkill, SkillMastery, StackType } from 'types';
 //= Styles
 import classes from './skills.module.scss';
 
 interface IProps {
   smallerPadding?: boolean;
+  data: ISkill[]
 }
 
-function Skills({ smallerPadding }: IProps) {
+function Skills({ smallerPadding, data }: IProps) {
   function handleTabClick(event: React.MouseEvent) {
     document.querySelectorAll(`.${classes.item}`).forEach(element => {
       element.classList.remove(classes.active);
@@ -32,15 +35,15 @@ function Skills({ smallerPadding }: IProps) {
           <div className={classes.skills_tabs_container}>
             <div className={classes.skills_items}>
               <div className={`${classes.item} ${classes.active}`} onClick={handleTabClick} id="front-end-btn">
-                <img src="/images/browser.png" alt="client side" loading="lazy" />
+                <img src="/images/front.png" alt="client side" loading="lazy" />
                 <p>Front End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="back-end-btn">
-                <img src="/images/server.svg" alt="server side" loading="lazy" />
+                <img src="/images/back.png" alt="server side" loading="lazy" />
                 <p>Back End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="tools-btn">
-                <img src="/images/tools.svg" alt="tools" loading="lazy" />
+                <img src="/images/tools.png" alt="tools" loading="lazy" />
                 <p>Tools</p>
               </div>
             </div>
@@ -51,54 +54,22 @@ function Skills({ smallerPadding }: IProps) {
                     Proficient:
                   </h3>
                   <ul>
-                    <li>
-                      <img src="/images/stack-icons/html.svg" alt="skill" loading="lazy" />
-                      HTML
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/css.svg" alt="skill" loading="lazy" />
-                      CSS
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/javascript.svg" alt="skill" loading="lazy" />
-                      JavaScript
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/typescript.svg" alt="skill" loading="lazy" />
-                      TypeScript
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/jquery.svg" alt="skill" loading="lazy" />
-                      jQuery
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/bootstrap.svg" alt="skill" loading="lazy" />
-                      Bootstrap
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/sass.svg" alt="skill" loading="lazy" />
-                      Sass
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/react.svg" alt="skill" loading="lazy" />
-                      React
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/redux.svg" alt="skill" loading="lazy" />
-                      Redux
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/next.svg" alt="skill" loading="lazy" />
-                      Nextjs
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/vue.svg" alt="skill" loading="lazy" />
-                      Vue
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/nuxt.svg" alt="skill" loading="lazy" />
-                      Nuxt
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.front && skill.mastery === SkillMastery.Proficient)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
                 <div className={classes.section}>
@@ -106,18 +77,22 @@ function Skills({ smallerPadding }: IProps) {
                     Moderate:
                   </h3>
                   <ul>
-                    <li>
-                      <div className={classes.compitable}><img src="/images/stack-icons/material-ui.svg" alt="skill" loading="lazy" /></div>
-                      Material UI
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/gatsby.svg" alt="skill" loading="lazy" />
-                      Gatsby
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/jest.svg" alt="skill" loading="lazy" />
-                      Jest
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.front && skill.mastery === SkillMastery.Moderate)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
               </div>
@@ -127,22 +102,22 @@ function Skills({ smallerPadding }: IProps) {
                     Proficient:
                   </h3>
                   <ul>
-                    <li>
-                      <img src="/images/stack-icons/nodejs.svg" alt="skill" loading="lazy" />
-                      Node.js
-                    </li>
-                    <li>
-                      <div className={classes.compitable}><img src="/images/stack-icons/express.svg" alt="skill" loading="lazy" /></div>
-                      Express
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/mongodb.svg" alt="skill" loading="lazy" />
-                      MongoDB
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/typescript.svg" alt="skill" loading="lazy" />
-                      TypeScript
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.back && skill.mastery === SkillMastery.Proficient)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
                 <div className={classes.section}>
@@ -150,18 +125,22 @@ function Skills({ smallerPadding }: IProps) {
                     Moderate:
                   </h3>
                   <ul>
-                    <li>
-                      <div className={classes.compitable}><img src="/images/stack-icons/prisma.svg" alt="skill" loading="lazy" /></div>
-                      Prisma
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/jest.svg" alt="skill" loading="lazy" />
-                      Jest
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/postgresql.svg" alt="skill" loading="lazy" />
-                      PostgreSQL
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.back && skill.mastery === SkillMastery.Moderate)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
               </div>
@@ -171,26 +150,22 @@ function Skills({ smallerPadding }: IProps) {
                     Proficient:
                   </h3>
                   <ul>
-                    <li>
-                      <img src="/images/stack-icons/git.svg" alt="skill" loading="lazy" />
-                      Git
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/github.svg" alt="skill" loading="lazy" />
-                      GitHub
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/npm.svg" alt="skill" loading="lazy" />
-                      NPM
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/yarn.svg" alt="skill" loading="lazy" />
-                      Yarn
-                    </li>
-                    <li>
-                      <div className={classes.compitable}><img src="/images/stack-icons/vercel.svg" alt="skill" loading="lazy" /></div>
-                      Vercel
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.tools && skill.mastery === SkillMastery.Proficient)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
                 <div className={classes.section}>
@@ -198,14 +173,22 @@ function Skills({ smallerPadding }: IProps) {
                     Moderate:
                   </h3>
                   <ul>
-                    <li>
-                      <img src="/images/stack-icons/netlify.svg" alt="skill" loading="lazy" />
-                      Netlify
-                    </li>
-                    <li>
-                      <img src="/images/stack-icons/amazon-aws.svg" alt="skill" loading="lazy" />
-                      AWS
-                    </li>
+                    {
+                      data.filter(skill => (skill.type === StackType.tools && skill.mastery === SkillMastery.Moderate)).map(skill => (
+                        <li key={skill._id}>
+                          {
+                            skill.skill.isNotCompitable
+                              ?
+                              <div className={classes.compitable}>
+                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              </div>
+                              :
+                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                          }
+                          {skill.skill.name}
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
               </div>

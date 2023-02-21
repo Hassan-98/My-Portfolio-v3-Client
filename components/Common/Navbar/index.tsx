@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+//= Api
+import { downloadResume } from 'api';
 //= Color Mode
 import { setTheme } from 'scripts/color-mode';
 //= Style
@@ -49,6 +51,14 @@ function Navbar() {
     document.querySelector(`.${classes.links}`)?.classList.toggle(classes.active);
   }
 
+  async function handleDownloadResume(event: React.MouseEvent<HTMLButtonElement>) {
+    const icon = event.currentTarget.children[0];
+    const oldIconClass = icon.className;
+    icon.className = `fa-regular fa-spinner-third ${classes['loading-spinner']}`;
+    await downloadResume();
+    icon.className = oldIconClass;
+  }
+
 
   return (
     <nav className={classes.navbar}>
@@ -84,7 +94,7 @@ function Navbar() {
             </li>
             <li onClick={toggleThemeMode}><i className={`fa-solid fa-${theme === 'dark' ? 'sun-bright' : 'moon-stars'}`}></i></li>
             <li>
-              <button className={`btn`} onClick={() => router.push('/resume')}>
+              <button className={`btn`} onClick={handleDownloadResume}>
                 <i className="fa-light fa-download"></i>
                 Resume
               </button>

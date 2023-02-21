@@ -5,18 +5,21 @@ import Navbar from 'components/Common/Navbar';
 import Scrollables from 'components/Common/Scollables';
 import Header from 'components/Common/MainHeader';
 import Footer from 'components/Common/Footer';
+//= Types
+import { GeneralSettings } from "types";
 
 interface IProps {
-  children: JSX.Element | JSX.Element[] | ReactNode | ReactNode[]
+  children: JSX.Element | JSX.Element[] | ReactNode | ReactNode[];
+  data: GeneralSettings;
 }
 
-function MainPageLayout({ children }: IProps) {
+function MainPageLayout({ children, data }: IProps) {
   return (
     <>
       <Loader />
       <Navbar />
-      <Header />
-      <Scrollables />
+      <Header data={data.header} />
+      <Scrollables data={data.links} />
       <main>
         {children}
       </main>
