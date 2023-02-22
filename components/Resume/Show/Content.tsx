@@ -155,7 +155,7 @@ function Content({ data }: IProps) {
             data.certificates.map(certificate => (
               <div className={classes.education} key={certificate._id}>
                 <div className={classes.title}>
-                  <p><a href="https://graduation.udacity.com/confirm/GHGJQMSV">{certificate.title}</a> <span>from</span> Udacity</p>
+                  <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
                   <p><i className="fi fi-rr-calendar-clock me-1"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
                 </div>
                 <p className={classes.description}>

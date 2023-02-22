@@ -39,13 +39,17 @@ function Certificates({ certsPage, data }: IProps) {
                 <div className={classes.certificate} key={certificate._id}>
                   <img src={certificate.image} alt="certificate" loading="lazy" />
                   <div className={classes.info}>
-                    <p className={classes.title}>{certificate.title}</p>
+                    <p className={classes.title}>{certificate.title} - {certificate.issuanceSource}</p>
                     <p className={classes.details}>
                       {certificate.description}
                     </p>
                     <p className={classes.date}>
                       <i className="fa-solid fa-calendar-days"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
                       <button onClick={() => viewCertificate(certificate.image)}><i className="fa-regular fa-eye"></i> View</button>
+                      {
+                        certificate.sourceLink &&
+                        <button><a href={certificate.sourceLink} target="_blank" rel="noreferrer"><i className="fa-regular fa-link-simple"></i> Verify</a></button>
+                      }
                     </p>
                   </div>
                 </div>

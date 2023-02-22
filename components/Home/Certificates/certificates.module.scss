@@ -93,11 +93,6 @@
 
       @include sm {
         width: 100%;
-
-        &:nth-last-of-type(1),
-        &:nth-last-of-type(2) {
-          display: none;
-        }
       }
 
       .info {
@@ -129,6 +124,14 @@
           transition: all 0.2s ease-in-out;
           color: var(--main-color);
 
+          @include xxs {
+            margin-inline-start: 10px;
+          }
+
+          a {
+            color: inherit;
+          }
+
           &:hover {
             color: var(--text-color);
           }
@@ -137,18 +140,31 @@
         .title {
           font-weight: 900;
           font-family: var(--font-mono);
-          font-size: 18px;
+          font-size: 16px;
+
+          @include xxs {
+            font-size: 14px;
+            margin-bottom: 0;
+          }
         }
 
         .details {
           margin: 0;
-          font-size: 14px;
+          font-size: 13px;
+
+          @include xxs {
+            font-size: 12px;
+          }
         }
 
         .date {
           font-weight: 600;
           margin-top: 10px;
           font-size: 14px;
+
+          @include xxs {
+            font-size: 12px;
+          }
         }
       }
 
