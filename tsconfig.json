@@ -16,7 +16,7 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "api/*": ["api/*"],
+      "api/*": ["API/*"],
       "components/*": ["components/*"],
       "scripts/*": ["scripts/*"],
       "utils/*": ["utils/*"],

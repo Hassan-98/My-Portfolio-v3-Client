@@ -1,4 +1,4 @@
-import { Stack, StackType } from "api/stack/types";
+import { Stack, StackType } from "types";
 
 export enum SkillMastery {
   Proficient = "Proficient",
