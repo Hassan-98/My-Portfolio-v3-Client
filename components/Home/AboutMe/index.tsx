@@ -2,7 +2,7 @@ import React from 'react';
 //= Components
 import DescriptionCompiler from './DescriptionCompiler';
 //= Types
-import { GeneralSettings } from 'types';
+import { GeneralSettings } from '../../../types';
 //= Styles
 import classes from './aboutme.module.scss';
 

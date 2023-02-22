@@ -3,7 +3,7 @@ import Link from 'next/link';
 //= Components
 import CertificateModal from 'components/Common/CertificateModal';
 //= Types
-import { ICertificate } from 'types';
+import { ICertificate } from '../../../types';
 //= Styles
 import classes from './certificates.module.scss';
 

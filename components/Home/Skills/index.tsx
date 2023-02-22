@@ -1,6 +1,6 @@
 import React from 'react';
 //= Types
-import { ISkill, SkillMastery, StackType } from 'types';
+import { ISkill, SkillMastery, StackType } from '../../../types';
 //= Styles
 import classes from './skills.module.scss';
 

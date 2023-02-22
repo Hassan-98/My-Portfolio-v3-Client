@@ -2,7 +2,7 @@ import React from 'react';
 //= Components
 import DescriptionCompiler from './DescriptionCompiler';
 //= Types
-import { GeneralSettings, IExperience, ISkill, IWork, IResumePreferences, ICertificate, CvSkillsPeriority, StackType, SkillMastery } from 'types';
+import { GeneralSettings, IExperience, ISkill, IWork, IResumePreferences, ICertificate, CvSkillsPeriority, StackType, SkillMastery } from '../../../types';
 //= Styles
 import classes from './show.module.scss';
 

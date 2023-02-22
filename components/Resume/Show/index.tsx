@@ -3,7 +3,7 @@ import React from 'react';
 import Topbar from './Topbar';
 import Content from './Content';
 //= Types
-import { GeneralSettings, IExperience, ISkill, IWork, ICertificate, IResumePreferences } from 'types';
+import { GeneralSettings, IExperience, ISkill, IWork, ICertificate, IResumePreferences } from '../../../types';
 //= Styles
 import classes from './show.module.scss';
 

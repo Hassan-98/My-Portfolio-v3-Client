@@ -1,6 +1,6 @@
 import React from 'react';
 //= Types
-import { IWork } from 'types';
+import { IWork } from '../../../types';
 //= Styles
 import classes from './works.module.scss';
 

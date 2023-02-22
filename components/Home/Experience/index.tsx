@@ -2,7 +2,7 @@ import React from 'react';
 //= Components
 import DescriptionCompiler from './DescriptionCompiler';
 //= Types
-import { IExperience } from 'types';
+import { IExperience } from '../../../types';
 //= Styles
 import classes from './experience.module.scss';
 

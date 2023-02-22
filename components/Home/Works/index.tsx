@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 //= Types
-import { IWork } from 'types';
+import { IWork } from '../../../types';
 //= Styles
 import classes from './works.module.scss';
 
