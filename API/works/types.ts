@@ -1,4 +1,4 @@
-import { Stack, StackType } from "types";
+import { Stack, StackType } from "../stack/types";
 
 export enum Importance {
   Glowing = "glowing",
