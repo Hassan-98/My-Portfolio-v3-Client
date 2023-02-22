@@ -1,11 +1,11 @@
-import { RawAxiosRequestConfig } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 //= Axios Util
 import axios from 'utils/axios';
 //= Toasts
 import toast from 'react-hot-toast';
 
 interface Options {
-  config?: RawAxiosRequestConfig;
+  config?: AxiosRequestConfig;
   body?: any;
 }
 
