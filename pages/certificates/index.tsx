@@ -4,9 +4,9 @@ import Layout from 'layouts/Alt';
 //= Components
 import AllCertificates from 'components/Home/Certificates';
 //= Api
-import { getGeneralSettings, getAllCertificates } from 'api';
+import { getGeneralSettings, getAllCertificates } from '../../api';
 //= Types
-import { GeneralSettings, ICertificate } from 'types';
+import { GeneralSettings, ICertificate } from '../../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;

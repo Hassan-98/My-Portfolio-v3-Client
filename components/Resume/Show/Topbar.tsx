@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 //= Api
-import { downloadResume } from 'api';
+import { downloadResume } from '../../../api';
 //= Styles
 import classes from './show.module.scss';
 

@@ -2,9 +2,9 @@ import Head from 'next/head';
 //= Components
 import Show from 'components/Resume/Show';
 //= Api
-import { getGeneralSettings, getAllExperiences, getAllSkills, getAllWorks, getResumePreferences, getAllCertificates } from 'api';
+import { getGeneralSettings, getAllExperiences, getAllSkills, getAllWorks, getResumePreferences, getAllCertificates } from '../../api';
 //= Types
-import { GeneralSettings, IExperience, ISkill, IWork, IResumePreferences, ICertificate } from 'types';
+import { GeneralSettings, IExperience, ISkill, IWork, IResumePreferences, ICertificate } from '../../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;

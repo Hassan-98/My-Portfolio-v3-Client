@@ -6,9 +6,9 @@ import AboutMe from 'components/Home/AboutMe';
 import Services from 'components/About/Services';
 import Testimonials from 'components/Home/Testimonials';
 //= Api
-import { getGeneralSettings, getAllTestimonials } from 'api';
+import { getGeneralSettings, getAllTestimonials } from '../../api';
 //= Types
-import { GeneralSettings, ITestimonial } from 'types';
+import { GeneralSettings, ITestimonial } from '../../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;

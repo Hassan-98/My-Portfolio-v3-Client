@@ -4,9 +4,9 @@ import Layout from 'layouts/Alt';
 //= Components
 import ContactForm from 'components/Contact';
 //= Api
-import { getGeneralSettings } from 'api';
+import { getGeneralSettings } from '../../api';
 //= Types
-import { GeneralSettings } from 'types';
+import { GeneralSettings } from '../../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;

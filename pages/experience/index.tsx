@@ -5,9 +5,9 @@ import Layout from 'layouts/Alt';
 import Experiences from 'components/Home/Experience';
 import Skills from 'components/Home/Skills';
 //= Api
-import { getGeneralSettings, getAllExperiences, getAllSkills } from 'api';
+import { getGeneralSettings, getAllExperiences, getAllSkills } from '../../api';
 //= Types
-import { GeneralSettings, IExperience, ISkill } from 'types';
+import { GeneralSettings, IExperience, ISkill } from '../../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;

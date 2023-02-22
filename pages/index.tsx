@@ -9,9 +9,9 @@ import Works from 'components/Home/Works';
 import Testimonials from 'components/Home/Testimonials';
 import Certificates from 'components/Home/Certificates';
 //= Api
-import { getGeneralSettings, getAllExperiences, getAllSkills, getAllWorks, getAllCertificates, getAllTestimonials } from 'api';
+import { getGeneralSettings, getAllExperiences, getAllSkills, getAllWorks, getAllCertificates, getAllTestimonials } from '../api';
 //= Types
-import { Importance, GeneralSettings, IExperience, ISkill, IWork, ICertificate, ITestimonial } from 'types';
+import { Importance, GeneralSettings, IExperience, ISkill, IWork, ICertificate, ITestimonial } from '../types';
 
 interface IProps {
   aboutInfo: GeneralSettings;
