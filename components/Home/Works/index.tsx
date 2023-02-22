@@ -58,7 +58,7 @@ function Works({ worksPage, data }: IProps) {
                         </div>
                         <div className={classes.switch_view}>
                           <i className="fa-solid fa-desktop" title="toggle desktop view" onClick={(e) => toggleView(e, work)}></i>
-                          <i className={`fa-sharp fa-solid fa-mobile ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
+                          <i className={`fa-solid fa-mobile-screen-button ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
                         </div>
                       </div>
                       <img src={work.images.desktop} alt="work image" loading="lazy" />
@@ -96,7 +96,7 @@ function Works({ worksPage, data }: IProps) {
                         {
                           work.links.demo &&
                           <a href={work.links.demo} target="_blank" rel="noreferrer">
-                            <i className={`fa-regular fa-arrow-up-right-from-square ${classes.demo}`} title="View Demo"></i>
+                            <i className={`fa-solid fa-arrow-up-right-from-square ${classes.demo}`} title="View Demo"></i>
                           </a>
                         }
                       </div>
@@ -116,7 +116,7 @@ function Works({ worksPage, data }: IProps) {
                         </div>
                         <div className={classes.switch_view}>
                           <i className="fa-solid fa-desktop" title="toggle desktop view" onClick={(e) => toggleView(e, work)}></i>
-                          <i className={`fa-sharp fa-solid fa-mobile ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
+                          <i className={`fa-solid fa-mobile-screen-button ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
                         </div>
                       </div>
                       <img src={work.images.desktop} alt="work image" loading="lazy" />

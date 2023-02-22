@@ -129,6 +129,11 @@ nav.navbar {
             margin-inline-start: 20px;
           }
 
+          i {
+            position: relative;
+            top: 2.5px;
+          }
+
           &:hover {
             background-color: var(--main-color-dark);
             border-color: var(--main-color-dark);
@@ -171,6 +176,8 @@ nav.navbar {
 
       i {
         color: inherit;
+        position: relative;
+        top: 1px;
       }
 
       &:hover {

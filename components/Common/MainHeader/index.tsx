@@ -23,7 +23,7 @@ function Header({ data }: IProps) {
             <p>{data.descriptionText}</p>
             <Link href="/works">
               <button className="btn">
-                <i className="fa-regular fa-briefcase me-2"></i>
+                <i className="fi fi-rr-briefcase me-2"></i>
                 Check out my works!
               </button>
             </Link>

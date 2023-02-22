@@ -103,6 +103,11 @@
     font-family: var(--font-text);
     padding: 10px 30px;
 
+    i {
+      position: relative;
+      top: 1px;
+    }
+
     @include md {
       display: block;
       margin: 0 auto 20px;

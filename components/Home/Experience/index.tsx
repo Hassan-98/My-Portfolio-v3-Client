@@ -29,7 +29,7 @@ function Experience({ noTitle, data }: IProps) {
               data.map(experience => (
                 <div className={classes.exp} key={experience._id}>
                   <h3>
-                    <i className="fa-light fa-briefcase"></i> {experience.title}
+                    <i className="fa-solid fa-briefcase"></i> {experience.title}
                     <span className={classes.at}>@</span>
                     <span className={classes.company}><a href={experience.companyLink} target="_blank" rel="noreferrer">{experience.company}</a></span>
                   </h3>

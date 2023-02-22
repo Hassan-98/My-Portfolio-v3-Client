@@ -8,14 +8,14 @@ function ContactInfo() {
       <h2>Have a project or question in mind? Just send me a message.</h2>
       <p>Do you fancy saying hi to me or do you want to get started with your project and you need my help? Feel free to contact me.</p>
       <div className={classes.box}>
-        <i className={`fa-light fa-mobile ${classes.box_icon}`}></i>
+        <i className={`fa-solid fa-mobile-screen-button ${classes.box_icon}`}></i>
         <div className={classes.box_info}>
           <p>Call me now</p>
           <p>+201146321817</p>
         </div>
       </div>
       <div className={classes.box}>
-        <i className={`fa-light fa-envelope ${classes.box_icon}`}></i>
+        <i className={`fa-solid fa-envelope ${classes.box_icon}`}></i>
         <div className={classes.box_info}>
           <p>Chat with me</p>
           <p>7assan.3li1998@gmail.com</p>

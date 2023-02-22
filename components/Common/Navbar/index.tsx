@@ -90,18 +90,18 @@ function Navbar() {
               <Link href={Page.Contact}>Contact</Link>
             </li>
             <li>
-              <i className={`fa-sharp fa-solid fa-xmark ${classes.closeBtn}`} onClick={toggleNavbar}></i>
+              <i className={`fa-solid fa-xmark ${classes.closeBtn}`} onClick={toggleNavbar}></i>
             </li>
-            <li onClick={toggleThemeMode}><i className={`fa-solid fa-${theme === 'dark' ? 'sun-bright' : 'moon-stars'}`}></i></li>
+            <li onClick={toggleThemeMode}><i className={`fi fi-${theme === 'dark' ? 'rr-brightness' : 'rr-moon-stars'}`}></i></li>
             <li>
               <button className={`btn`} onClick={handleDownloadResume}>
-                <i className="fa-light fa-download"></i>
+                <i className="fi fi-rr-inbox-in"></i>
                 Resume
               </button>
             </li>
           </ul>
           <div className={classes.navbar__toggler} onClick={toggleNavbar}>
-            <i className="fa-sharp fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </div>
         </div>
       </div>
