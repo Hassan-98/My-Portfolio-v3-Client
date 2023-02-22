@@ -105,7 +105,7 @@ function Content({ data }: IProps) {
         data.preferences.summary.showSection &&
         <div className={classes.section}>
           <h3>Summary</h3>
-          <p>{data.aboutInfo.header.descriptionText}</p>
+          <p>{data.preferences.summary.enableCustomSummary ? data.preferences.summary.customSummary : data.aboutInfo.header.descriptionText}</p>
         </div>
       }
 

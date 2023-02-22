@@ -1,5 +1,6 @@
 @import "styles/mixins.scss";
 
+
 .loader_container {
   width: 100vw;
   height: 100vh;
@@ -11,6 +12,10 @@
   align-items: center;
   background-color: var(--common-bg);
   z-index: 100;
+
+  @include print {
+    display: none;
+  }
 
   &.hide {
     display: none;

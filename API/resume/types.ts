@@ -16,6 +16,8 @@ export interface Links {
 export interface Summary {
   showSection: boolean;
   showPicture: boolean;
+  enableCustomSummary: boolean;
+  customSummary?: string;
   enableCustomTitle: boolean;
   customTitle?: string;
 }

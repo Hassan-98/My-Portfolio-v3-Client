@@ -11,3 +11,15 @@ export async function updateResumePreferences(updates: Partial<IResumePreference
   let preferences = await API.PATCH<IResumePreferences>(`/resume`, { body: updates });
   if (preferences) return preferences;
 }
+
+
+export async function downloadResume() {
+  await API.POST<Buffer>(`/hassan-cv`, {
+    config: {
+      responseType: 'arraybuffer',
+      headers: {
+        'Accept': 'application/pdf'
+      }
+    }
+  });
+}
