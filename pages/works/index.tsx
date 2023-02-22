@@ -5,7 +5,7 @@ import Layout from 'layouts/Alt';
 import MainWorks from 'components/Home/Works';
 import WorthNoteWorks from 'components/Works/WorthNoteWorks';
 //= Api
-import { getGeneralSettings, getAllWorks } from '../../api';
+import { getGeneralSettings, getAllWorks } from '../../API';
 //= Types
 import { GeneralSettings, Importance, IWork } from '../../types';
 

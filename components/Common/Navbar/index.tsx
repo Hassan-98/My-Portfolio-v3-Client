@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 //= Api
-import { downloadResume } from '../../../api';
+import { downloadResume } from '../../../API';
 //= Color Mode
 import { setTheme } from 'scripts/color-mode';
 //= Style

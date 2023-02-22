@@ -4,7 +4,7 @@ import Layout from 'layouts/Alt';
 //= Components
 import ContactForm from 'components/Contact';
 //= Api
-import { getGeneralSettings } from '../../api';
+import { getGeneralSettings } from '../../API';
 //= Types
 import { GeneralSettings } from '../../types';
 
