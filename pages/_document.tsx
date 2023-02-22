@@ -25,7 +25,7 @@ export default function Document() {
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css' />
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-straight/css/uicons-thin-straight.css' />
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css' />
-        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        {/* <link rel="stylesheet" href="/css/bootstrap.min.css" /> */}
       </Head>
       <body>
         <Main />
