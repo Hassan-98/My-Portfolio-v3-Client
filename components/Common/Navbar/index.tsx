@@ -54,7 +54,7 @@ function Navbar() {
   async function handleDownloadResume(event: React.MouseEvent<HTMLButtonElement>) {
     const icon = event.currentTarget.children[0];
     const oldIconClass = icon.className;
-    icon.className = `fa-regular fa-spinner-third ${classes['loading-spinner']}`;
+    icon.className = `fa-solid fa-spinner-third ${classes['loading-spinner']}`;
     await downloadResume();
     icon.className = oldIconClass;
   }
