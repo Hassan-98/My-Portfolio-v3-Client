@@ -1,6 +1,6 @@
 import API from "../request.handler";
 //= Types
-import { ISkill, IUpdateSkill } from 'types';
+import { ISkill, IUpdateSkill } from "./types";
 
 export async function getAllSkills(): Promise<ISkill[] | undefined> {
   const skills = await API.GET<ISkill[]>(`/skills?sort=order&populate=skill`);
