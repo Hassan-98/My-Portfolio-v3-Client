@@ -1,6 +1,6 @@
 import API from "../request.handler";
 //= Types
-import { IWork, Importance } from 'types';
+import { IWork, Importance } from './types';
 
 export async function getAllWorks({ limit, type, withStack, cvOnly }: { limit?: number, type?: Importance, withStack?: boolean; cvOnly?: boolean; }): Promise<IWork[] | undefined> {
   let query = `?sort=order`;
