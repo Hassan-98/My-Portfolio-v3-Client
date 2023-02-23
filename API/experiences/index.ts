@@ -3,7 +3,7 @@ import API from "../request.handler";
 import { IExperience } from './types';
 
 export async function getAllExperiences({ limit, cvOnly }: { limit?: number; cvOnly?: boolean; }): Promise<IExperience[] | undefined> {
-  let query = `?sort=order`;
+  let query = `?sort=endedAt,-startedAt`;
   if (limit) query += `&limit=${limit}`;
   if (cvOnly) query += `&showInCv=true`;
 
