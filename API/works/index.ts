@@ -2,12 +2,13 @@ import API from "../request.handler";
 //= Types
 import { IWork, Importance } from './types';
 
-export async function getAllWorks({ limit, type, withStack, cvOnly }: { limit?: number, type?: Importance, withStack?: boolean; cvOnly?: boolean; }): Promise<IWork[] | undefined> {
+export async function getAllWorks({ limit, type, withStack, cvOnly, website }: { limit?: number, type?: Importance, withStack?: boolean; cvOnly?: boolean; website?: boolean; }): Promise<IWork[] | undefined> {
   let query = `?sort=order`;
   if (limit) query += `&limit=${limit}`;
   if (type) query += `&importance=${type}`;
   if (withStack) query += `&populate=stack.stack`;
   if (cvOnly) query += `&showInCv=true`;
+  if (website) query += `&showInWebsite=true`;
 
   const works = await API.GET<IWork[]>(`/works${query}`);
   if (works) return works;

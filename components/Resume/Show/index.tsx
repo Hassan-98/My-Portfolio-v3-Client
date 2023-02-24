@@ -19,8 +19,13 @@ interface IProps {
 }
 
 function Show({ data }: IProps) {
+  // function save() {
+  //   PDF.render(<Content data={data} />, `${__dirname}/cv.pdf`);
+  // }
+
   return (
     <section className={classes.resume}>
+      {/* <button onClick={save}>Save</button> */}
       <Topbar />
       <Content data={data} />
     </section>

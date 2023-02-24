@@ -14,7 +14,7 @@ interface IProps {
     works: IWork[];
     certificates: ICertificate[];
     preferences: IResumePreferences
-  }
+  },
 }
 
 function Content({ data }: IProps) {

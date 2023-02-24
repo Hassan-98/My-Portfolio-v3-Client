@@ -12,6 +12,7 @@ export interface IWork {
   stackType: StackType;
   importance: Importance;
   showInCv: boolean;
+  showInWebsite: boolean;
   links: {
     github?: string;
     demo?: string;

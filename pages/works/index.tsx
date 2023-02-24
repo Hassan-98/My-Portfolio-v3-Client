@@ -42,7 +42,7 @@ export const getServerSideProps = async () => {
   try {
     const [aboutInfo, works] = await Promise.all([
       getGeneralSettings(),
-      getAllWorks({ withStack: true })
+      getAllWorks({ withStack: true, website: true })
     ]);
 
     return {
