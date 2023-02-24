@@ -40,7 +40,7 @@ export const getServerSideProps = async () => {
   try {
     const [aboutInfo, certificates] = await Promise.all([
       getGeneralSettings(),
-      getAllCertificates({})
+      getAllCertificates({ website: true })
     ]);
 
     return {

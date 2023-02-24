@@ -2,10 +2,11 @@ import API from "../request.handler";
 //= Types
 import { ICertificate } from './types';
 
-export async function getAllCertificates({ limit, cvOnly }: { limit?: number; cvOnly?: boolean; }): Promise<ICertificate[] | undefined> {
+export async function getAllCertificates({ limit, cvOnly, website }: { limit?: number; cvOnly?: boolean; website?: boolean; }): Promise<ICertificate[] | undefined> {
   let query = `?sort=order`;
   if (limit) query += `&limit=${limit}`;
   if (cvOnly) query += `&showInCv=true`;
+  if (website) query += `&showInWebsite=true`;
 
   const certificates = await API.GET<ICertificate[]>(`/certificates${query}`);
   if (certificates) return certificates;
