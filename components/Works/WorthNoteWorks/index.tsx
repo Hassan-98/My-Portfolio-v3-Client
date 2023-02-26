@@ -35,7 +35,7 @@ function WorthNoteWorks({ data }: IProps) {
                       {
                         work.stack.map((stack) => (
                           <li key={stack._id} className={stack.stack.isNotCompitable ? classes.compitable : ''}>
-                            <img src={stack.stack.image} alt="skill" loading="lazy" />
+                            <img src={stack.stack.image} alt="skill" loading="lazy" title={stack.stack.name} />
                           </li>
                         ))
                       }

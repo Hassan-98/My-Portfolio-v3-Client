@@ -7,6 +7,11 @@ export async function getAllMessages() {
   if (messages) return messages;
 }
 
+export async function sendMessage(message: Partial<IMessage>) {
+  let res = await API.POST<IMessage>(`/contact`, { body: message });
+  if (res) return res;
+}
+
 export async function deleteAMessage(id: string) {
   let done = await API.DELETE<boolean>(`/contact/${id}`);
   if (done) return done;
