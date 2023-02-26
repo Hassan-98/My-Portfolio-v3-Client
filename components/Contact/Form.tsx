@@ -20,11 +20,8 @@ function ContactForm() {
       message: message.value,
     }
 
-    console.log(name);
-
     //= Validation
     const validation = schema.safeParse(data);
-    console.log(validation);
     if (!validation.success) return validation.error.issues.forEach((issue: any) => toast.error(`${issue.path.join('.')}: ${issue.message}`));
 
     const responseData = await sendMessage(data);
