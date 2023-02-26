@@ -12,7 +12,7 @@ function ContactForm() {
   async function handleSendMessage() {
     const name = document.querySelector<HTMLInputElement>('#name')!;
     const email = document.querySelector<HTMLInputElement>('#email')!;
-    const message = document.querySelector<HTMLInputElement>('#message')!;
+    const message = document.querySelector<HTMLTextAreaElement>('#message')!;
 
     const data = {
       name: name.value,
@@ -20,8 +20,11 @@ function ContactForm() {
       message: message.value,
     }
 
+    console.log(name);
+
     //= Validation
     const validation = schema.safeParse(data);
+    console.log(validation);
     if (!validation.success) return validation.error.issues.forEach((issue: any) => toast.error(`${issue.path.join('.')}: ${issue.message}`));
 
     const responseData = await sendMessage(data);
@@ -38,7 +41,7 @@ function ContactForm() {
     <div className={classes.form}>
       <input type="text" placeholder="Full Name" id="name" className={classes.half} />
       <input type="email" placeholder="Email Address" id="email" className={classes.half} />
-      <input type="text" placeholder="Subject" disabled />
+      {/* <input type="text" placeholder="Subject" disabled /> */}
       <textarea cols={30} rows={8} placeholder="Message" id="message"></textarea>
       <button onClick={handleSendMessage}>Send Message <i className="fa-solid fa-paper-plane"></i></button>
     </div>
