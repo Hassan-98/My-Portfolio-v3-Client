@@ -87,7 +87,7 @@ function Content({ data }: IProps) {
             data.preferences.links.showLinkedin &&
             <div className={classes.link}>
               <i className="fi fi-brands-linkedin me-1"></i>
-              <a href={data.aboutInfo.links.linkedin}>{data.aboutInfo.links.linkedin.split('/').at(-1)}</a>
+              <a href={data.aboutInfo.links.linkedin}>in/{data.aboutInfo.links.linkedin.split('/').at(-1)}</a>
             </div>
           }
           {
@@ -158,9 +158,9 @@ function Content({ data }: IProps) {
                   <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
                   <p><i className="fi fi-rr-calendar-clock me-1"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
                 </div>
-                <p className={classes.description}>
+                {/* <p className={classes.description}>
                   {certificate.description}
-                </p>
+                </p> */}
               </div>
             ))
           }
@@ -176,28 +176,28 @@ function Content({ data }: IProps) {
               <div className={classes.project} key={work._id}>
                 <div className={classes.title}>
                   <p>{work.name}</p>
-                  <div className={classes.links}>
-                    {
-                      work.links.github &&
-                      <a href={work.links.github} target="_blank" rel="noreferrer"><i className="fi fi-brands-github me-1"></i> Github</a>
-                    }
-                    {
-                      work.links.apiRepo &&
-                      <a href={work.links.apiRepo} target="_blank" rel="noreferrer"><i className="fi fi-br-database me-1"></i> API Repo</a>
-                    }
-                    {
-                      work.links.demo &&
-                      <a href={work.links.demo} target="_blank" rel="noreferrer"><i className="fi fi-br-arrow-up-right-from-square me-1"></i> Demo</a>
-                    }
-                    {
-                      work.links.apiDocs &&
-                      <a href={work.links.apiDocs} target="_blank" rel="noreferrer"><i className="fi fi-br-document-signed me-1"></i> Docs</a>
-                    }
-                  </div>
                 </div>
                 <p className={classes.description}>
                   {work.description}
                 </p>
+                <div className={classes.links}>
+                  {
+                    work.links.demo &&
+                    <a href={work.links.demo} target="_blank" rel="noreferrer"><i className="fi fi-br-arrow-up-right-from-square"></i> Live Demo: <span>{work.links.demo}</span></a>
+                  }
+                  {
+                    work.links.github &&
+                    <a href={work.links.github} target="_blank" rel="noreferrer"><i className="fi fi-brands-github"></i> Github: <span>{work.links.github}</span></a>
+                  }
+                  {
+                    work.links.apiRepo &&
+                    <a href={work.links.apiRepo} target="_blank" rel="noreferrer"><i className="fi fi-br-database"></i> Server Code: <span>{work.links.apiRepo}</span></a>
+                  }
+                  {
+                    work.links.apiDocs &&
+                    <a href={work.links.apiDocs} target="_blank" rel="noreferrer"><i className="fi fi-br-document-signed"></i> Documentations: <span>{work.links.apiDocs}</span></a>
+                  }
+                </div>
               </div>
             ))
           }

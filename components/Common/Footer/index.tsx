@@ -23,7 +23,7 @@ function Footer() {
           <div className={classes.bottom_bar}>
             <p className={classes.email}>7assan.3li1998@gmail.com</p>
             <i className="fa-solid fa-arrow-turn-down-left"></i>
-            <p className={classes.copyright}>Copyright &copy; 2023 By Hassan Ali | All Rights Reserved</p>
+            <p className={classes.copyright}>Copyright &copy; {new Date().getFullYear()} By Hassan Ali | All Rights Reserved</p>
           </div>
         </div>
       </footer>
