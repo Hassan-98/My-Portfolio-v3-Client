@@ -18,33 +18,43 @@ interface IProps {
 }
 
 function Content({ data }: IProps) {
-  function proficientSkills() {
+  const allSkillsMode = data.preferences.skills.showFrontendSkills && data.preferences.skills.showBackendSkills;
+
+  function proficientSkills(type?: StackType) {
     let skillsList = '';
 
-    if (data.preferences.skills.skillsPeriority === CvSkillsPeriority.front) {
-      if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Proficient);
-      if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Proficient);
-      if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Proficient);
+    if (type) {
+      skillsList += extractSkills(type, SkillMastery.Proficient);
     } else {
-      if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Proficient);
-      if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Proficient);
-      if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Proficient);
+      if (data.preferences.skills.skillsPeriority === CvSkillsPeriority.front) {
+        if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Proficient);
+        if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Proficient);
+        if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Proficient);
+      } else {
+        if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Proficient);
+        if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Proficient);
+        if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Proficient);
+      }
     }
 
     return [...new Set(skillsList.trim().slice(0, -1).trim().split(' - '))].join(' - ');
   }
 
-  function moderateSkills() {
+  function moderateSkills(type?: StackType) {
     let skillsList = '';
 
-    if (data.preferences.skills.skillsPeriority === CvSkillsPeriority.front) {
-      if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Moderate);
-      if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Moderate);
-      if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Moderate);
+    if (type) {
+      skillsList += extractSkills(type, SkillMastery.Moderate);
     } else {
-      if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Moderate);
-      if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Moderate);
-      if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Moderate);
+      if (data.preferences.skills.skillsPeriority === CvSkillsPeriority.front) {
+        if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Moderate);
+        if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Moderate);
+        if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Moderate);
+      } else {
+        if (data.preferences.skills.showBackendSkills) skillsList += extractSkills(StackType.back, SkillMastery.Moderate);
+        if (data.preferences.skills.showFrontendSkills) skillsList += extractSkills(StackType.front, SkillMastery.Moderate);
+        if (data.preferences.skills.showToolsSkills) skillsList += extractSkills(StackType.tools, SkillMastery.Moderate);
+      }
     }
 
     return [...new Set(skillsList.trim().slice(0, -1).trim().split(' - '))].join(' - ');
@@ -115,11 +125,39 @@ function Content({ data }: IProps) {
           <h3>Skills</h3>
           <div className={classes.skill_set}>
             <span>Proficient</span>
-            <p>{proficientSkills()}</p>
+            {
+              allSkillsMode ?
+                <>
+                  {
+                    data.preferences.skills.showFrontendSkills &&
+                    <p><span className={classes.stack_type}>Front End :</span> {proficientSkills(StackType.front)}</p>
+                  }
+                  {
+                    data.preferences.skills.showBackendSkills &&
+                    <p><span className={classes.stack_type}>Back End :</span> {proficientSkills(StackType.back)}</p>
+                  }
+                </>
+                :
+                <p>{proficientSkills()}</p>
+            }
           </div>
           <div className={classes.skill_set}>
             <span>Moderate</span>
-            <p>{moderateSkills()}</p>
+            {
+              allSkillsMode ?
+                <>
+                  {
+                    data.preferences.skills.showFrontendSkills &&
+                    <p><span className={classes.stack_type}>Front End :</span> {moderateSkills(StackType.front)}</p>
+                  }
+                  {
+                    data.preferences.skills.showBackendSkills &&
+                    <p><span className={classes.stack_type}>Back End :</span> {moderateSkills(StackType.back)}</p>
+                  }
+                </>
+                :
+                <p>{moderateSkills()}</p>
+            }
           </div>
         </div>
       }
@@ -158,6 +196,12 @@ function Content({ data }: IProps) {
                   <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
                   <p><i className="fi fi-rr-calendar-clock me-1"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
                 </div>
+                {
+                  certificate.sourceLink &&
+                  <a className={classes.link} href={certificate.sourceLink}>
+                    <span>Certificate:</span> {certificate.sourceLink}
+                  </a>
+                }
                 {/* <p className={classes.description}>
                   {certificate.description}
                 </p> */}
