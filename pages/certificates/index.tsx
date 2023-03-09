@@ -26,7 +26,7 @@ function Certificates({ aboutInfo, certificates }: IProps) {
       {/* Head */}
       <Head>
         <title>Hassan Ali's Portfolio | Certificates</title>
-        <meta name="description" content="Hassan Ali's Portfolio Certificates Page, Hassan Ali is self-taught web developer based on Egypt, with +2 years experience as a professional web developer specializes in front-end & MERN Stack web development, this is my skills and Certificates page." />
+        <meta name="description" content="Hassan Ali's Certificates, Hassan is self-taught web developer based on Egypt, with +2 years experience as a web developer specializes in MERN Stack web development." />
       </Head>
       {/* Page Content */}
       <Layout headerData={headerData} data={aboutInfo}>

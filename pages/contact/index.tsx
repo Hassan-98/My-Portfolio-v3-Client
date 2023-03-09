@@ -25,7 +25,7 @@ function Contact({ aboutInfo }: IProps) {
       {/* Head */}
       <Head>
         <title>Hassan Ali's Portfolio | Contact Me</title>
-        <meta name="description" content="Hassan Ali's Portfolio Contact Page, Hassan Ali is self-taught web developer based on Egypt, with +2 years experience as a professional web developer specializes in front-end & MERN Stack web development, this is my projects and Contact page." />
+        <meta name="description" content="Contact Hassan, Hassan is self-taught web developer based on Egypt, with +2 years experience as a web developer specializes in MERN Stack web development." />
       </Head>
       {/* Page Content */}
       <Layout headerData={headerData} data={aboutInfo}>

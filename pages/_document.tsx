@@ -11,7 +11,6 @@ export default function Document() {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="Hassan, Ali, Hassan Ali, Hassan Ali's Portfolio, Hassan Ali's Website, Hassan Ali's Portfolio Website, Hassan Portfolio, Hassan Portfolio Website, hassan ali, hassanali, developer, mern, web, react, portfolio, personal, website, works" />
-        <meta name="description" content="Hassan Ali's Portfolio, Hassan Ali is self-taught web developer based on Egypt, who specializes in front-end & MERN Stack web development, Welcome to my corner of the internet." />
         <meta name="twitter:description" content="Hassan Ali's Portfolio, Hassan Ali is self-taught web developer based on Egypt, who specializes in front-end & MERN Stack web development, Welcome to my corner of the internet." />
         <meta property="og:description" content="Hassan Ali's Portfolio, Hassan Ali is self-taught web developer based on Egypt, who specializes in front-end & MERN Stack web development, Welcome to my corner of the internet." />
         <meta name="author" content="Hassan Ali" />

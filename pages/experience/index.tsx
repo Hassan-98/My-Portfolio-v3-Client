@@ -28,7 +28,7 @@ function Experience({ aboutInfo, experiences, skills }: IProps) {
       {/* Head */}
       <Head>
         <title>Hassan Ali's Portfolio | Experience</title>
-        <meta name="description" content="Hassan Ali's Portfolio Experience Page, Hassan Ali is self-taught web developer based on Egypt, with +2 years experience as a professional web developer specializes in front-end & MERN Stack web development, this is my skills and experiences page." />
+        <meta name="description" content="Hassan Ali's Experience, Hassan is self-taught web developer based on Egypt, with +2 years experience as a web developer specializes in MERN Stack web development." />
       </Head>
       {/* Page Content */}
       <Layout headerData={headerData} data={aboutInfo}>

@@ -33,8 +33,8 @@ function Home({
   return (
     <>
       <Head>
-        <title>Hassan Ali's Portfolio | Home</title>
-        <meta name="description" content="Hassan Ali's Portfolio Home Page, Hassan Ali is self-taught web developer based on Egypt, with +2 years experience as a professional web developer specializes in front-end & MERN Stack web development, Welcome to my corner of the internet." />
+        <title>Hassan Ali's Portfolio</title>
+        <meta name="description" content="Hassan Ali's Portfolio, self-taught web developer based on Egypt, with +2 years experience as a web developer specializes in MERN Stack web development." />
       </Head>
 
       <Layout data={aboutInfo}>
