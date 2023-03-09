@@ -128,7 +128,7 @@ function Works({ worksPage, data }: IProps) {
           </div>
           {
             !worksPage &&
-            <Link href="/works"><button><i className="fa-regular fa-eye me-1"></i> View All Works</button></Link>
+            <Link href="/works"><button><i className="fa-regular fa-eye me-1"></i> View All Portfolio</button></Link>
           }
         </div>
       </div>
