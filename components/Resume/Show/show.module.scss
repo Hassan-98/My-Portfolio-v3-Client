@@ -138,12 +138,12 @@
     }
 
     p {
-      padding-left: 15px;
+      padding-left: 10px;
       margin-bottom: 0;
       color: #666666;
 
       @include lg {
-        font-size: 12px;
+        font-size: 11px;
       }
     }
 
@@ -180,7 +180,7 @@
       margin: 15px 0 20px;
 
       @include lg {
-        margin: 0 0 10px;
+        margin: 0 0 5px;
       }
 
       .title {
@@ -248,7 +248,7 @@
       margin: 15px 0 20px;
 
       @include lg {
-        margin: 0 0 10px;
+        margin: 0 0 5px;
       }
 
       .title {
@@ -330,7 +330,7 @@
       break-inside: avoid;
 
       @include lg {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
 
       &:last-of-type {
@@ -379,11 +379,11 @@
       }
 
       .links {
-        margin-top: 10px;
+        margin-top: 5px;
         margin-inline-start: 30px;
 
         @include lg {
-          margin-top: 5px;
+          margin-top: 0;
         }
 
         a {

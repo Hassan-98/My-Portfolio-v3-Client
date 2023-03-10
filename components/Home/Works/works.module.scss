@@ -263,17 +263,30 @@
             margin-top: 0;
           }
 
+          @include xs {
+            flex-wrap: wrap;
+          }
+
           ul {
             max-width: 75%;
             display: flex;
             padding: 0;
             margin: 0;
 
-            @include xxs {
-              max-width: 60%;
+            @include sm {
+              flex-wrap: wrap;
+            }
+
+            @include xs {
+              width: 100%;
+              margin-bottom: 10px;
             }
 
             li {
+              @include xs {
+                margin-bottom: 10px;
+              }
+
               img {
                 width: 44px;
                 height: 44px;
