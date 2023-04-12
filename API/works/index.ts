@@ -10,6 +10,7 @@ export async function getAllWorks({ limit, type, withStack, cvOnly, website, tcg
   if (cvOnly) query += `&showInCv=true`;
   if (website) query += `&showInWebsite=true`;
   if (tcgWorks) query += `&isTcgWork=true`;
+  if (tcgWorks === false) query += `&isTcgWork=false`;
 
   const works = await API.GET<IWork[]>(`/works${query}`);
   if (works) return works;
