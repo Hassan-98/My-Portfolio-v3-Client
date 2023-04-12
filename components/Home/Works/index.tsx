@@ -52,9 +52,9 @@ function Works({ worksPage, data }: IProps) {
                 </p>
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
-                    <a href="/works/tcg">
+                    <Link href="/works/tcg">
                       <i className={`fa-solid fa-eye ${classes.demo}`} title="View Works"></i> View Works
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
