@@ -165,7 +165,6 @@ nav.navbar {
       }
     }
 
-
     button {
       @extend %button;
       margin-inline-start: 30px;
@@ -177,7 +176,7 @@ nav.navbar {
       i {
         color: inherit;
         position: relative;
-        top: 1px;
+        top: 2px;
       }
 
       &:hover {

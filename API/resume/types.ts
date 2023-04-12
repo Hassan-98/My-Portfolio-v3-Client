@@ -45,6 +45,7 @@ export interface Education {
 export interface Projects {
   showSection: boolean;
   isLimited: boolean;
+  showTcgWorks: boolean;
   limit?: number;
 }
 

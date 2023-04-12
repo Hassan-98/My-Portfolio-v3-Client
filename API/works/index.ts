@@ -2,13 +2,14 @@ import API from "../request.handler";
 //= Types
 import { IWork, Importance } from './types';
 
-export async function getAllWorks({ limit, type, withStack, cvOnly, website }: { limit?: number, type?: Importance, withStack?: boolean; cvOnly?: boolean; website?: boolean; }): Promise<IWork[] | undefined> {
+export async function getAllWorks({ limit, type, withStack, cvOnly, website, tcgWorks }: GetAllWorksParams): Promise<IWork[] | undefined> {
   let query = `?sort=order`;
   if (limit) query += `&limit=${limit}`;
   if (type) query += `&importance=${type}`;
   if (withStack) query += `&populate=stack.stack`;
   if (cvOnly) query += `&showInCv=true`;
   if (website) query += `&showInWebsite=true`;
+  if (tcgWorks) query += `&isTcgWork=true`;
 
   const works = await API.GET<IWork[]>(`/works${query}`);
   if (works) return works;
@@ -37,4 +38,13 @@ export async function updateWorksOrder(body: { id: string; order: number }[]) {
 export async function removeWork(id: string) {
   const work = await API.DELETE<boolean>(`/works/${id}`);
   if (work) return work;
+}
+
+interface GetAllWorksParams {
+  limit?: number;
+  type?: Importance;
+  withStack?: boolean;
+  cvOnly?: boolean;
+  website?: boolean;
+  tcgWorks?: boolean;
 }

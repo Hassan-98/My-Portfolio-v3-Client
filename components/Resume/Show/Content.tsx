@@ -216,6 +216,20 @@ function Content({ data }: IProps) {
         <div className={classes.section}>
           <h3>Projects</h3>
           {
+            data.preferences.projects.showTcgWorks &&
+            <div className={classes.project}>
+              <div className={classes.title}>
+                <p>My Projects for themescamp <small>- TCG -</small></p>
+              </div>
+              <p className={classes.description}>
+                All projects and templates i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company
+              </p>
+              <div className={classes.links}>
+                <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer"><i className="fi fi-br-arrow-up-right-from-square"></i> Live Demo: <span>https://hassanali.tk/works/tcg</span></a>
+              </div>
+            </div>
+          }
+          {
             data.works.map(work => (
               <div className={classes.project} key={work._id}>
                 <div className={classes.title}>

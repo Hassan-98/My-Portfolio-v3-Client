@@ -41,11 +41,29 @@ function Works({ worksPage, data }: IProps) {
             </h2>
           }
           <div className={classes.works_container}>
+            <div className={classes.work}>
+              <div className={classes.work_image}>
+                <img src="/images/TCG-image.png" alt="work image" loading="lazy" />
+              </div>
+              <div className={classes.work_info}>
+                <h3>TCG Projects</h3>
+                <p className={classes.description}>
+                  All projects and templates i've developed or contributed to it for "Themescamp - TCG" company in the period of Apr 2022 to present
+                </p>
+                <div className={classes.bottom}>
+                  <div className={classes.actions}>
+                    <a href="/works/tcg">
+                      <i className={`fa-solid fa-eye ${classes.demo}`} title="View Works"></i> View Works
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
             {
               data.map((work, index) => (
                 <div className={classes.work} key={work._id}>
                   {
-                    index % 2 === 0 &&
+                    index % 2 !== 0 &&
                     <div className={classes.work_image}>
                       <div className={classes.topbar}>
                         <div className={classes.actions}>
@@ -103,7 +121,7 @@ function Works({ worksPage, data }: IProps) {
                     </div>
                   </div>
                   {
-                    index % 2 !== 0 &&
+                    index % 2 === 0 &&
                     <div className={classes.work_image}>
                       <div className={classes.topbar}>
                         <div className={classes.actions}>

@@ -357,6 +357,51 @@
           }
         }
       }
+
+      &:first-of-type {
+        .work_image {
+          background-color: var(--main-color);
+
+          .topbar {
+            display: none;
+          }
+
+          img {
+            object-position: center;
+          }
+        }
+
+        .work_info {
+          .actions {
+            border: 1px solid #eee;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+
+            a,
+            i {
+              color: inherit;
+              font-size: inherit
+            }
+
+            i {
+              margin-inline-end: 5px;
+            }
+
+            &:hover {
+              color: var(--text-color);
+              background-color: var(--main-color);
+
+              a,
+              i {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
     }
   }
 

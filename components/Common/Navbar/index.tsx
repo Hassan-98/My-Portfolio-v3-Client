@@ -94,8 +94,8 @@ function Navbar() {
             </li>
             <li onClick={toggleThemeMode}><i className={`fi fi-${theme === 'dark' ? 'rr-brightness' : 'rr-moon-stars'}`}></i></li>
             <li>
-              <button className={`btn`} onClick={() => router.push('/resume')}>
-                <i className="fi fi-rr-inbox-in"></i>
+              <button className="btn" onClick={() => router.push('/resume')}>
+                <i className="fi fi-rr-file-invoice"></i>
                 Resume
               </button>
             </li>
