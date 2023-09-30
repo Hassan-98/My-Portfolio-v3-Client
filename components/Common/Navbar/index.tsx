@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Icon } from '@iconify/react';
 //= Api
 import { downloadResume } from '../../../API';
 //= Color Mode
@@ -92,16 +93,18 @@ function Navbar() {
             <li>
               <i className={`fa-solid fa-xmark ${classes.closeBtn}`} onClick={toggleNavbar}></i>
             </li>
-            <li onClick={toggleThemeMode}><i className={`fi fi-${theme === 'dark' ? 'rr-brightness' : 'rr-moon-stars'}`}></i></li>
+            <li onClick={toggleThemeMode}>
+              <Icon icon={theme === 'dark' ? 'ph:sun-bold' : 'bi:moon'} className="iconifiy-icon nomargin" />
+            </li>
             <li>
               <button className="btn" onClick={() => router.push('/resume')}>
-                <i className="fi fi-rr-file-invoice"></i>
+                <Icon icon="pepicons-pop:cv" className="iconifiy-icon" />
                 Resume
               </button>
             </li>
           </ul>
           <div className={classes.navbar__toggler} onClick={toggleNavbar}>
-            <i className="fa-solid fa-bars"></i>
+            <Icon icon="uil:bars" className="iconifiy-icon" />
           </div>
         </div>
       </div>

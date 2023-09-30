@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Packages
 import toast from 'react-hot-toast';
 //= schema
@@ -40,7 +41,7 @@ function ContactForm() {
       <input type="email" placeholder="Email Address" id="email" className={classes.half} />
       {/* <input type="text" placeholder="Subject" disabled /> */}
       <textarea cols={30} rows={8} placeholder="Message" id="message"></textarea>
-      <button onClick={handleSendMessage}>Send Message <i className="fa-solid fa-paper-plane"></i></button>
+      <button onClick={handleSendMessage}>Send Message <Icon icon="fa-regular:paper-plane" className="d-inline" /></button>
     </div>
   )
 }

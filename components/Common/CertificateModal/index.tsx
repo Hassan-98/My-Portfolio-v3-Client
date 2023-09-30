@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Styles
 import classes from './modal.module.scss';
 
@@ -11,7 +12,7 @@ function CertificateModal({ imageUrl, closeModal }: IProps) {
   return (
     <div className={classes.modal}>
       <div className={classes.wrapper}>
-        <i className="fa-sharp fa-solid fa-xmark" onClick={closeModal}></i>
+        <Icon icon="ph:x-bold" className="iconifiy-icon" onClick={closeModal} />
         <img src={imageUrl} alt="modal image" />
       </div>
     </div>

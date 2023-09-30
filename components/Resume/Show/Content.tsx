@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Components
 import DescriptionCompiler from './DescriptionCompiler';
 //= Types
@@ -75,37 +76,36 @@ function Content({ data }: IProps) {
           {
             data.preferences.links.showEmail &&
             <div className={classes.link}>
-              <i className="fi fi-br-at me-1"></i>
+              <Icon icon="bi:envelope-at-fill" className="iconifiy-icon me-2" />
               <a href={`mailto:${data.aboutInfo.links.emailAddress}`}>{data.aboutInfo.links.emailAddress}</a>
             </div>
           }
           {
             data.preferences.links.showPhone &&
             <div className={classes.link}>
-              <i className="fi fi-br-phone-call me-1"></i>
+              <Icon icon="bi:phone-fill" className="iconifiy-icon me-2" />
               <a href={`tel:${data.aboutInfo.links.phoneNumber}`}>{data.aboutInfo.links.phoneNumber}</a>
             </div>
           }
           {
             data.preferences.links.showGithub &&
             <div className={classes.link}>
-              <i className="fi fi-brands-github me-1"></i>
+              <Icon icon="mdi:github" className="iconifiy-icon me-2" />
               <a href={data.aboutInfo.links.github}>{data.aboutInfo.links.github.split('/').at(-1)}</a>
             </div>
           }
           {
             data.preferences.links.showLinkedin &&
             <div className={classes.link}>
-              <i className="fi fi-brands-linkedin me-1"></i>
+              <Icon icon="bi:linkedin" className="iconifiy-icon me-2" />
               <a href={data.aboutInfo.links.linkedin}>in/{data.aboutInfo.links.linkedin.split('/').at(-1)}</a>
             </div>
           }
           {
             data.preferences.links.showTwitter &&
             <div className={classes.link}>
-              <i className="fi fi-brands-twitter me-1"></i>
+              <Icon icon="simple-icons:x" className="iconifiy-icon me-2" />
               <a href={data.aboutInfo.links.twitter}>{data.aboutInfo.links.twitter.split('/').at(-1)}</a>
-
             </div>
           }
         </div>
@@ -172,10 +172,10 @@ function Content({ data }: IProps) {
                 <div className={classes.title}>
                   <p>{experience.title} <span>@</span> <a href={experience.companyLink}>{experience.company}</a></p>
                   <p>
-                    <i className="fi fi-rr-calendar-clock me-1"></i>
-                    {new Date(experience.startedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+                    <Icon icon="solar:calendar-bold-duotone" className="iconifiy-icon me-2" />
+                    {new Date(experience.startedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' })}
                     &nbsp;-&nbsp;
-                    {experience.endedAt ? new Date(experience.endedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' }) : 'Present'}
+                    {experience.endedAt ? new Date(experience.endedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' }) : 'Present'}
                   </p>
                 </div>
                 <DescriptionCompiler content={experience.description} />
@@ -194,7 +194,7 @@ function Content({ data }: IProps) {
               <div className={classes.education} key={certificate._id}>
                 <div className={classes.title}>
                   <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
-                  <p><i className="fi fi-rr-calendar-clock me-1"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
+                  <p><Icon icon="solar:calendar-bold-duotone" className="iconifiy-icon me-2" /> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}</p>
                 </div>
                 {
                   certificate.sourceLink &&
@@ -225,7 +225,9 @@ function Content({ data }: IProps) {
                 All projects and templates i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company
               </p>
               <div className={classes.links}>
-                <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer"><i className="fi fi-br-arrow-up-right-from-square"></i> Live Demo: <span>https://hassanali.tk/works/tcg</span></a>
+                <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer">
+                  <Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Live Demo: <span>https://hassanali.tk/works/tcg</span>
+                </a>
               </div>
             </div>
           }
@@ -241,19 +243,19 @@ function Content({ data }: IProps) {
                 <div className={classes.links}>
                   {
                     work.links.demo &&
-                    <a href={work.links.demo} target="_blank" rel="noreferrer"><i className="fi fi-br-arrow-up-right-from-square"></i> Live Demo: <span>{work.links.demo}</span></a>
+                    <a href={work.links.demo} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Live Demo: <span>{work.links.demo}</span></a>
                   }
                   {
                     work.links.github &&
-                    <a href={work.links.github} target="_blank" rel="noreferrer"><i className="fi fi-brands-github"></i> Github: <span>{work.links.github}</span></a>
+                    <a href={work.links.github} target="_blank" rel="noreferrer"><Icon icon="mdi:github" className="iconifiy-icon" /> Github: <span>{work.links.github}</span></a>
                   }
                   {
                     work.links.apiRepo &&
-                    <a href={work.links.apiRepo} target="_blank" rel="noreferrer"><i className="fi fi-br-database"></i> Server Code: <span>{work.links.apiRepo}</span></a>
+                    <a href={work.links.apiRepo} target="_blank" rel="noreferrer"><Icon icon="solar:server-linear" className="iconifiy-icon" /> Server Code: <span>{work.links.apiRepo}</span></a>
                   }
                   {
                     work.links.apiDocs &&
-                    <a href={work.links.apiDocs} target="_blank" rel="noreferrer"><i className="fi fi-br-document-signed"></i> Documentations: <span>{work.links.apiDocs}</span></a>
+                    <a href={work.links.apiDocs} target="_blank" rel="noreferrer"><Icon icon="et:documents" className="iconifiy-icon" /> Documentations: <span>{work.links.apiDocs}</span></a>
                   }
                 </div>
               </div>

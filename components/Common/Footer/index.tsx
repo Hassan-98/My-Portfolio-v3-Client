@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Styles
 import classes from './footer.module.scss';
 
@@ -22,7 +23,7 @@ function Footer() {
           </p>
           <div className={classes.bottom_bar}>
             <p className={classes.email}>7assan.3li1998@gmail.com</p>
-            <i className="fa-solid fa-arrow-turn-down-left"></i>
+            <Icon icon="fluent:arrow-turn-down-left-20-filled" className="iconifiy-icon" />
             <p className={classes.copyright}>Copyright &copy; {new Date().getFullYear()} By Hassan Ali | All Rights Reserved</p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 //= Components
 import CertificateModal from 'components/Common/CertificateModal';
 //= Types
@@ -44,11 +45,11 @@ function Certificates({ certsPage, data }: IProps) {
                       {certificate.description}
                     </p>
                     <p className={classes.date}>
-                      <i className="fa-solid fa-calendar-days"></i> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
-                      <button onClick={() => viewCertificate(certificate.image)}><i className="fa-regular fa-eye"></i> View</button>
+                      <Icon icon="uil:calender" className={`iconifiy-icon ${classes.view}`} /> {new Date(certificate.issuanceDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+                      <button onClick={() => viewCertificate(certificate.image)}><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View</button>
                       {
                         certificate.sourceLink &&
-                        <button><a href={certificate.sourceLink} target="_blank" rel="noreferrer"><i className="fa-regular fa-link-simple"></i> Verify</a></button>
+                        <button><a href={certificate.sourceLink} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold" className={`iconifiy-icon ${classes.view}`} /> Verify</a></button>
                       }
                     </p>
                   </div>
@@ -59,7 +60,7 @@ function Certificates({ certsPage, data }: IProps) {
           {
             !certsPage &&
             <Link href="/certificates">
-              <button className={classes.viewMore}><i className="fa-regular fa-eye me-1"></i> View All Certificates</button>
+              <button className={classes.viewMore}><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View All Certificates</button>
             </Link>
           }
         </div>

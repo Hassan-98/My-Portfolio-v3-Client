@@ -46,7 +46,6 @@
 
     @include xs {
       font-size: 40px;
-
     }
 
     span {
@@ -132,15 +131,15 @@
               background-color: #000;
 
               &:first-of-type {
-                background-color: #DD3531;
+                background-color: #dd3531;
               }
 
               &:nth-of-type(2) {
-                background-color: #E6A74C;
+                background-color: #e6a74c;
               }
 
               &:last-of-type {
-                background-color: #4DD126;
+                background-color: #4dd126;
               }
             }
           }
@@ -168,7 +167,9 @@
               pointer-events: none;
             }
 
-            i {
+            svg {
+              width: 20px;
+              height: 20px;
               cursor: pointer;
 
               &.hide {
@@ -288,44 +289,49 @@
               }
 
               img {
-                width: 44px;
-                height: 44px;
-                margin-inline-end: 15px;
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
 
                 @include sm {
-                  width: 38px;
-                  height: 38px;
+                  width: 30px;
+                  height: 30px;
                 }
 
                 @include xs {
-                  width: 34px;
-                  height: 34px;
+                  width: 24px;
+                  height: 24px;
                 }
 
                 @include xxs {
-                  width: 33px;
-                  height: 33px;
+                  width: 22px;
+                  height: 22px;
                 }
               }
 
               &.compitable {
-                height: 44px;
-                width: 44px;
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-inline-end: 15px;
                 padding: 5px;
                 @extend %fancyIcon;
 
                 @include sm {
-                  width: 40px;
-                  height: 40px;
+                  width: 30px;
+                  height: 30px;
                 }
 
                 @include xs {
-                  width: 34px;
-                  height: 34px;
+                  width: 24px;
+                  height: 24px;
+                }
+
+                @include xxs {
+                  width: 22px;
+                  height: 22px;
                 }
 
                 img {
@@ -338,10 +344,20 @@
             }
           }
 
-          i.github,
-          i.demo {
-            font-size: 27px;
-            margin-inline-end: 15px;
+          svg.view {
+            width: 16px;
+            height: 16px;
+            margin-inline-end: 5px;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: all 0.3s ease;
+          }
+
+          svg.github,
+          svg.demo {
+            width: 30px;
+            height: 30px;
+            margin-inline-end: 5px;
             cursor: pointer;
             color: var(--main-color);
             transition: all 0.3s ease;
@@ -351,8 +367,8 @@
             }
 
             @include xs {
-              margin-inline-end: 15px;
-              font-size: 22px;
+              width: 22px;
+              height: 22px;
             }
           }
         }
@@ -376,17 +392,17 @@
             border: 1px solid #eee;
             padding: 10px 30px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             transition: all 0.3s ease;
             border-radius: 4px;
 
             a,
-            i {
+            svg {
               color: inherit;
-              font-size: inherit
+              font-size: inherit;
             }
 
-            i {
+            svg {
               margin-inline-end: 5px;
             }
 
@@ -395,7 +411,7 @@
               background-color: var(--main-color);
 
               a,
-              i {
+              svg {
                 color: #fff;
               }
             }

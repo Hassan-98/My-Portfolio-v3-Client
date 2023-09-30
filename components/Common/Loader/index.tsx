@@ -16,7 +16,7 @@ function Loader() {
       showLoading();
       setTimeout(() => {
         hideLoading();
-      }, 1000);
+      }, 100);
     } else {
       window.addEventListener('load', hideLoading, false);
       // Remove the event listener when component unmounts

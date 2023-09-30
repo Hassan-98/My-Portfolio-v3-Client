@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 //= Types
 import { IWork } from '../../../types';
 //= Styles
@@ -11,7 +12,7 @@ interface IProps {
 }
 
 function Works({ worksPage, data }: IProps) {
-  function toggleView(event: React.MouseEvent, work: IWork) {
+  function toggleView(event: React.MouseEvent<SVGSVGElement>, work: IWork) {
     const work_image = event.currentTarget.parentElement?.parentElement?.parentElement;
     const currentViewBtn = event.currentTarget;
     const otherViewBtn = event.currentTarget.nextElementSibling || event.currentTarget.previousElementSibling;
@@ -20,7 +21,7 @@ function Works({ worksPage, data }: IProps) {
     const desktop_img = work.images.desktop;
     const mobile_img = work.images.mobile;
 
-    image.src = currentViewBtn.className.includes('mobile') ? desktop_img : mobile_img;
+    image.src = currentViewBtn.className.baseVal.includes('mobile') ? desktop_img : mobile_img;
 
     currentViewBtn.classList.add(classes.hide);
     otherViewBtn!.classList.remove(classes.hide);
@@ -43,7 +44,9 @@ function Works({ worksPage, data }: IProps) {
           <div className={classes.works_container}>
             <div className={classes.work}>
               <div className={classes.work_image}>
-                <img src="/images/TCG-image.png" alt="work image" loading="lazy" />
+                <Link href="/works/tcg">
+                  <img src="/images/TCG-image.avif" alt="work image" loading="lazy" />
+                </Link>
               </div>
               <div className={classes.work_info}>
                 <h3>TCG Projects</h3>
@@ -53,7 +56,7 @@ function Works({ worksPage, data }: IProps) {
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
                     <Link href="/works/tcg">
-                      <i className={`fa-solid fa-eye ${classes.demo}`} title="View Works"></i> View Works
+                      <Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View Works
                     </Link>
                   </div>
                 </div>
@@ -75,11 +78,13 @@ function Works({ worksPage, data }: IProps) {
                           <span>{work.links.demo}</span>
                         </div>
                         <div className={classes.switch_view}>
-                          <i className="fa-solid fa-desktop" title="toggle desktop view" onClick={(e) => toggleView(e, work)}></i>
-                          <i className={`fa-solid fa-mobile-screen-button ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
+                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
+                          <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>
                       </div>
-                      <img src={work.images.desktop} alt="work image" loading="lazy" />
+                      <a href={work.links.demo ? work.links.demo : '#'} target="_blank" rel="noreferrer">
+                        <img src={work.images.desktop} alt="work image" loading="lazy" />
+                      </a>
                     </div>
                   }
                   <div className={classes.work_info}>
@@ -102,19 +107,19 @@ function Works({ worksPage, data }: IProps) {
                         {
                           work.links.github &&
                           <a href={work.links.github} target="_blank" rel="noreferrer">
-                            <i className={`fa-brands fa-github ${classes.github}`} title="Github Repo"></i>
+                            <Icon icon="mdi:github" className={`iconifiy-icon ${classes.github}`} />
                           </a>
                         }
                         {
                           work.links.apiRepo &&
                           <a href={work.links.apiRepo} target="_blank" rel="noreferrer">
-                            <i className={`fa-solid fa-server ${classes.github}`} title="API Github Repo"></i>
+                            <Icon icon="fluent:server-link-20-filled" className={`iconifiy-icon ${classes.github}`} />
                           </a>
                         }
                         {
                           work.links.demo &&
                           <a href={work.links.demo} target="_blank" rel="noreferrer">
-                            <i className={`fa-solid fa-arrow-up-right-from-square ${classes.demo}`} title="View Demo"></i>
+                            <Icon icon="mdi:link-box" className={`iconifiy-icon ${classes.demo}`} />
                           </a>
                         }
                       </div>
@@ -133,11 +138,13 @@ function Works({ worksPage, data }: IProps) {
                           <span>{work.links.demo}</span>
                         </div>
                         <div className={classes.switch_view}>
-                          <i className="fa-solid fa-desktop" title="toggle desktop view" onClick={(e) => toggleView(e, work)}></i>
-                          <i className={`fa-solid fa-mobile-screen-button ${classes.hide}`} title="toggle mobile view" onClick={(e) => toggleView(e, work)}></i>
+                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
+                          <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>
                       </div>
-                      <img src={work.images.desktop} alt="work image" loading="lazy" />
+                      <a href={work.links.demo ? work.links.demo : '#'} target="_blank" rel="noreferrer">
+                        <img src={work.images.desktop} alt="work image" loading="lazy" />
+                      </a>
                     </div>
                   }
                 </div>
@@ -146,7 +153,7 @@ function Works({ worksPage, data }: IProps) {
           </div>
           {
             !worksPage &&
-            <Link href="/works"><button><i className="fa-regular fa-eye me-1"></i> View All Portfolio</button></Link>
+            <Link href="/works"><button><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.demo}`} /> View All Portfolio</button></Link>
           }
         </div>
       </div>

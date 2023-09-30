@@ -165,56 +165,64 @@
             padding: 0;
             margin: 0;
 
-            @include xxs {
-              width: 100%;
-              margin-bottom: 10px;
+            @include sm {
               flex-wrap: wrap;
             }
 
+            @include xs {
+              width: 100%;
+              margin-bottom: 10px;
+            }
+
             li {
-              @include xxs {
+              @include xs {
                 margin-bottom: 10px;
               }
 
               img {
-                width: 40px;
-                height: 40px;
-                margin-inline-end: 15px;
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
 
                 @include sm {
-                  width: 36px;
-                  height: 36px;
+                  width: 30px;
+                  height: 30px;
                 }
 
                 @include xs {
-                  width: 32px;
-                  height: 32px;
+                  width: 24px;
+                  height: 24px;
                 }
 
                 @include xxs {
-                  width: 28px;
-                  height: 28px;
+                  width: 22px;
+                  height: 22px;
                 }
               }
 
               &.compitable {
-                height: 40px;
-                width: 40px;
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-inline-end: 15px;
                 padding: 5px;
                 @extend %fancyIcon;
 
                 @include sm {
-                  width: 36px;
-                  height: 36px;
+                  width: 30px;
+                  height: 30px;
                 }
 
                 @include xs {
-                  width: 32px;
-                  height: 32px;
+                  width: 24px;
+                  height: 24px;
+                }
+
+                @include xxs {
+                  width: 22px;
+                  height: 22px;
                 }
 
                 img {
@@ -227,10 +235,11 @@
             }
           }
 
-          i.github,
-          i.demo {
-            font-size: 24px;
-            margin-inline-end: 15px;
+          svg.github,
+          svg.demo {
+            width: 30px;
+            height: 30px;
+            margin-inline-end: 5px;
             cursor: pointer;
             color: var(--main-color);
             transition: all 0.3s ease;
@@ -240,13 +249,12 @@
             }
 
             @include xs {
-              margin-inline-end: 15px;
-              font-size: 22px;
+              width: 22px;
+              height: 22px;
             }
           }
         }
       }
     }
   }
-
 }

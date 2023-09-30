@@ -18,7 +18,7 @@
   .info {
     width: 40%;
     padding-inline-end: 50px;
-    border-right: 1px solid #E1E1E1;
+    border-right: 1px solid #e1e1e1;
 
     @include lg {
       width: 50%;
@@ -52,7 +52,7 @@
       }
     }
 
-    &>p {
+    & > p {
       font-size: 14px;
       margin-bottom: 25px;
 
@@ -70,7 +70,8 @@
       .box_icon {
         width: 60px;
         height: 60px;
-        font-size: 26px;
+        padding: 12px;
+        font-size: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -93,7 +94,6 @@
             color: var(--text-color);
           }
         }
-
       }
     }
 
@@ -125,8 +125,8 @@
           align-items: center;
           flex-grow: 1;
 
-          i {
-            font-size: 18px;
+          svg {
+            font-size: 24px;
             cursor: pointer;
             color: var(--main-color);
             transition: all 0.3s ease-in-out;
@@ -162,7 +162,7 @@
       width: 100%;
       padding: 12px 15px;
       background-color: transparent;
-      border: 1px solid #E1E1E1;
+      border: 1px solid #e1e1e1;
       outline: 3px solid transparent;
       border-radius: 5px;
       transition: all 0.3s ease;
@@ -192,8 +192,10 @@
       border-radius: 8px;
       transition: all 0.3s ease;
 
-      i {
-        margin-inline-start: 7px;
+      svg {
+        margin-inline-start: 5px;
+        position: relative;
+        top: -1px;
         color: inherit;
       }
 
@@ -214,7 +216,6 @@
     }
 
     .form {
-
       input,
       textarea {
         &::placeholder {
@@ -227,9 +228,10 @@
         border-color: var(--main-color);
 
         &:hover {
-          background-color: var(--common-bg);
+          background-color: #fff;
           border-color: var(--text-color);
-          color: #fff;
+          color: var(--common-bg);
+          transform: none;
         }
       }
     }

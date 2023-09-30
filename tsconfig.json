@@ -22,7 +22,10 @@
       "scripts/*": ["scripts/*"],
       "utils/*": ["utils/*"],
       "styles/*": ["styles/*"],
-      "layouts/*": ["layouts/*"]
+      "layouts/*": ["layouts/*"],
+      "@/*": ["./*"],
+      "@/utils/*": ["./utils/*"],
+      "__mocks__": ["__mocks__/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

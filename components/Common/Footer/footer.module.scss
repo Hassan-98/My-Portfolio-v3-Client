@@ -44,11 +44,11 @@
       }
 
       @include sm {
-        max-width: 85%
+        max-width: 85%;
       }
 
       @include xs {
-        max-width: 100%
+        max-width: 100%;
       }
     }
 
@@ -95,14 +95,14 @@
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 30px;
     left: 0;
     width: 100%;
     height: calc(100% - 30px);
-    background-image: url('/images/world.png');
+    background-image: url("/images/world.avif");
     background-size: cover;
   }
 
@@ -159,11 +159,11 @@
         margin-top: 30px;
       }
 
-      i {
-        font-size: 30px;
+      svg {
+        font-size: 36px;
 
         @include lg {
-          font-size: 26px;
+          font-size: 30px;
         }
 
         @include md {
@@ -212,6 +212,5 @@
     &::after {
       opacity: 0.02;
     }
-
   }
 }

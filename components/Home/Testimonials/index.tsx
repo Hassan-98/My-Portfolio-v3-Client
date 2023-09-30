@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Icon } from '@iconify/react';
 //= Packages
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
@@ -43,11 +44,13 @@ function Testimonials({ data }: { data: ITestimonial[] }) {
                 data.map(testimonial => (
                   <SwiperSlide key={testimonial._id}>
                     <div className={classes.testimonial}>
-                      <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i>
+                      <Icon icon="mingcute:quote-right-fill" className={`iconifiy-icon ${classes.quotes}`} />
+                      {/* <i className={`fa-solid fa-quote-right ${classes.quotes}`}></i> */}
                       <p className={classes.rating}>
                         {
                           new Array(testimonial.rating).fill(0).map((_, i) => (
-                            <i className={`fa-solid fa-star ${i !== testimonial.rating - 1 ? 'me-1' : ''}`} key={i}></i>
+                            <Icon icon="mingcute:star-fill" className={`iconifiy-icon ${i !== testimonial.rating - 1 ? 'me-1' : ''}`} key={i} />
+                            // <i className={`fa-solid fa-star ${i !== testimonial.rating - 1 ? 'me-1' : ''}`}></i>
                           ))
                         }
                       </p>

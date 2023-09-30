@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Types
 import { IWork } from '../../../types';
 //= Styles
@@ -44,19 +45,19 @@ function WorthNoteWorks({ data }: IProps) {
                       {
                         work.links.github &&
                         <a href={work.links.github} target="_blank" rel="noreferrer">
-                          <i className={`fa-brands fa-github ${classes.github}`} title="Github Repo"></i>
+                          <Icon icon="mdi:github" className={`iconifiy-icon ${classes.github}`} />
                         </a>
                       }
                       {
                         work.links.apiRepo &&
                         <a href={work.links.apiRepo} target="_blank" rel="noreferrer">
-                          <i className={`fa-solid fa-server ${classes.github}`} title="API Github Repo"></i>
+                          <Icon icon="fluent:server-link-20-filled" className={`iconifiy-icon ${classes.github}`} />
                         </a>
                       }
                       {
                         work.links.demo &&
                         <a href={work.links.demo} target="_blank" rel="noreferrer">
-                          <i className={`fa-regular fa-arrow-up-right-from-square ${classes.demo}`} title="View Demo"></i>
+                          <Icon icon="mdi:link-box" className={`iconifiy-icon ${classes.demo}`} />
                         </a>
                       }
                     </div>

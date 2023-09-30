@@ -2,7 +2,7 @@
 @import "./variables.scss";
 
 /***************  { General Styles For Elements }   *****************/
-$mainColor: #AB5429;
+$mainColor: #ab5429;
 $h1: 2rem;
 $h2: 1.714rem;
 $h3: 1.5rem;
@@ -137,7 +137,6 @@ p {
 }
 
 @include md {
-
   span,
   p {
     font-size: 15px;
@@ -145,7 +144,6 @@ p {
 }
 
 @include sm {
-
   span,
   p {
     font-size: 14px;
@@ -153,7 +151,6 @@ p {
 }
 
 @include xs {
-
   span,
   p {
     font-size: 13px;
@@ -202,5 +199,16 @@ img {
   ::-webkit-scrollbar-thumb {
     border: 3px solid var(--background-dark);
     background-color: var(--slate-color-dark);
+  }
+}
+
+.iconifiy-icon {
+  display: inline-block;
+  margin-inline-end: 4px;
+  position: relative;
+  top: -1px;
+
+  &.nomargin {
+    margin: 0;
   }
 }

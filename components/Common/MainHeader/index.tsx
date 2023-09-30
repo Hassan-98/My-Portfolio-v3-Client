@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 //= Styles
 import classes from "./header.module.scss";
 
@@ -23,7 +24,7 @@ function Header({ data }: IProps) {
             <p>{data.descriptionText}</p>
             <Link href="/works">
               <button className="btn">
-                <i className="fi fi-rr-briefcase me-2"></i>
+                <Icon icon="octicon:briefcase-16" className="iconifiy-icon me-2" />
                 Check out my works!
               </button>
             </Link>

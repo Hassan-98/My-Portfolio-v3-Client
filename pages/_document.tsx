@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script';
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -17,19 +16,10 @@ export default function Document() {
         {/* App Logo */}
         <link rel="shortcut icon" href="/logo-secondary.svg" />
         <link rel="apple-touch-icon" href="/logo-png.png" />
-        {/* CSS Libs */}
-        <link rel="stylesheet" href="/css/all.min.css" />
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css' />
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css' />
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css' />
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css' />
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-straight/css/uicons-thin-straight.css' />
-
       </Head>
       <body>
         <Main />
         <NextScript />
-        <Script strategy="beforeInteractive" src="/js/bootstrap.bundle.min.js" />
       </body>
     </Html>
   )

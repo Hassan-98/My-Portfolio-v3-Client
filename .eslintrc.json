@@ -1,5 +1,5 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/babel", "next/core-web-vitals"],
   "rules": {
     "@next/next/no-css-tags": "off",
     "no-document-viewport-meta": "off",

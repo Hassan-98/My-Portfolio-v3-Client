@@ -50,7 +50,6 @@
 
     @include xs {
       font-size: 40px;
-
     }
 
     span {
@@ -84,7 +83,7 @@
       padding: 25px;
       border-right: 1px solid var(--background-white);
       text-align: center;
-      min-width: 280px;
+      min-width: 220px;
 
       @include md {
         width: 100%;
@@ -123,8 +122,9 @@
           margin-bottom: 0;
         }
 
-        img {
-          width: 45px;
+        svg {
+          height: 55px;
+          width: 55px;
           margin: 0 auto 10px;
         }
 
@@ -153,6 +153,7 @@
         margin-bottom: 40px;
 
         .sub_title {
+          font-size: 22px;
           font-weight: bold;
           -webkit-text-stroke: 1px var(--main-color);
           color: transparent;

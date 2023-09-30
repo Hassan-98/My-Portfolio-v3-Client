@@ -1,6 +1,7 @@
-import React from 'react';
 //= Modules
+import React from 'react';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 //= Api
 import { downloadResume } from '../../../API';
 //= Styles
@@ -13,9 +14,9 @@ function Topbar() {
 
   return (
     <div className={classes.topbar}>
-      <Link href="/"><button><i className="fi fi-br-arrow-left"></i> Go back</button></Link>
-      <button onClick={() => window.print()}><i className="fi fi-br-print"></i> Print</button>
-      <button onClick={downloadResume}><i className="fi fi-br-download"></i> Download</button>
+      <Link href="/"><button><Icon icon="pixelarticons:arrow-left" className="iconifiy-icon" /> Go back</button></Link>
+      <button onClick={() => window.print()}><Icon icon="fluent:print-32-regular" className="iconifiy-icon" /> Print</button>
+      <button onClick={downloadResume} disabled={true}><Icon icon="entypo:download" className="iconifiy-icon" /> Download</button>
     </div>
   )
 }

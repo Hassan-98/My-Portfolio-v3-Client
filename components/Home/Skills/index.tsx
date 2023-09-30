@@ -3,6 +3,7 @@ import React from 'react';
 import { ISkill, SkillMastery, StackType } from '../../../types';
 //= Styles
 import classes from './skills.module.scss';
+import { Icon } from '@iconify/react';
 
 interface IProps {
   smallerPadding?: boolean;
@@ -35,24 +36,27 @@ function Skills({ smallerPadding, data }: IProps) {
           <div className={classes.skills_tabs_container}>
             <div className={classes.skills_items}>
               <div className={`${classes.item} ${classes.active}`} onClick={handleTabClick} id="front-end-btn">
-                <img src="/images/front.png" alt="client side" loading="lazy" />
+                <Icon icon="majesticons:browser-cookie" />
+                {/* <img src="/images/front.png" alt="client side" loading="lazy" width="45" height="45" /> */}
                 <p>Front End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="back-end-btn">
-                <img src="/images/back.png" alt="server side" loading="lazy" />
+                <Icon icon="solar:server-square-cloud-bold" />
+                {/* <img src="/images/back.png" alt="server side" loading="lazy" width="45" height="45" /> */}
                 <p>Back End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="tools-btn">
-                <img src="/images/tools.png" alt="tools" loading="lazy" />
+                <Icon icon="mdi:semantic-web" />
+                {/* <img src="/images/tools.png" alt="tools" loading="lazy" width="45" height="45" /> */}
                 <p>Tools</p>
               </div>
             </div>
             <div className={classes.skills_tabs}>
               <div className={`${classes.tab} ${classes.active}`} id="front-end">
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Proficient:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Proficient
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.front && skill.mastery === SkillMastery.Proficient)).map(skill => (
@@ -61,10 +65,10 @@ function Skills({ smallerPadding, data }: IProps) {
                             skill.skill.isNotCompitable
                               ?
                               <div className={classes.compitable}>
-                                <img src={skill.skill.image} alt="skill" loading="lazy" />
+                                <img src={skill.skill.image} alt="skill" loading="lazy" width="80" height="80" />
                               </div>
                               :
-                              <img src={skill.skill.image} alt="skill" loading="lazy" />
+                              <img src={skill.skill.image} alt="skill" loading="lazy" width="80" height="80" />
                           }
                           {skill.skill.name}
                         </li>
@@ -73,9 +77,9 @@ function Skills({ smallerPadding, data }: IProps) {
                   </ul>
                 </div>
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Moderate:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Moderate
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.front && skill.mastery === SkillMastery.Moderate)).map(skill => (
@@ -98,9 +102,9 @@ function Skills({ smallerPadding, data }: IProps) {
               </div>
               <div className={classes.tab} id="back-end">
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Proficient:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Proficient
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.back && skill.mastery === SkillMastery.Proficient)).map(skill => (
@@ -121,9 +125,9 @@ function Skills({ smallerPadding, data }: IProps) {
                   </ul>
                 </div>
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Moderate:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Moderate
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.back && skill.mastery === SkillMastery.Moderate)).map(skill => (
@@ -146,9 +150,9 @@ function Skills({ smallerPadding, data }: IProps) {
               </div>
               <div className={classes.tab} id="tools">
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Proficient:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Proficient
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.tools && skill.mastery === SkillMastery.Proficient)).map(skill => (
@@ -169,9 +173,9 @@ function Skills({ smallerPadding, data }: IProps) {
                   </ul>
                 </div>
                 <div className={classes.section}>
-                  <h3 className={classes.sub_title}>
-                    Moderate:
-                  </h3>
+                  <p className={classes.sub_title}>
+                    Moderate
+                  </p>
                   <ul>
                     {
                       data.filter(skill => (skill.type === StackType.tools && skill.mastery === SkillMastery.Moderate)).map(skill => (

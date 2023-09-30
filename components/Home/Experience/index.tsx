@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 //= Components
 import DescriptionCompiler from './DescriptionCompiler';
 //= Types
@@ -29,14 +30,14 @@ function Experience({ noTitle, data }: IProps) {
               data.map(experience => (
                 <div className={classes.exp} key={experience._id}>
                   <h3>
-                    <i className="fa-solid fa-briefcase"></i> {experience.title}
+                    <Icon icon="ion:briefcase" className="iconifiy-icon me-2" /> {experience.title}
                     <span className={classes.at}>@</span>
                     <span className={classes.company}><a href={experience.companyLink} target="_blank" rel="noreferrer">{experience.company}</a></span>
                   </h3>
                   <p className={classes.time_range}>
-                    {new Date(experience.startedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+                    {new Date(experience.startedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' })}
                     &nbsp;-&nbsp;
-                    {experience.endedAt ? new Date(experience.endedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' }) : 'Present'}
+                    {experience.endedAt ? new Date(experience.endedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' }) : 'Present'}
                   </p>
                   <DescriptionCompiler content={experience.description} />
                 </div>
