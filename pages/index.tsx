@@ -53,7 +53,7 @@ export const getServerSideProps = async () => {
   try {
     const [aboutInfo, experiences, skills, works, certificates, testimonials] = await Promise.all([
       getGeneralSettings(),
-      getAllExperiences({ limit: 3 }),
+      getAllExperiences({ limit: 4 }),
       getAllSkills(),
       getAllWorks({ limit: 5, type: Importance.Glowing, withStack: true, website: true, tcgWorks: false }),
       getAllCertificates({ limit: 6, website: true }),
