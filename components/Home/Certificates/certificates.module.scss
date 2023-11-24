@@ -44,7 +44,6 @@
 
     @include xs {
       font-size: 40px;
-
     }
 
     span {
@@ -217,5 +216,26 @@
   }
 }
 
-// [data-bs-theme="dark"] {
-// }
+[data-bs-theme="dark"] {
+  .certificates {
+    button.viewMore {
+      background-color: transparent;
+      border-color: var(--slate-color-dark);
+      color: var(--slate-color);
+
+      i {
+        color: inherit;
+      }
+
+      &:hover {
+        background-color: var(--slate-color-dark);
+        color: var(--background-dark);
+        border-color: var(--slate-color-dark);
+
+        i {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

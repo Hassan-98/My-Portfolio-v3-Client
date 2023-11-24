@@ -35,6 +35,7 @@ function Experience({ noTitle, data }: IProps) {
                     <span className={classes.company}><a href={experience.companyLink} target="_blank" rel="noreferrer">{experience.company}</a></span>
                   </h3>
                   <p className={classes.time_range}>
+                    <Icon icon="lets-icons:date-range" className="iconifiy-icon me-2" />
                     {new Date(experience.startedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' })}
                     &nbsp;-&nbsp;
                     {experience.endedAt ? new Date(experience.endedAt).toLocaleDateString('en', { year: 'numeric', month: 'short' }) : 'Present'}

@@ -71,7 +71,9 @@
 
   .skills_tabs_container {
     margin-top: 50px;
-    background-color: var(--common-bg);
+    border: 1px solid var(--common-bg);
+    background-color: rgba(var(--common-bg-rgb), 0.55) !important;
+    backdrop-filter: blur(16px);
     border-radius: 8px;
     display: flex;
 
@@ -102,6 +104,7 @@
         border-radius: 8px;
         margin-bottom: 10px;
         transition: all 0.3s ease;
+        border: 1px solid var(--common-bg);
 
         @include md {
           flex-grow: 1;
@@ -130,8 +133,8 @@
 
         p {
           margin-bottom: 0;
-          font-weight: bold;
-          color: var(--slate-color-dark);
+          font-weight: 500;
+          color: var(--main-color);
         }
       }
     }
@@ -180,7 +183,7 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            font-size: 15px;
+            font-size: 14px;
 
             @include md {
               margin: 10px 25px;
@@ -242,5 +245,11 @@
         }
       }
     }
+  }
+}
+
+[data-bs-theme="dark"] {
+  .skills_tabs_container {
+    background-color: rgba(var(--common-bg-rgb), 0.25) !important;
   }
 }

@@ -4,13 +4,15 @@
 .top_bar {
   position: relative;
   width: 100%;
-  top: 220px;
+  top: 240px;
   overflow: hidden;
 
   .content {
-    border-radius: 8px;
-    background-color: var(--common-bg);
-    padding: 50px 40px 20px;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid rgba(var(--common-bg-rgb), 1);
+    background-color: rgba(var(--common-bg-rgb), 0.4);
+    backdrop-filter: blur(16px);
+    padding: 40px;
     position: relative;
     z-index: 2;
     text-align: center;
@@ -91,7 +93,9 @@
   margin-top: 80px;
   padding: 50px 0 70px;
   padding-top: 200px;
-  background-color: var(--common-bg);
+  border: 1px solid var(--common-bg);
+  background-color: rgba(var(--common-bg-rgb), 0.85) !important;
+  backdrop-filter: blur(16px);
   position: relative;
 
   &::after {
@@ -208,7 +212,27 @@
 }
 
 [data-bs-theme="dark"] {
+  .top_bar {
+    .content {
+      border: 1px solid var(--common-bg);
+      background-color: rgba(var(--common-bg-rgb), 0.25) !important;
+    }
+
+    button {
+      background-color: transparent;
+      border-color: var(--slate-color-dark) !important;
+      color: var(--slate-color) !important;
+
+      &:hover {
+        background-color: var(--slate-color-dark) !important;
+        color: var(--background-dark) !important;
+        border-color: var(--slate-color-dark) !important;
+      }
+    }
+  }
+
   .footer {
+    background-color: rgba(var(--common-bg-rgb), 0.25) !important;
     &::after {
       opacity: 0.02;
     }

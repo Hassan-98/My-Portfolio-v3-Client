@@ -3,7 +3,10 @@
 
 .about_me {
   padding: 70px 50px;
-  background-color: var(--common-bg);
+  // background-color: var(--common-bg);
+  border: 1px solid var(--common-bg);
+  background-color: rgba(var(--common-bg-rgb), 0.85) !important;
+  backdrop-filter: blur(16px);
   border-radius: 8px;
 
   @include lg {
@@ -143,7 +146,6 @@
   }
 
   .info_box {
-
     p:first-of-type {
       font-family: var(--font-heading);
       color: var(--text-color);
@@ -171,6 +173,7 @@
 
     p span.highlight {
       color: var(--main-color);
+      font-weight: 500;
     }
 
     .skills {
@@ -214,21 +217,22 @@
         span {
           font-family: var(--font-mono);
           font-weight: 900;
-          font-size: 15px;
+          font-size: 14px;
 
           @include xs {
-            font-size: 14px;
+            font-size: 13px;
           }
         }
       }
     }
   }
-
 }
 
 [data-bs-theme="dark"] {
+  .about_me {
+    background-color: rgba(var(--common-bg-rgb), 0.25) !important;
+  }
   .info_box {
-
     p:first-of-type {
       color: var(--slate-color);
     }

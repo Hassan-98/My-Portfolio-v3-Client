@@ -28,7 +28,7 @@ nav.navbar {
     .logo {
       // width: 48px;
       font-size: 75px;
-      font-family: 'Array';
+      font-family: "Array";
       color: var(--text-color-tint);
       // position: relative;
       // top: -35px;
@@ -89,7 +89,36 @@ nav.navbar {
         font-family: var(--font-mono);
         color: var(--text-color);
         font-size: 15px;
+        font-weight: 600;
         transition: all 0.3s ease;
+        position: relative;
+
+        a:hover {
+          color: inherit;
+        }
+
+        &:not(:nth-last-of-type(2), :last-of-type) {
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            border-radius: 50%;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+          }
+        }
+
+        &:hover,
+        &.active {
+          font-weight: bold;
+
+          &:not(:nth-last-of-type(2), :last-of-type) {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
 
         &:first-of-type {
           display: none;
@@ -104,22 +133,18 @@ nav.navbar {
           margin-bottom: 10px;
         }
 
-        &:hover,
-        &.active {
-          font-weight: bold;
-        }
-
         &:nth-last-of-type(2) {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 0;
-          width: 38px;
-          height: 38px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           font-size: 17px;
-          border: 2px solid var(--main-color-tint);
+          border: 1px solid #ccc;
           transition: all 0.3s ease;
+          font-family: var(--font-text);
 
           @include md {
             margin-top: 10px;
@@ -135,8 +160,8 @@ nav.navbar {
           }
 
           &:hover {
-            background-color: var(--main-color-dark);
-            border-color: var(--main-color-dark);
+            background-color: var(--main-color);
+            border-color: var(--main-color);
             color: #fff;
 
             i {
@@ -167,7 +192,7 @@ nav.navbar {
 
     button {
       @extend %button;
-      margin-inline-start: 30px;
+      margin-inline-start: 10px;
       border-color: #ccc;
       color: var(--main-color);
       font-family: var(--font-text);
@@ -242,19 +267,27 @@ nav.navbar {
         }
 
         li {
-
           &:nth-last-of-type(2) {
             border-color: var(--main-color);
 
             &:hover {
-              border-color: var(--secondary-color);
+              border-color: rgba(var(--slate-color-rgb), 0.5);
+              background-color: rgba(var(--slate-color-rgb), 0.15);
 
               i {
                 color: var(--secondary-color);
               }
             }
           }
+        }
 
+        button {
+          color: var(--text-color-dark);
+          border-color: var(--slate-color-dark);
+
+          &:hover {
+            background-color: rgba(var(--slate-color-rgb), 0.15);
+          }
         }
       }
 

@@ -228,12 +228,16 @@
         }
 
         h3 {
-          font-size: 50px;
+          font-size: 38px;
           font-family: var(--font-mono);
           font-weight: bold;
 
           @include md {
-            font-size: 36px;
+            font-size: 32px;
+          }
+
+          @include xs {
+            font-size: 28px;
           }
         }
 
@@ -247,8 +251,9 @@
           color: var(--bs-heading-color);
           font-family: var(--font-mono);
           margin-top: 20px;
-          font-weight: bold;
-          font-size: 17px;
+          font-weight: bolder;
+          text-decoration: underline;
+          font-size: 14px;
 
           @include sm {
             margin-top: 10px;
@@ -269,7 +274,7 @@
           }
 
           ul {
-            max-width: 75%;
+            max-width: 70%;
             display: flex;
             padding: 0;
             margin: 0;
@@ -421,36 +426,42 @@
     }
   }
 
-  button {
-    @extend %button;
+  a.view_more {
     display: block;
-    margin: 100px auto 0;
-    font-family: var(--font-text);
-    padding: 13px 60px;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: transparent;
-    border-color: var(--main-color);
-    color: var(--main-color);
+    width: fit-content;
+    margin-inline: auto;
 
-    i {
-      color: inherit;
-    }
-
-    &:hover {
-      background-color: var(--main-color);
-      color: #fff;
+    button {
+      @extend %button;
+      display: block;
+      margin: 100px auto 0;
+      font-family: var(--font-text);
+      padding: 13px 60px;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: transparent;
+      border-color: var(--main-color);
+      color: var(--main-color);
 
       i {
         color: inherit;
       }
-    }
 
-    @include sm {
-      display: block;
-      margin: 70px auto 0;
-      font-size: 15px;
-      padding: 11px 40px;
+      &:hover {
+        background-color: var(--main-color);
+        color: #fff;
+
+        i {
+          color: inherit;
+        }
+      }
+
+      @include sm {
+        display: block;
+        margin: 70px auto 0;
+        font-size: 15px;
+        padding: 11px 40px;
+      }
     }
   }
 }
@@ -466,14 +477,18 @@
         }
 
         .topbar {
-          background-color: var(--common-bg);
+          background-color: var(--slate-color-dark);
+
+          svg {
+            color: var(--slate-color);
+          }
         }
       }
     }
 
     button {
-      background-color: var(--secondary-tint);
-      border-color: transparent;
+      background-color: transparent;
+      border-color: var(--slate-color-dark);
       color: var(--slate-color);
 
       i {
@@ -481,8 +496,30 @@
       }
 
       &:hover {
-        background-color: transparent;
-        color: var(--secondary-color);
+        background-color: var(--slate-color-dark);
+        color: var(--background-dark);
+        border-color: var(--slate-color-dark);
+
+        i {
+          color: inherit;
+        }
+      }
+    }
+  }
+  a.view_more {
+    button {
+      background-color: transparent;
+      border-color: var(--slate-color-dark) !important;
+      color: var(--slate-color) !important;
+
+      i {
+        color: inherit;
+      }
+
+      &:hover {
+        background-color: var(--slate-color-dark) !important;
+        color: var(--background-dark) !important;
+        border-color: var(--slate-color-dark) !important;
 
         i {
           color: inherit;

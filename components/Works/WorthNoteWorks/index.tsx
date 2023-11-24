@@ -35,7 +35,7 @@ function WorthNoteWorks({ data }: IProps) {
                     <ul>
                       {
                         work.stack.map((stack) => (
-                          <li key={stack._id} className={stack.stack.isNotCompitable ? classes.compitable : ''}>
+                          <li key={stack._id} className={stack.stack.isNotCompitable ? classes.compitable : ''} data-tooltip={stack.stack.name} data-direction='bottom'>
                             <img src={stack.stack.image} alt="skill" loading="lazy" title={stack.stack.name} />
                           </li>
                         ))
@@ -44,19 +44,19 @@ function WorthNoteWorks({ data }: IProps) {
                     <div className={classes.actions}>
                       {
                         work.links.github &&
-                        <a href={work.links.github} target="_blank" rel="noreferrer">
+                        <a href={work.links.github} target="_blank" rel="noreferrer" data-tooltip="Visit github repo" data-direction='bottom'>
                           <Icon icon="mdi:github" className={`iconifiy-icon ${classes.github}`} />
                         </a>
                       }
                       {
                         work.links.apiRepo &&
-                        <a href={work.links.apiRepo} target="_blank" rel="noreferrer">
+                        <a href={work.links.apiRepo} target="_blank" rel="noreferrer" data-tooltip="Visit api repo" data-direction='bottom'>
                           <Icon icon="fluent:server-link-20-filled" className={`iconifiy-icon ${classes.github}`} />
                         </a>
                       }
                       {
                         work.links.demo &&
-                        <a href={work.links.demo} target="_blank" rel="noreferrer">
+                        <a href={work.links.demo} target="_blank" rel="noreferrer" data-tooltip="View project demo" data-direction='bottom'>
                           <Icon icon="mdi:link-box" className={`iconifiy-icon ${classes.demo}`} />
                         </a>
                       }

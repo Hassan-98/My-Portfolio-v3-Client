@@ -24,7 +24,7 @@ function Footer() {
           <div className={classes.bottom_bar}>
             <p className={classes.email}>7assan.3li1998@gmail.com</p>
             <Icon icon="fluent:arrow-turn-down-left-20-filled" className="iconifiy-icon" />
-            <p className={classes.copyright}>Copyright &copy; {new Date().getFullYear()} By Hassan Ali | All Rights Reserved</p>
+            <p className={classes.copyright}>Copyright &copy; 2018-{new Date().getFullYear()} By Hassan Ali | All Rights Reserved</p>
           </div>
         </div>
       </footer>

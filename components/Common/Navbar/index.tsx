@@ -70,7 +70,7 @@ function Navbar() {
               theme === 'light' ?
                 <img src="/logo-black.svg" alt="website logo" />
                 :
-                <img src="/logo-secondary.svg" alt="website logo" />
+                <img src="/logo-white.svg" alt="website logo" />
             }
             {/* H */}
           </div>
@@ -93,7 +93,7 @@ function Navbar() {
             <li>
               <i className={`fa-solid fa-xmark ${classes.closeBtn}`} onClick={toggleNavbar}></i>
             </li>
-            <li onClick={toggleThemeMode}>
+            <li onClick={toggleThemeMode} data-tooltip="Toggle theme mode" data-direction='bottom'>
               <Icon icon={theme === 'dark' ? 'ph:sun-bold' : 'bi:moon'} className="iconifiy-icon nomargin" />
             </li>
             <li>

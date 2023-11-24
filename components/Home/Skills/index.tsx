@@ -36,17 +36,17 @@ function Skills({ smallerPadding, data }: IProps) {
           <div className={classes.skills_tabs_container}>
             <div className={classes.skills_items}>
               <div className={`${classes.item} ${classes.active}`} onClick={handleTabClick} id="front-end-btn">
-                <Icon icon="majesticons:browser-cookie" />
+                <Icon icon="uim:web-grid" />
                 {/* <img src="/images/front.png" alt="client side" loading="lazy" width="45" height="45" /> */}
                 <p>Front End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="back-end-btn">
-                <Icon icon="solar:server-square-cloud-bold" />
+                <Icon icon="solar:server-path-bold-duotone" />
                 {/* <img src="/images/back.png" alt="server side" loading="lazy" width="45" height="45" /> */}
                 <p>Back End</p>
               </div>
               <div className={classes.item} onClick={handleTabClick} id="tools-btn">
-                <Icon icon="mdi:semantic-web" />
+                <Icon icon="fontisto:webpack" />
                 {/* <img src="/images/tools.png" alt="tools" loading="lazy" width="45" height="45" /> */}
                 <p>Tools</p>
               </div>
