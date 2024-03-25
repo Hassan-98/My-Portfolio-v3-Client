@@ -10,7 +10,7 @@ import { getGeneralSettings, getAllTestimonials } from '../../API';
 //= Types
 import { GeneralSettings, ITestimonial } from '../../types';
 
-interface IProps {
+export interface IProps {
   aboutInfo: GeneralSettings;
   testimonials: ITestimonial[];
 }

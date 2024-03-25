@@ -13,7 +13,7 @@ import { getGeneralSettings, getAllExperiences, getAllSkills, getAllWorks, getAl
 //= Types
 import { Importance, GeneralSettings, IExperience, ISkill, IWork, ICertificate, ITestimonial } from '../types';
 
-interface IProps {
+export interface IProps {
   aboutInfo: GeneralSettings;
   experiences: IExperience[];
   skills: ISkill[];
@@ -63,22 +63,22 @@ export const getServerSideProps = async () => {
     return {
       props: {
         aboutInfo,
-        experiences,
-        skills,
-        works,
-        certificates,
-        testimonials
+        experiences: experiences || [],
+        skills: skills || [],
+        works: works || [],
+        certificates: certificates || [],
+        testimonials: testimonials || []
       }
     }
   } catch {
     return {
       props: {
         aboutInfo: null,
-        experiences: null,
-        skills: null,
-        works: null,
-        certificates: null,
-        testimonials: null
+        experiences: [],
+        skills: [],
+        works: [],
+        certificates: [],
+        testimonials: []
       }
     }
   }

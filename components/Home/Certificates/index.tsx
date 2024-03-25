@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
 //= Components
-import CertificateModal from 'components/Common/CertificateModal';
+import CertificateModal from '../../Common/CertificateModal';
 //= Types
 import { ICertificate } from '../../../types';
 //= Styles

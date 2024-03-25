@@ -125,7 +125,7 @@ const data: DataType = {
         "name": "css",
         "image": "/images/picture.png",
         "type": StackType.front,
-        "isNotCompitable": false
+        "isNotCompitable": true
       },
       "mastery": SkillMastery.Proficient,
       "type": StackType.front,

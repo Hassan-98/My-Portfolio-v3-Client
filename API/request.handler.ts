@@ -87,6 +87,6 @@ class API {
   }
 }
 
-const api = new API(process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:9999/`);
+const api = new API(process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:9999`);
 
 export default api;

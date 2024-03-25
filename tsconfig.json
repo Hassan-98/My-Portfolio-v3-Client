@@ -28,6 +28,11 @@
       "__mocks__": ["__mocks__/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/Home/Skills/Skillstesttsx"
+  ],
   "exclude": ["node_modules"]
 }

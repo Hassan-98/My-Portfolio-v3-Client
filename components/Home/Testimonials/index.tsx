@@ -7,8 +7,6 @@ import { Autoplay } from 'swiper';
 import { ITestimonial } from '../../../types';
 //= Styles
 import classes from './testimonials.module.scss';
-import "swiper/css";
-import "swiper/css/autoplay";
 
 function Testimonials({ data }: { data: ITestimonial[] }) {
   const [loadSwiper, setLoadSwiper] = useState<boolean>(false);
