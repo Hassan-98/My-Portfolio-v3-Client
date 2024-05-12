@@ -9,23 +9,23 @@
  * you don't want to deal with this.
  */
 
-const { TextDecoder, TextEncoder, ReadableStream } = require("node:util")
+// const { TextDecoder, TextEncoder, ReadableStream } = require("node:util")
 
-Object.defineProperties(globalThis, {
-  TextDecoder: { value: TextDecoder },
-  TextEncoder: { value: TextEncoder },
-  ReadableStream: { value: ReadableStream },
-})
+// Object.defineProperties(globalThis, {
+//   TextDecoder: { value: TextDecoder },
+//   TextEncoder: { value: TextEncoder },
+//   ReadableStream: { value: ReadableStream },
+// })
 
-const { Blob, File } = require("node:buffer")
-const { fetch, Headers, FormData, Request, Response } = require("undici")
+// const { Blob, File } = require("node:buffer")
+// const { fetch, Headers, FormData, Request, Response } = require("undici")
 
-Object.defineProperties(globalThis, {
-  fetch: { value: fetch, writable: true },
-  Blob: { value: Blob },
-  File: { value: File },
-  Headers: { value: Headers },
-  FormData: { value: FormData },
-  Request: { value: Request },
-  Response: { value: Response },
-})
+// Object.defineProperties(globalThis, {
+//   fetch: { value: fetch, writable: true },
+//   Blob: { value: Blob },
+//   File: { value: File },
+//   Headers: { value: Headers },
+//   FormData: { value: FormData },
+//   Request: { value: Request },
+//   Response: { value: Response },
+// })

@@ -4,7 +4,7 @@ import { serverRequests } from '@/tests/server';
 //= Mock Data
 import mockData from '@/__mocks__/header-info';
 //= Component
-import HomePage, { getServerSideProps, type IProps } from './index';
+import HomePage, { getServerSideProps, type IProps } from '../../pages/index';
 
 serverRequests([
   {
