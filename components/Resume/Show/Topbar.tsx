@@ -16,7 +16,7 @@ function Topbar() {
     <div className={classes.topbar}>
       <Link href="/"><button><Icon icon="pixelarticons:arrow-left" className="iconifiy-icon" /> Go back</button></Link>
       <button onClick={() => window.print()}><Icon icon="fluent:print-32-regular" className="iconifiy-icon" /> Print</button>
-      <button onClick={downloadResume} disabled={true}><Icon icon="entypo:download" className="iconifiy-icon" /> Download</button>
+      {/* <button onClick={downloadResume} disabled={true}><Icon icon="entypo:download" className="iconifiy-icon" /> Download</button> */}
     </div>
   )
 }

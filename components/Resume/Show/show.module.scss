@@ -8,6 +8,10 @@
   min-width: 900px;
   padding-bottom: 50px;
 
+  * {
+    font-family: Calibri, Arial, Helvetica, sans-serif !important;
+  }
+
   @include print {
     display: table;
     break-inside: avoid;
@@ -414,7 +418,16 @@
           }
         }
       }
+    }
+  }
+}
 
+[data-bs-theme="dark"] .resume {
+  .topbar {
+    button {
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

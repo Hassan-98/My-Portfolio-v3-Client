@@ -15,14 +15,7 @@ interface IProps {
   preferences: IResumePreferences
 }
 
-function Resume({
-  aboutInfo,
-  experiences,
-  skills,
-  works,
-  certificates,
-  preferences
-}: IProps) {
+function Resume({ aboutInfo, experiences, skills, works, certificates, preferences }: IProps) {
   const data = {
     aboutInfo,
     experiences,
@@ -71,10 +64,10 @@ export const getServerSideProps = async () => {
     return {
       props: {
         aboutInfo,
-        experiences,
-        skills,
-        works,
-        certificates,
+        experiences: experiences || [],
+        skills: skills || [],
+        works: works || [],
+        certificates: certificates || [],
         preferences
       }
     }
