@@ -203,6 +203,7 @@
             img {
               width: 80px;
               margin-bottom: 10px;
+              object-fit: contain;
 
               @include md {
                 width: 70px;
