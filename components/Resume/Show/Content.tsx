@@ -219,14 +219,14 @@ function Content({ data }: IProps) {
             data.preferences.projects.showTcgWorks &&
             <div className={classes.project}>
               <div className={classes.title}>
-                <p>My Projects for themescamp <small>- TCG -</small></p>
+                <p>"<i>Themescamp - <small>TCG</small></i>" company projects <b style={{ marginInlineStart: '5px' }}><small><i>(12 Big Projects)</i></small></b></p>
               </div>
               <p className={classes.description}>
-                All projects and templates i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company
+                All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023, all projects are big themeforest themes for various categories such as <i>ecommerce</i>, <i>newspaper & magazine</i>, <i>personal portfolio</i>, <i>agency themes</i>, <i>multi-purpose templates</i>, etc...
               </p>
               <div className={classes.links}>
                 <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer">
-                  <Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Live Demo: <span>https://hassanali.tk/works/tcg</span>
+                  <Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Browse Projects: <span>https://hassanali.tk/works/tcg</span>
                 </a>
               </div>
             </div>

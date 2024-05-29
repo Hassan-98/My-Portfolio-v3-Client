@@ -51,7 +51,9 @@ function Works({ worksPage, data }: IProps) {
               <div className={classes.work_info}>
                 <h3>TCG Projects</h3>
                 <p className={classes.description}>
-                  All projects and templates i've developed or contributed to it for "Themescamp - TCG" company in the period of Apr 2022 to present
+                  All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
+                  <br />
+                  all projects are big themeforest themes for various categories such as <u><i>ecommerce</i></u>, <u><i>newspaper & magazine</i></u>, <u><i>personal portfolio</i></u>, <u><i>agency themes</i></u>, <u><i>multi-purpose templates</i></u>, etc...
                 </p>
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
