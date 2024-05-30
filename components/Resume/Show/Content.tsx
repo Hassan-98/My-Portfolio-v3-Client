@@ -261,6 +261,18 @@ function Content({ data }: IProps) {
               </div>
             ))
           }
+          <div className={classes.project}>
+            <div className={classes.title}>
+              <p>Other noteworthy projects</p>
+            </div>
+            <p className={classes.description}>
+              There are many other noteworthy projects listed in my portfolio
+            </p>
+            <div className={classes.links}>
+              <a href={'https://hassanali.tk/works'} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Visit My Portfolio: <span>https://hassanali.tk</span></a>
+
+            </div>
+          </div>
         </div>
       }
     </div>
