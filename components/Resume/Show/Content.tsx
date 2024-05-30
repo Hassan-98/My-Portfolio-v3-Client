@@ -76,36 +76,51 @@ function Content({ data }: IProps) {
           {
             data.preferences.links.showEmail &&
             <div className={classes.link}>
-              <Icon icon="bi:envelope-at-fill" className="iconifiy-icon me-2" />
+              <div>
+                <Icon icon="bi:envelope-at-fill" className="iconifiy-icon me-2" />
+                <b>Email Address</b>
+              </div>
               <a href={`mailto:${data.aboutInfo.links.emailAddress}`}>{data.aboutInfo.links.emailAddress}</a>
             </div>
           }
           {
             data.preferences.links.showPhone &&
             <div className={classes.link}>
-              <Icon icon="bi:phone-fill" className="iconifiy-icon me-2" />
+              <div>
+                <Icon icon="bi:phone-fill" className="iconifiy-icon me-2" />
+                <b>Phone</b>
+              </div>
               <a href={`tel:${data.aboutInfo.links.phoneNumber}`}>{data.aboutInfo.links.phoneNumber}</a>
             </div>
           }
           {
             data.preferences.links.showGithub &&
             <div className={classes.link}>
-              <Icon icon="mdi:github" className="iconifiy-icon me-2" />
-              <a href={data.aboutInfo.links.github}>{data.aboutInfo.links.github.split('/').at(-1)}</a>
+              <div>
+                <Icon icon="mdi:github" className="iconifiy-icon me-2" />
+                <b>Github</b>
+              </div>
+              <a href={data.aboutInfo.links.github}>{data.aboutInfo.links.github}</a>
             </div>
           }
           {
             data.preferences.links.showLinkedin &&
             <div className={classes.link}>
-              <Icon icon="bi:linkedin" className="iconifiy-icon me-2" />
-              <a href={data.aboutInfo.links.linkedin}>in/{data.aboutInfo.links.linkedin.split('/').at(-1)}</a>
+              <div>
+                <Icon icon="bi:linkedin" className="iconifiy-icon me-2" />
+                <b>Linkedin</b>
+              </div>
+              <a href={data.aboutInfo.links.linkedin}>{data.aboutInfo.links.linkedin}</a>
             </div>
           }
           {
             data.preferences.links.showTwitter &&
             <div className={classes.link}>
-              <Icon icon="simple-icons:x" className="iconifiy-icon me-2" />
-              <a href={data.aboutInfo.links.twitter}>{data.aboutInfo.links.twitter.split('/').at(-1)}</a>
+              <div>
+                <Icon icon="simple-icons:x" className="iconifiy-icon me-2" />
+                <b>Twitter</b>
+              </div>
+              <a href={data.aboutInfo.links.twitter}>{data.aboutInfo.links.twitter}</a>
             </div>
           }
         </div>
@@ -270,7 +285,6 @@ function Content({ data }: IProps) {
             </p>
             <div className={classes.links}>
               <a href={'https://hassanali.tk/works'} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Visit My Portfolio: <span>https://hassanali.tk</span></a>
-
             </div>
           </div>
         </div>
