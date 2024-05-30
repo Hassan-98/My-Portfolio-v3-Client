@@ -55,7 +55,7 @@ export const getServerSideProps = async () => {
       getGeneralSettings(),
       getAllExperiences({ limit: 4 }),
       getAllSkills(),
-      getAllWorks({ limit: 5, type: Importance.Glowing, withStack: true, website: true, tcgWorks: false }),
+      getAllWorks({ limit: 7, type: Importance.Glowing, withStack: true, website: true, tcgWorks: false }),
       getAllCertificates({ limit: 6, website: true }),
       getAllTestimonials()
     ]);
