@@ -155,7 +155,7 @@ function Works({ worksPage, data }: IProps) {
           </div>
           {
             !worksPage &&
-            <Link href="/works" className={classes.view_more}><button><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.demo}`} /> View All Portfolio</button></Link>
+            <Link href="/works" className={classes.view_more}><button><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.demo}`} /> View alot more projects</button></Link>
           }
         </div>
       </div>
