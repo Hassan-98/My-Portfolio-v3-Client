@@ -116,10 +116,10 @@
 
   .bg {
     background-color: var(--common-bg);
-    background-image: url("/images/my-picture.png");
+    background-image: url("/images/my-pic.webp");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-position: 50% -35px;
+    background-size: cover;
     aspect-ratio: 1;
     height: 500px;
     box-shadow: inset 0 0 35px rgba(#000, 0.2);
@@ -153,7 +153,8 @@
   }
 
   .bg {
-    filter: opacity(0.65);
+    background-image: url("/images/my-pic.webp");
+    filter: brightness(0.6);
     box-shadow: inset 0 0 15px rgba(var(--background-dark-rgb), 1);
   }
 
