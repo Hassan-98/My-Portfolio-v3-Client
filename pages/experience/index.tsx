@@ -39,7 +39,7 @@ function Experience({ aboutInfo, experiences, skills }: IProps) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const [aboutInfo, experiences, skills] = await Promise.all([
       getGeneralSettings(),
@@ -52,7 +52,8 @@ export const getServerSideProps = async () => {
         aboutInfo,
         experiences,
         skills,
-      }
+      },
+      revalidate: 600
     }
   } catch {
     return {
@@ -60,7 +61,8 @@ export const getServerSideProps = async () => {
         aboutInfo: null,
         experiences: null,
         skills: null,
-      }
+      },
+      revalidate: 600
     }
   }
 }

@@ -36,7 +36,7 @@ function Certificates({ aboutInfo, certificates }: IProps) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const [aboutInfo, certificates] = await Promise.all([
       getGeneralSettings(),
@@ -47,14 +47,16 @@ export const getServerSideProps = async () => {
       props: {
         aboutInfo,
         certificates
-      }
+      },
+      revalidate: 600
     }
   } catch {
     return {
       props: {
         aboutInfo: null,
         certificates: []
-      }
+      },
+      revalidate: 600
     }
   }
 }

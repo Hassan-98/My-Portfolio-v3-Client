@@ -38,7 +38,7 @@ function Works({ aboutInfo, works }: IProps) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const [aboutInfo, works] = await Promise.all([
       getGeneralSettings(),
@@ -49,14 +49,16 @@ export const getServerSideProps = async () => {
       props: {
         aboutInfo,
         works
-      }
+      },
+      revalidate: 600
     }
   } catch {
     return {
       props: {
         aboutInfo: null,
         works: []
-      }
+      },
+      revalidate: 600
     }
   }
 }

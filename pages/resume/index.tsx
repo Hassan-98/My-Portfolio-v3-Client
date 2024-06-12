@@ -38,7 +38,7 @@ function Resume({ aboutInfo, experiences, skills, works, certificates, preferenc
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const preferences = await getResumePreferences();
     let aboutInfo, experiences, skills, works, certificates;
@@ -69,7 +69,8 @@ export const getServerSideProps = async () => {
         works: works || [],
         certificates: certificates || [],
         preferences
-      }
+      },
+      revalidate: 300
     }
   } catch {
     return {
@@ -80,7 +81,8 @@ export const getServerSideProps = async () => {
         works: [],
         certificates: [],
         preferences: null
-      }
+      },
+      revalidate: 300
     }
   }
 }

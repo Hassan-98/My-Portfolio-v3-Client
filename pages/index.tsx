@@ -49,7 +49,7 @@ function Home({
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const [aboutInfo, experiences, skills, works, certificates, testimonials] = await Promise.all([
       getGeneralSettings(),
@@ -68,7 +68,8 @@ export const getServerSideProps = async () => {
         works: works || [],
         certificates: certificates || [],
         testimonials: testimonials || []
-      }
+      },
+      revalidate: 600
     }
   } catch {
     return {
@@ -79,7 +80,8 @@ export const getServerSideProps = async () => {
         works: [],
         certificates: [],
         testimonials: []
-      }
+      },
+      revalidate: 600
     }
   }
 }
