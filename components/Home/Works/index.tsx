@@ -21,6 +21,9 @@ function Works({ worksPage, data }: IProps) {
     const desktop_img = work.images.desktop;
     const mobile_img = work.images.mobile;
 
+    console.log(currentViewBtn.className);
+
+
     image.src = currentViewBtn.className.baseVal.includes('mobile') ? desktop_img : mobile_img;
 
     currentViewBtn.classList.add(classes.hide);
@@ -37,7 +40,7 @@ function Works({ worksPage, data }: IProps) {
             !worksPage &&
             <h2>
               <span />
-              Works
+              Projects
               <span />
             </h2>
           }
@@ -49,16 +52,17 @@ function Works({ worksPage, data }: IProps) {
                 </Link>
               </div>
               <div className={classes.work_info}>
-                <h3>TCG Projects</h3>
+                <h3><a href="/works/tcg">Themescamp Projects</a></h3>
+                <small>(12 Big Projects)</small>
                 <p className={classes.description}>
                   All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
                   <br />
-                  all projects are big themeforest themes for various categories such as <u><i>ecommerce</i></u>, <u><i>newspaper & magazine</i></u>, <u><i>personal portfolio</i></u>, <u><i>agency themes</i></u>, <u><i>multi-purpose templates</i></u>, etc...
+                  all projects are big themeforest themes for various categories such as <i>ecommerce</i>, <i>newspaper & magazine</i>, <i>personal portfolio</i>, <i>agency themes</i>, <i>multi-purpose templates</i>, etc...
                 </p>
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
                     <Link href="/works/tcg">
-                      <Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View Works
+                      <Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View All Projects
                     </Link>
                   </div>
                 </div>
@@ -80,7 +84,7 @@ function Works({ worksPage, data }: IProps) {
                           <span>{work.links.demo}</span>
                         </div>
                         <div className={classes.switch_view}>
-                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
+                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon mobile ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
                           <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>
                       </div>
@@ -90,7 +94,11 @@ function Works({ worksPage, data }: IProps) {
                     </div>
                   }
                   <div className={classes.work_info}>
-                    <h3>{work.name}</h3>
+                    <h3>
+                      <a href={work.links.demo ? work.links.demo : '#'} target="_blank" rel="noreferrer">
+                        {work.name}
+                      </a>
+                    </h3>
                     <p className={classes.description}>
                       {work.description}
                     </p>
@@ -140,7 +148,7 @@ function Works({ worksPage, data }: IProps) {
                           <span>{work.links.demo}</span>
                         </div>
                         <div className={classes.switch_view}>
-                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
+                          <Icon icon="basil:desktop-solid" className={`iconifiy-icon mobile ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
                           <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>
                       </div>

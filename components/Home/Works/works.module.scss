@@ -227,10 +227,26 @@
           padding-inline-start: 0;
         }
 
+        small {
+          color: var(--slate-color-dark);
+          font-size: 16px;
+          position: relative;
+          top: -5px;
+          margin-inline-start: 5px;
+          // text-decoration: underline;
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+
         h3 {
-          font-size: 38px;
+          font-size: 36px;
           font-family: var(--font-mono);
           font-weight: bold;
+
+          a {
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+          }
 
           @include md {
             font-size: 32px;
@@ -289,14 +305,20 @@
             }
 
             li {
+              cursor: auto;
               @include xs {
                 margin-bottom: 10px;
+              }
+
+              a {
+                cursor: auto;
               }
 
               img {
                 width: 35px;
                 height: 35px;
                 margin-inline-end: 10px;
+                cursor: auto;
 
                 @include sm {
                   width: 30px;
@@ -405,6 +427,7 @@
             svg {
               color: inherit;
               font-size: inherit;
+              // cursor: auto;
             }
 
             svg {

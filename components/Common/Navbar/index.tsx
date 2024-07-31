@@ -85,7 +85,7 @@ function Navbar() {
               <Link href={Page.Experience}>Experience</Link>
             </li>
             <li className={router.pathname === Page.Works ? classes.active : ''}>
-              <Link href={Page.Works}>Works</Link>
+              <Link href={Page.Works}>Projects</Link>
             </li>
             <li className={router.pathname === Page.Contact ? classes.active : ''}>
               <Link href={Page.Contact}>Contact</Link>
