@@ -375,6 +375,18 @@
         margin-top: 5px;
         color: #8a8a8a;
 
+        b {
+          margin-top: 10px;
+        }
+
+        li {
+          margin-inline-start: 10px;
+
+          &:last-of-type {
+            margin-bottom: 10px;
+          }
+        }
+
         @include lg {
           font-size: 11px;
           margin-top: 0px;

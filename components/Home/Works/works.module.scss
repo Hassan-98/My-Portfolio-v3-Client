@@ -182,8 +182,16 @@
         img {
           transition: all 1s linear;
           object-position: top;
-          height: 360px;
+          height: 420px;
           width: 100%;
+
+          @include xl {
+            height: 400px;
+          }
+
+          @include lg {
+            height: 360px;
+          }
 
           @include md {
             height: 320px;
@@ -231,7 +239,7 @@
           color: var(--slate-color-dark);
           font-size: 16px;
           position: relative;
-          top: -5px;
+          top: 0px;
           margin-inline-start: 5px;
           // text-decoration: underline;
           margin-bottom: 10px;
@@ -239,13 +247,25 @@
         }
 
         h3 {
-          font-size: 36px;
+          font-size: 40px;
           font-family: var(--font-mono);
           font-weight: bold;
+          margin-bottom: 15px;
+
+          @include lg {
+            font-size: 36px;
+          }
 
           a {
             color: inherit;
             transition: all 0.2s ease-in-out;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            svg {
+              top: 0;
+            }
           }
 
           @include md {
@@ -258,6 +278,20 @@
         }
 
         p.description {
+          font-size: 15px;
+
+          b {
+            margin-top: 10px;
+          }
+
+          li {
+            margin-inline-start: 10px;
+
+            &:last-of-type {
+              margin-bottom: 10px;
+            }
+          }
+
           @include md {
             font-size: 14px;
           }
@@ -416,17 +450,21 @@
 
         .work_info {
           .actions {
-            border: 1px solid #eee;
+            border: 1px solid var(--main-color);
+            color: var(--main-color);
+            background-color: var(--main-color);
             padding: 10px 30px;
             cursor: pointer;
             font-size: 15px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border-radius: 4px;
+            margin-top: 10px;
 
             a,
             svg {
-              color: inherit;
+              color: #fff;
               font-size: inherit;
+              transition: all 0.2s ease;
               // cursor: auto;
             }
 
@@ -435,12 +473,12 @@
             }
 
             &:hover {
-              color: var(--text-color);
-              background-color: var(--main-color);
+              color: var(--main-color);
+              background-color: transparent;
 
               a,
               svg {
-                color: #fff;
+                color: var(--main-color);
               }
             }
           }

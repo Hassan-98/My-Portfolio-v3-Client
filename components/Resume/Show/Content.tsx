@@ -67,6 +67,14 @@ function Content({ data }: IProps) {
     )).join('');
   }
 
+  function projectsDescriptionParser(description: string): string {
+    let formattedText = description.replace(/\*\*\*(.*?)\*\*\*/g, '<b style="display: block;">$1</b>');
+    formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    formattedText = formattedText.replace(/--(.*?)--/g, '<li>$1</li>');
+
+    return formattedText;
+  }
+
   return (
     <div className={classes.content}>
       <div className={classes.metadata}>
@@ -234,10 +242,20 @@ function Content({ data }: IProps) {
             data.preferences.projects.showTcgWorks &&
             <div className={classes.project}>
               <div className={classes.title}>
-                <p>"<i>Themescamp - <small>TCG</small></i>" company projects <b style={{ marginInlineStart: '5px' }}><small><i>(12 Big Projects)</i></small></b></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 'bold' }}>
+                  <Icon icon="fontisto:envato" style={{ fontSize: '14px', marginInlineStart: '5px' }} /> Themeforest Projects
+                  <b style={{ marginInlineStart: '5px' }}><small><i>(12 Big Projects)</i></small></b>
+                </p>
               </div>
               <p className={classes.description}>
-                All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023, all projects are big themeforest themes for various categories such as <i>ecommerce</i>, <i>newspaper & magazine</i>, <i>personal portfolio</i>, <i>agency themes</i>, <i>multi-purpose templates</i>, etc...
+                All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
+                <div style={{ marginBottom: '5px' }} />
+                all projects are big themeforest themes for various categories such as:
+                <li><i>ecommerce</i></li>
+                <li><i>newspaper & magazine</i></li>
+                <li><i>personal portfolio</i></li>
+                <li><i>agency themes</i></li>
+                <li><i>multi-purpose templates</i>, etc...</li>
               </p>
               <div className={classes.links}>
                 <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer">
@@ -250,15 +268,13 @@ function Content({ data }: IProps) {
             data.works.map(work => (
               <div className={classes.project} key={work._id}>
                 <div className={classes.title}>
-                  <p>{work.name}</p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 'bold' }}>{work.name}</p>
                 </div>
-                <p className={classes.description}>
-                  {work.description}
-                </p>
+                <p className={classes.description} dangerouslySetInnerHTML={{ __html: projectsDescriptionParser(work.description) }}></p>
                 <div className={classes.links}>
                   {
                     work.links.demo &&
-                    <a href={work.links.demo} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Live Demo: <span>{work.links.demo}</span></a>
+                    <a href={work.links.demo} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold-duotone" className="iconifiy-icon" /> Preview: <span>{work.links.demo}</span></a>
                   }
                   {
                     work.links.github &&

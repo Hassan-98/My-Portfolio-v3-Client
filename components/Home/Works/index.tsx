@@ -32,6 +32,14 @@ function Works({ worksPage, data }: IProps) {
     work_image?.classList.toggle(classes.mobile_view);
   }
 
+  function descriptionParser(description: string): string {
+    let formattedText = description.replace(/\*\*\*(.*?)\*\*\*/g, '<b style="display: block;">$1</b>');
+    formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    formattedText = formattedText.replace(/--(.*?)--/g, '<li>$1</li>');
+
+    return formattedText;
+  }
+
   return (
     <section>
       <div className="container">
@@ -52,12 +60,21 @@ function Works({ worksPage, data }: IProps) {
                 </Link>
               </div>
               <div className={classes.work_info}>
-                <h3><a href="/works/tcg">Themescamp Projects</a></h3>
+                <h3>
+                  <a href="/works/tcg">
+                    <Icon icon="fontisto:envato" /> Themeforest Projects
+                  </a>
+                </h3>
                 <small>(12 Big Projects)</small>
                 <p className={classes.description}>
                   All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
-                  <br />
-                  all projects are big themeforest themes for various categories such as <i>ecommerce</i>, <i>newspaper & magazine</i>, <i>personal portfolio</i>, <i>agency themes</i>, <i>multi-purpose templates</i>, etc...
+                  <hr style={{ marginBottom: '10px' }} />
+                  All projects are big themeforest themes for various categories such as
+                  <li><i>ecommerce</i></li>
+                  <li><i>newspaper & magazine</i></li>
+                  <li><i>personal portfolio</i></li>
+                  <li><i>agency themes</i></li>
+                  <li><i>multi-purpose templates</i>, etc...</li>
                 </p>
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
@@ -99,9 +116,7 @@ function Works({ worksPage, data }: IProps) {
                         {work.name}
                       </a>
                     </h3>
-                    <p className={classes.description}>
-                      {work.description}
-                    </p>
+                    <p className={classes.description} dangerouslySetInnerHTML={{ __html: descriptionParser(work.description) }}></p>
                     <p className={classes.stack}>Built With</p>
                     <div className={classes.bottom}>
                       <ul>
