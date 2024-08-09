@@ -33,9 +33,12 @@ function Works({ worksPage, data }: IProps) {
   }
 
   function descriptionParser(description: string): string {
-    let formattedText = description.replace(/\*\*\*(.*?)\*\*\*/g, '<b style="display: block;">$1</b>');
-    formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-    formattedText = formattedText.replace(/--(.*?)--/g, '<li>$1</li>');
+    let formattedText = description.replaceAll(/\*\*\*(.*?)\*\*\*/g, '<b style="display: block;">$1</b>');
+    formattedText = formattedText.replaceAll(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    formattedText = formattedText.replaceAll(/--(.*?)--/g, '<li>$1</li>');
+    formattedText = formattedText.replaceAll(/\/\/(.*?)\/\//g, '<i>$1</i>');
+    formattedText = formattedText.replaceAll(/__(.*?)__/g, '<u>$1</u>');
+    formattedText = formattedText.replaceAll(/\[(.*?)\]/g, '<a href="$1" target="_blank">$1</a>');
 
     return formattedText;
   }
