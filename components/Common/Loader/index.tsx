@@ -12,16 +12,16 @@ function Loader() {
   }
 
   useEffect(() => {
-    if (document.readyState === 'complete') {
-      showLoading();
-      setTimeout(() => {
-        hideLoading();
-      }, 100);
-    } else {
-      window.addEventListener('load', hideLoading, false);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener('load', hideLoading);
-    }
+    // if (document.readyState === 'complete') {
+    showLoading();
+    setTimeout(() => {
+      hideLoading();
+    }, 200);
+    // } else {
+    //   window.addEventListener('load', hideLoading, false);
+    //   // Remove the event listener when component unmounts
+    //   return () => window.removeEventListener('load', hideLoading);
+    // }
   }, []);
 
 

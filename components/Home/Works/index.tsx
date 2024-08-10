@@ -134,19 +134,19 @@ function Works({ worksPage, data }: IProps) {
                       <div className={classes.actions}>
                         {
                           work.links.github &&
-                          <a href={work.links.github} target="_blank" rel="noreferrer" data-tooltip="Visit github repo" data-direction='bottom'>
+                          <a href={work.links.github} target="_blank" rel="noreferrer" data-tooltip="Visit github repo" data-direction='bottom' aria-label='Visit github repo'>
                             <Icon icon="mdi:github" className={`iconifiy-icon ${classes.github}`} />
                           </a>
                         }
                         {
                           work.links.apiRepo &&
-                          <a href={work.links.apiRepo} target="_blank" rel="noreferrer" data-tooltip="Visit api repo" data-direction='bottom'>
+                          <a href={work.links.apiRepo} target="_blank" rel="noreferrer" data-tooltip="Visit api repo" data-direction='bottom' aria-label='Visit api repo'>
                             <Icon icon="fluent:server-link-20-filled" className={`iconifiy-icon ${classes.github}`} />
                           </a>
                         }
                         {
                           work.links.demo &&
-                          <a href={work.links.demo} target="_blank" rel="noreferrer" data-tooltip="View project demo" data-direction='bottom'>
+                          <a href={work.links.demo} target="_blank" rel="noreferrer" data-tooltip="View project demo" data-direction='bottom' aria-label='View project demo'>
                             <Icon icon="mdi:link-box" className={`iconifiy-icon ${classes.demo}`} />
                           </a>
                         }

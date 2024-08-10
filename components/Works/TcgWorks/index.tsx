@@ -44,13 +44,13 @@ function WorthNoteWorks({ data }: IProps) {
                     <div className={classes.actions}>
                       {
                         work.links.github &&
-                        <a href={work.links.github} target="_blank" rel="noreferrer" data-tooltip="Visit project at envato" data-direction='bottom'>
+                        <a href={work.links.github} target="_blank" rel="noreferrer" data-tooltip="Visit project at envato" data-direction='bottom' aria-label='Visit project at envato'>
                           <Icon icon="simple-icons:envato" className={`iconifiy-icon ${classes.github}`} />
                         </a>
                       }
                       {
                         work.links.demo &&
-                        <a href={work.links.demo} target="_blank" rel="noreferrer" data-tooltip="View project demo" data-direction='bottom'>
+                        <a href={work.links.demo} target="_blank" rel="noreferrer" data-tooltip="View project demo" data-direction='bottom' aria-label='View project demo'>
                           <Icon icon="fluent:link-square-12-filled" className={`iconifiy-icon ${classes.demo}`} />
                         </a>
                       }
