@@ -35,20 +35,22 @@ function Contact({ aboutInfo }: IProps) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const aboutInfo = await getGeneralSettings();
 
     return {
       props: {
         aboutInfo
-      }
+      },
+      revalidate: 1800
     }
   } catch {
     return {
       props: {
         aboutInfo: null
-      }
+      },
+      revalidate: 1800
     }
   }
 }
