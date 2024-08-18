@@ -40,6 +40,13 @@ function Works({ worksPage, data }: IProps) {
     formattedText = formattedText.replaceAll(/__(.*?)__/g, '<u>$1</u>');
     formattedText = formattedText.replaceAll(/\[(.*?)\]/g, '<a href="$1" target="_blank">$1</a>');
 
+    let indexofList = formattedText.indexOf('<li>');
+    let indexofListEnd = formattedText.lastIndexOf('</li>');
+
+    if (indexofList > -1) {
+      formattedText = formattedText.slice(0, indexofList) + '<ul>' + formattedText.slice(indexofList, indexofListEnd + 5) + '</ul>' + formattedText.slice(indexofListEnd + 6);
+    }
+
     return formattedText;
   }
 
@@ -73,11 +80,13 @@ function Works({ worksPage, data }: IProps) {
                   All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
                   <hr style={{ marginBottom: '10px' }} />
                   All projects are big themeforest themes for various categories such as
-                  <li><i>ecommerce</i></li>
-                  <li><i>newspaper & magazine</i></li>
-                  <li><i>personal portfolio</i></li>
-                  <li><i>agency themes</i></li>
-                  <li><i>multi-purpose templates</i>, etc...</li>
+                  <ul>
+                    <li><i>ecommerce</i></li>
+                    <li><i>newspaper & magazine</i></li>
+                    <li><i>personal portfolio</i></li>
+                    <li><i>agency themes</i></li>
+                    <li><i>multi-purpose templates</i>, etc...</li>
+                  </ul>
                 </p>
                 <div className={classes.bottom}>
                   <div className={classes.actions}>
@@ -103,7 +112,7 @@ function Works({ worksPage, data }: IProps) {
                         <div className={classes.search}>
                           <span>{work.links.demo}</span>
                         </div>
-                        <div className={classes.switch_view}>
+                        <div className={classes.switch_view} data-tooltip={"Switch view"} data-direction='left'>
                           <Icon icon="basil:desktop-solid" className={`iconifiy-icon mobile ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
                           <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>
@@ -165,7 +174,7 @@ function Works({ worksPage, data }: IProps) {
                         <div className={classes.search}>
                           <span>{work.links.demo}</span>
                         </div>
-                        <div className={classes.switch_view}>
+                        <div className={classes.switch_view} data-tooltip={"Switch view"} data-direction='left'>
                           <Icon icon="basil:desktop-solid" className={`iconifiy-icon mobile ${classes.hide}`} onClick={(e) => toggleView(e, work)} />
                           <Icon icon="teenyicons:mobile-solid" className={`iconifiy-icon`} onClick={(e) => toggleView(e, work)} />
                         </div>

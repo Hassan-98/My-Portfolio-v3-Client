@@ -163,6 +163,12 @@
           }
 
           .switch_view {
+            border: 1px solid #eee;
+            background-color: #eee;
+            padding: 3px 5px;
+            border-radius: 4px;
+            animation: pulse 1.5s infinite;
+
             @include sm {
               pointer-events: none;
             }
@@ -171,6 +177,7 @@
               width: 20px;
               height: 20px;
               cursor: pointer;
+              margin: 0;
 
               &.hide {
                 display: none;
@@ -284,11 +291,13 @@
             margin-top: 10px;
           }
 
-          li {
-            margin-inline-start: 10px;
+          ul {
+            list-style: disc;
 
-            &:last-of-type {
-              margin-bottom: 10px;
+            li {
+              &:last-of-type {
+                margin-bottom: 10px;
+              }
             }
           }
 
@@ -587,5 +596,20 @@
         }
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 #eee;
+    box-shadow: 0 0 0 0 #eee;
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px #eeeeee11;
+    box-shadow: 0 0 0 10px #eeeeee11;
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent;
   }
 }

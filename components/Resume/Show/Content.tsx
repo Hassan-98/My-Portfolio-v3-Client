@@ -75,6 +75,13 @@ function Content({ data }: IProps) {
     formattedText = formattedText.replaceAll(/__(.*?)__/g, '<u>$1</u>');
     formattedText = formattedText.replaceAll(/\[(.*?)\]/g, '<a href="$1" target="_blank"><u>$1</u></a>');
 
+    let indexofList = formattedText.indexOf('<li>');
+    let indexofListEnd = formattedText.lastIndexOf('</li>');
+
+    if (indexofList > -1) {
+      formattedText = formattedText.slice(0, indexofList) + '<ul>' + formattedText.slice(indexofList, indexofListEnd + 5) + '</ul>' + formattedText.slice(indexofListEnd + 6);
+    }
+
     return formattedText;
   }
 
