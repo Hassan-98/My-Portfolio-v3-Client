@@ -49,7 +49,7 @@ function Certificates({ certsPage, data }: IProps) {
                       <button onClick={() => viewCertificate(certificate.image)}><Icon icon="grommet-icons:view" className={`iconifiy-icon ${classes.view}`} /> View</button>
                       {
                         certificate.sourceLink &&
-                        <button><a href={certificate.sourceLink} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold" className={`iconifiy-icon ${classes.view}`} /> Verify</a></button>
+                        <a href={certificate.sourceLink} target="_blank" rel="noreferrer"><Icon icon="solar:link-round-bold" className={`iconifiy-icon ${classes.view}`} /> Verify</a>
                       }
                     </p>
                   </div>
