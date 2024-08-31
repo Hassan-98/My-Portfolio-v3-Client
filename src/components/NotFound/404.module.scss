@@ -1,0 +1,113 @@
+@import "@/styles/mixins";
+@import "@/styles/extends";
+
+.notFound {
+  padding: 180px 0 0;
+  color: var(--main-color);
+  background-color: var(--bg-main-color);
+
+  .container {
+    @extend %container;
+  }
+
+  @include sm {
+    padding: 130px 0 0;
+  }
+
+  .item {
+    text-align: center;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center !important;
+    color: var(--main-color);
+    width: 100%;
+    font-size: 34px;
+
+    @include md {
+      font-size: 28px;
+    }
+  }
+
+  button {
+    @extend %button;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 180px;
+    font-weight: bold;
+    text-align: center !important;
+    margin: 25px 0;
+    background-color: var(--bg-alt-color);
+    border-radius: 8px;
+    width: 100%;
+
+    @include lg {
+      font-size: 100px;
+    }
+
+    @include md {
+      margin-bottom: -20px;
+    }
+
+    @include xs {
+      font-size: 60px;
+    }
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+    text-align: center !important;
+    font-size: 30px;
+    margin-top: 0;
+    line-height: 1.5;
+
+    @include lg {
+      font-size: 24px;
+    }
+
+    @include md {
+      margin-bottom: 20px;
+    }
+
+    @include xs {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    max-height: 550px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+
+    @include lg {
+      max-height: 350px;
+    }
+
+    @include md {
+      max-height: 300px;
+      margin-bottom: 10px;
+    }
+
+    @include sm {
+      max-height: 200px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .btnPrimar {
+    @extend %button;
+    display: block;
+    width: fit-content;
+    padding: 10px 50px;
+    border-radius: 4px;
+    margin-inline: auto;
+  }
+}

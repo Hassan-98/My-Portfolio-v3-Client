@@ -1,0 +1,260 @@
+@import "@/styles/mixins";
+@import "@/styles/extends";
+
+.works {
+  padding: 50px 0 0;
+
+  @include xl {
+    padding: 40px 0 0;
+  }
+
+  @include md {
+    padding: 40px 0 0;
+  }
+
+  h2 {
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    @include xl {
+      font-size: 37px;
+    }
+
+    @include md {
+      font-size: 32px;
+    }
+
+    @include sm {
+      font-size: 27px;
+    }
+
+    @include xs {
+      font-size: 22px;
+    }
+
+    @include xxs {
+      font-size: 18px;
+    }
+
+    span {
+      flex-grow: 1;
+      height: 1px;
+      background-color: var(--main-color);
+      transform: translate(25px);
+
+      @include xs {
+        transform: translate(15px);
+      }
+
+      &:first-of-type {
+        transform: translate(-25px);
+
+        @include xs {
+          transform: translate(-15px);
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 50px;
+
+    .work {
+      margin-top: 80px;
+      width: calc(50% - 25px);
+
+      @include md {
+        width: 100%;
+      }
+
+      .work_image {
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        @include lg {
+          width: 100%;
+          margin-bottom: 10px;
+          order: 1;
+        }
+
+        &:hover {
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
+        }
+
+        img {
+          height: 280px;
+          width: 100%;
+          object-position: top;
+          transition: all 1s linear;
+
+          @include md {
+            height: 240px;
+          }
+
+          @include xs {
+            height: 200px;
+          }
+
+          &:hover {
+            transition: all 4s linear;
+            object-position: bottom;
+          }
+        }
+      }
+
+      .work_info {
+        width: 100%;
+        margin-top: 20px;
+
+        @include lg {
+          width: 100%;
+          margin-top: 10px;
+          order: 2;
+          padding-inline-start: 0;
+        }
+
+        h3 {
+          font-size: 36px;
+          font-family: var(--font-mono);
+          font-weight: bold;
+
+          @include md {
+            font-size: 30px;
+          }
+        }
+
+        p.description {
+          font-size: 14px;
+        }
+
+        p.stack {
+          color: var(--bs-heading-color);
+          font-family: var(--font-mono);
+          margin-top: 10px;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .bottom {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          @include sm {
+            margin-top: 0;
+          }
+
+          @include xxs {
+            flex-wrap: wrap;
+          }
+
+          ul {
+            max-width: 70%;
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            @include sm {
+              flex-wrap: wrap;
+            }
+
+            @include xs {
+              width: 100%;
+              margin-bottom: 10px;
+            }
+
+            li {
+              @include xs {
+                margin-bottom: 10px;
+              }
+
+              img {
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
+
+                @include sm {
+                  width: 30px;
+                  height: 30px;
+                }
+
+                @include xs {
+                  width: 24px;
+                  height: 24px;
+                }
+
+                @include xxs {
+                  width: 22px;
+                  height: 22px;
+                }
+              }
+
+              &.compitable {
+                width: 35px;
+                height: 35px;
+                margin-inline-end: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                @extend %fancyIcon;
+
+                @include sm {
+                  width: 30px;
+                  height: 30px;
+                }
+
+                @include xs {
+                  width: 24px;
+                  height: 24px;
+                }
+
+                @include xxs {
+                  width: 22px;
+                  height: 22px;
+                }
+
+                img {
+                  object-fit: contain;
+                  width: calc(100% - 6px);
+                  height: calc(100% - 6px);
+                  margin-inline-end: 0;
+                }
+              }
+            }
+          }
+
+          svg.github,
+          svg.demo {
+            width: 30px;
+            height: 30px;
+            margin-inline-end: 5px;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: var(--text-color);
+            }
+
+            @include xs {
+              width: 22px;
+              height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

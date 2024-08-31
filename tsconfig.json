@@ -1,38 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2015",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "api/*": ["api/*"],
-      "types/*": ["types/*"],
-      "components/*": ["components/*"],
-      "scripts/*": ["scripts/*"],
-      "utils/*": ["utils/*"],
-      "styles/*": ["styles/*"],
-      "layouts/*": ["layouts/*"],
-      "@/*": ["./*"],
-      "@/utils/*": ["./utils/*"],
-      "__mocks__": ["__mocks__/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "components/Home/Skills/Skillstesttsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,445 @@
+@import "@/styles/mixins";
+@import "@/styles/extends";
+
+.resume {
+  background-color: #fff;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 900px;
+  padding-bottom: 50px;
+
+  * {
+    font-family: Calibri, Arial, Helvetica, sans-serif !important;
+  }
+
+  @include print {
+    display: table;
+    break-inside: avoid;
+    min-width: auto;
+    padding-bottom: 0;
+  }
+
+  .topbar {
+    background-color: var(--common-bg);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+
+    @include print {
+      display: none;
+    }
+
+    button {
+      @extend %button;
+      margin-inline-end: 10px;
+      border-radius: 3px;
+
+      i {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  .metadata {
+    text-align: center;
+
+    h1 {
+      font-size: 60px;
+      color: #000;
+      font-weight: bold;
+      margin-bottom: 0;
+
+      @include lg {
+        font-size: 38px;
+      }
+    }
+
+    h2 {
+      color: #414141;
+      font-family: var(--font-mono);
+      font-weight: bold;
+
+      @include lg {
+        font-size: 18px;
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 25px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+      max-width: 60%;
+      margin: 5px auto;
+
+      @include lg {
+        max-width: 80%;
+        column-gap: 15px;
+      }
+
+      .link {
+        cursor: pointer;
+        color: #414141;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        a {
+          color: inherit;
+        }
+
+        i {
+          font-size: 18px;
+          position: relative;
+          top: 4px;
+          margin-inline-end: 8px;
+
+          @include lg {
+            font-size: 14px;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .section {
+    margin-bottom: 10px;
+    padding: 15px 150px;
+    padding-bottom: 0;
+    max-width: 1600px;
+    margin: 10px auto;
+
+    @include xl {
+      padding: 15px 50px;
+      padding-bottom: 0;
+    }
+
+    @include lg {
+      padding: 15px;
+      padding-bottom: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      color: #414141;
+      border-bottom: 2px solid #f1f1f1;
+      font-weight: 600;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: var(--font-mono);
+
+      @include lg {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      padding-left: 10px;
+      margin-bottom: 0;
+      color: #666666;
+
+      @include lg {
+        font-size: 11px;
+      }
+    }
+
+    .skill_set {
+      span {
+        font-size: 18px;
+        padding-left: 7.5px;
+        color: #414141;
+        font-weight: bold;
+        font-style: italic;
+
+        @include lg {
+          font-size: 13px;
+        }
+
+        &.stack_type {
+          font-size: 15px;
+          font-weight: 600;
+          margin-inline-end: 7px;
+          color: #666666;
+
+          &::before {
+            content: "♦ ";
+          }
+
+          @include lg {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .experience {
+      margin: 15px 0 20px;
+
+      @include lg {
+        margin: 0 0 5px;
+      }
+
+      .title {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 5px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 18px;
+
+          @include lg {
+            font-size: 14px;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: normal;
+            margin-inline: 5px;
+          }
+
+          a {
+            color: inherit;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+
+        p:last-of-type {
+          @include lg {
+            font-size: 11px;
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      ul {
+        list-style: "▹ ";
+        padding: 0;
+        margin: 0;
+        padding-left: 40px;
+
+        li {
+          color: #8a8a8a;
+          font-size: 14px;
+
+          @include lg {
+            font-size: 11px;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .education {
+      margin: 15px 0 20px;
+
+      @include lg {
+        margin: 0 0 5px;
+      }
+
+      .title {
+        display: flex;
+        gap: 20px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 18px;
+
+          @include lg {
+            font-size: 14px;
+          }
+
+          a {
+            color: inherit;
+          }
+
+          span {
+            font-weight: 100;
+            margin-inline: 5px;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+
+        p:last-of-type {
+          @include lg {
+            font-size: 11px;
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      a.link {
+        padding-left: 30px;
+        color: #0004ff;
+        font-weight: 100;
+        font-size: 15px;
+
+        span {
+          font-weight: normal;
+          color: #8a8a8a;
+
+          &::before {
+            content: "— ";
+          }
+        }
+
+        @include lg {
+          font-size: 11px;
+        }
+      }
+
+      p.description {
+        padding-left: 30px;
+        max-width: 90%;
+        line-height: 1.25;
+        color: #8a8a8a;
+
+        @include lg {
+          font-size: 11px;
+          color: #666;
+        }
+      }
+    }
+
+    .project {
+      margin-bottom: 25px;
+      break-inside: avoid;
+
+      @include lg {
+        margin-bottom: 5px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .title {
+        display: flex;
+        gap: 50px;
+
+        p:first-of-type {
+          font-weight: 500;
+          font-size: 20px;
+
+          @include lg {
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: normal;
+            margin-inline: 5px;
+          }
+
+          &::before {
+            content: "# ";
+            font-weight: normal;
+            color: #aaa;
+          }
+        }
+      }
+
+      p.description {
+        padding-left: 30px;
+        max-width: 90%;
+        line-height: 1.25;
+        margin-top: 5px;
+        color: #8a8a8a;
+
+        b {
+          margin-top: 10px;
+        }
+
+        li {
+          margin-inline-start: 10px;
+
+          &:last-of-type {
+            margin-bottom: 10px;
+          }
+        }
+
+        @include lg {
+          font-size: 11px;
+          margin-top: 0px;
+          color: #666;
+        }
+      }
+
+      .links {
+        margin-top: 5px;
+        margin-inline-start: 30px;
+
+        @include lg {
+          margin-top: 0;
+        }
+
+        a {
+          color: #414141;
+          margin-inline-end: 15px;
+          font-size: 13px;
+          font-weight: 500;
+
+          @include lg {
+            font-size: 9px;
+          }
+
+          span {
+            color: #0d6efd;
+            padding-left: 5px;
+            font-weight: 400;
+            font-size: inherit;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          i {
+            font-size: inherit;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+[data-bs-theme="dark"] .resume {
+  .topbar {
+    button {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

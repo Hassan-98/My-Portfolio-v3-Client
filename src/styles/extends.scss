@@ -1,0 +1,84 @@
+@import "./mixins";
+
+%container {
+  max-width: calc($xxl-size - 100px);
+  margin: 0 auto;
+
+  @include xxl {
+    max-width: calc($xl-size - 60px);
+  }
+
+  @include xl {
+    max-width: calc($lg-size - 60px);
+  }
+
+  @include lg {
+    max-width: calc($md-size - 60px);
+  }
+
+  @include md {
+    max-width: calc($sm-size - 40px);
+  }
+
+  @include sm {
+    max-width: calc(100% - 40px);
+  }
+
+  @include xs {
+    max-width: calc(100% - 10px);
+  }
+}
+
+.container {
+  @extend %container;
+}
+
+%button {
+  padding: 6px 15px;
+  border: 1px solid transparent;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  background-color: var(--main-color);
+
+  @include md {
+    padding: 5px 40px;
+  }
+
+  i {
+    margin-inline-end: 8px;
+    color: inherit;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: var(--main-color);
+    color: var(--main-color);
+
+    i {
+      color: inherit;
+    }
+  }
+}
+
+%fancyIcon {
+  border-radius: 36% 51% 26% 72% / 47% 53% 35% 44%;
+  background: #efefef;
+}
+
+[data-bs-theme="dark"] {
+  %button {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    background-color: transparent;
+
+    i {
+      color: var(--secondary-color);
+    }
+
+    &:hover {
+      background-color: var(--secondary-tint);
+      border-color: var(--secondary-tint);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  padding: 5px 0;
+
+  .wrapper {
+    width: 100%;
+    background-color: var(--background-main-color);
+    border: 1px solid rgba(var(--border-color-rgb), 0.1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    animation: show 0.6s forwards;
+    padding-bottom: 1px;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
