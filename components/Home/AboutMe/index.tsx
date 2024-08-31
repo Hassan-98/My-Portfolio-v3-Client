@@ -23,7 +23,7 @@ function AboutMe({ data }: { data: GeneralSettings }): JSX.Element {
                 <p>Hassan Ali</p>
                 <h3>{data.intro.jobTitle}</h3>
                 <DescriptionCompiler text={data.intro.aboutMe} />
-                <p>Here are a few technologies I’ve been working with recently:</p>
+                {/* <p>Here are a few technologies I’ve been working with recently:</p>
                 <div className={classes.skills}>
                   {
                     data.recentStack.map(stack => (
@@ -33,7 +33,7 @@ function AboutMe({ data }: { data: GeneralSettings }): JSX.Element {
                       </div>
                     ))
                   }
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

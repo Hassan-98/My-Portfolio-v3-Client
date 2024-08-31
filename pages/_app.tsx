@@ -6,7 +6,6 @@ import { Toaster } from 'react-hot-toast';
 import ProgressBar from '@/components/Common/ProgressBar';
 //= Apply Theme Mode
 import applyColorMode from 'scripts/color-mode';
-
 //= Global Styles
 import "swiper/css/bundle";
 import "bootstrap/scss/bootstrap.scss";

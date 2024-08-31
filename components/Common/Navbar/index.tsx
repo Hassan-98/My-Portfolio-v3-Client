@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
@@ -19,10 +19,22 @@ enum Page {
 
 function Navbar() {
   const router = useRouter();
-  const [theme, setThemeState] = useState<string>('light');
+  const [theme, setThemeState] = useState<string>(typeof window !== 'undefined' ? window.localStorage.getItem('theme-mode') || 'light' : 'light');
+
+  useLayoutEffect(() => {
+    const savedTheme = window.localStorage.getItem('theme-mode');
+    if (savedTheme) {
+      setThemeState(savedTheme);
+    } else {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setThemeState('dark');
+      } else {
+        setThemeState('light');
+      }
+    }
+  }, [])
 
   useEffect(() => {
-    setThemeState(window.localStorage.getItem('theme-mode') || 'light');
     window.addEventListener('scroll', handleScrolling);
 
     return () => {

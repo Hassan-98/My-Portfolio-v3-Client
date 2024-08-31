@@ -15,6 +15,14 @@ function DescriptionCompiler({ text }: { text: string }) {
     compiledContent = compiledContent.replaceAll('[*', '');
     compiledContent = compiledContent.replaceAll('*]', '');
 
+
+    // Compile Bold Texts
+    const underlinedTexts = content.match(/(?<=_\*)(.*?)(?=\*_)/g);
+    underlinedTexts?.forEach(txt => {
+      compiledContent = compiledContent.replace(txt, `<span class="${classes.underlined}">${txt}</span>`);
+    });
+    compiledContent = compiledContent.replaceAll('_*', '');
+    compiledContent = compiledContent.replaceAll('*_', '');
     return compiledContent;
   }
 
