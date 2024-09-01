@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 }
 
 export const revalidate = 1800;
+export const maxDuration = 300;
 
 export default async function ContactPage({ }: IProps) {
   const [aboutInfo] = await Promise.all([
