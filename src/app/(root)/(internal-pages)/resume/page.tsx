@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 }
 
 export const revalidate = 300;
+export const dynamic = 'force-static';
 export const maxDuration = 60;
 
 export default async function Resume({ }: IProps) {

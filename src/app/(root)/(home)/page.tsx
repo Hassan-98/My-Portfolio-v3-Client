@@ -14,6 +14,7 @@ import { Importance } from '@/types';
 import type { Metadata } from 'next/types';
 
 export const revalidate = 600;
+export const dynamic = 'force-static';
 export const maxDuration = 60;
 
 export const metadata: Metadata = {
