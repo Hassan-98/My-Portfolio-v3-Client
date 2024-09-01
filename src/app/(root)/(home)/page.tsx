@@ -14,7 +14,7 @@ import { Importance } from '@/types';
 import type { Metadata } from 'next/types';
 
 export const revalidate = 600;
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 export const metadata: Metadata = {
   title: `Hassan Ali - Home`,

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 export const revalidate = 3600;
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 export default async function Works({ }: IProps) {
   const [aboutInfo, works] = await Promise.all([

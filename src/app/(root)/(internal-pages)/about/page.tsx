@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export const revalidate = 600;
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 export default async function AboutPage() {
   const [aboutInfo, testimonials] = await Promise.all([
