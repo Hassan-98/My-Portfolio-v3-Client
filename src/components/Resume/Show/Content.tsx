@@ -182,8 +182,8 @@ function Content({ data }: IProps) {
                 <p>{proficientSkills()}</p>
             }
           </div>
-          {/* <div className={cls.skill_set}>
-            <span>Moderate</span>
+          <div className={cls.skill_set}>
+            {/* <span>Moderate</span> */}
             {
               allSkillsMode ?
                 <>
@@ -199,7 +199,7 @@ function Content({ data }: IProps) {
                 :
                 <p>{moderateSkills()}</p>
             }
-          </div> */}
+          </div>
         </div>
       }
 
