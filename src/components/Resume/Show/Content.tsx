@@ -231,7 +231,7 @@ function Content({ data }: IProps) {
         <div className={cls.section}>
           <h3>Education</h3>
           {
-            data.certificates?.toReversed().map(certificate => (
+            data.certificates && data.certificates.toReversed?.().map(certificate => (
               <div className={cls.education} key={certificate._id}>
                 <div className={cls.title}>
                   <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
