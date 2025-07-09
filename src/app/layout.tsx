@@ -11,7 +11,6 @@ import type { Metadata } from 'next';
 import "swiper/css/bundle";
 import "bootstrap/scss/bootstrap.scss";
 import '@/styles/globals.scss';
-import '@sweetalert2/theme-wordpress-admin/wordpress-admin.css';
 
 export const metadata: Metadata = {
   title: "Hassan Ali - Personal Website",

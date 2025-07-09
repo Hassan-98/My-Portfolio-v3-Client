@@ -231,7 +231,7 @@ function Content({ data }: IProps) {
         <div className={cls.section}>
           <h3>Education</h3>
           {
-            data.certificates.map(certificate => (
+            data.certificates.toReversed().map(certificate => (
               <div className={cls.education} key={certificate._id}>
                 <div className={cls.title}>
                   <p><a href={certificate.sourceLink ? certificate.sourceLink : '#'}>{certificate.title}</a> <span>from</span> {certificate.issuanceSource}</p>
@@ -262,18 +262,14 @@ function Content({ data }: IProps) {
               <div className={cls.title}>
                 <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 'bold' }}>
                   <Icon icon="fontisto:envato" style={{ fontSize: '14px', marginInlineStart: '5px' }} /> Themeforest Projects
-                  <b style={{ marginInlineStart: '5px' }}><small><i>(12 Big Projects)</i></small></b>
+                  <small>(12 Large-Scale Projects)</small>
                 </p>
               </div>
               <p className={cls.description}>
                 All projects and themes i've developed or contributed to it for  '<u>Themescamp - TCG</u>'  company at the period of Apr 2022 to Oct 2023.
                 <div style={{ marginBottom: '5px' }} />
                 all projects are big themeforest themes for various categories such as:
-                <li><i>ecommerce</i></li>
-                <li><i>newspaper & magazine</i></li>
-                <li><i>personal portfolio</i></li>
-                <li><i>agency themes</i></li>
-                <li><i>multi-purpose templates</i>, etc...</li>
+                <li><i>ecommerce</i>, <i>newspaper & magazine</i>, <i>personal portfolio</i>, <i>blog</i>, <i>restaurant</i>, <i>photography</i>, <i>business</i>, <i>agency</i>, <i>multi-purpose templates</i>, etc...</li>
               </p>
               <div className={cls.links}>
                 <a href="https://hassanali.tk/works/tcg" target="_blank" rel="noreferrer">
